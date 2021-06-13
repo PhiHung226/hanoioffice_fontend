@@ -15,7 +15,9 @@
     "build:css": "npx tailwindcss-cli@latest build src/assets/css/tailwind.css -o src/assets/css/main.css",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "eslintConfig": {
     "extends": [
@@ -35,9 +37,15 @@
       "last 1 safari version"
     ]
   },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "eslint": "^7.28.0",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
