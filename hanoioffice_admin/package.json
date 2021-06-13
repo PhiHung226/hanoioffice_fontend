@@ -29,13 +29,11 @@
     "react-toastify": "^7.0.4",
     "react-tooltip": "^4.2.21",
     "recoil": "^0.3.1",
-    "tailwindcss": "^2.1.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "build:css": "npx tailwindcss-cli@latest build src/assets/css/tailwind.css -o src/assets/css/main.css",
     "start": "set PORT=8000 && react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -56,5 +54,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
