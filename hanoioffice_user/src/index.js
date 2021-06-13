@@ -1,13 +1,39 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/css/main.css';
+import './assets/csscustom/custom.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+
 import App from './App';
+import LoadingSpinner from './components/common/LoadingSpinner';
+// import ToastAppContainer from './components/common/ToastAppContainer';
 import reportWebVitals from './reportWebVitals';
 
+const queryCache = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      suspense: true,
+      retry: 2
+    }
+  }
+});
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <RecoilRoot>
+    <QueryClientProvider client={ queryCache }>
+      {/* <React.StrictMode> */ }
+      <Router basename={ '/' }>
+        <App />
+      </Router>
+      <LoadingSpinner />
+      {/* <ToastAppContainer/> */ }
+      {/* </React.StrictMode> */ }
+    </QueryClientProvider>
+  </RecoilRoot>,
   document.getElementById('root')
 );
 
