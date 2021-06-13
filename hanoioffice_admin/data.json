@@ -1,0 +1,44 @@
+{
+  "employees-employees-employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Nommand",
+      "address": "123 Subway, NDC"
+    },
+    {
+      "id": 2,
+      "first_name": "Julia",
+      "last_name": "Palmer",
+      "address": "Path 12, Manchess Street"
+    },
+    {
+      "id": 3,
+      "first_name": "Anne",
+      "last_name": "Cathays",
+      "address": "4th floor, Nanman Landing"
+    }
+  ],
+  "auth-login": {
+    "data": {
+      "user": {
+        "id": "NV3094",
+        "branch": "Chi nhánh Thanh Xuân"
+      },
+      "expires_in": 1
+    },
+    "meta": {
+      "message": "Đăng nhập thành công",
+      "status_code": 0
+    }
+  },
+  "user-me": {
+    "data": {
+      "user": {
+        "user_name": "PhiHung",
+        "first_name": "Hùng",
+        "last_name": "Tạ Phi"
+      }
+    }
+  }
+}
