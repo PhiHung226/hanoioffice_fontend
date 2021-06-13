@@ -1,0 +1,38 @@
+/*Custom Tooltip*/
+.customeTheme {
+  color: #111 !important;
+  background-color: #fff !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  pointer-events: auto !important;
+  padding: 10px !important;
+  max-width: 220px;
+}
+.customeTheme.place-top:after {
+  border-top-color: #4bac4d !important;
+  border-top-style: solid !important;
+  border-top-width: 6px !important;
+}
+.customeTheme:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.w-main-left {
+  width: 234px;
+}
+.w-main-right {
+  background-color: #fff;
+  height: 53rem;
+}
+.responsive-menu {
+  display: none;
+}
+.table-selectInput-MuiInput-formControl .MuiInput-formControl {
+  margin-top: 0;
+}
+.custom-layoutNotFilter .makeStyles-root-34 div .MuiBox-root-42 {
+  padding: 24px 0 0 0;
+}
