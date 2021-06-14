@@ -1,16 +1,16 @@
 import React from 'react';
 
-import ListEmloyee from '../../components/employees';
-import Breadcrumbs from '../../components/employees/Breadcrumbs';
+import ContractList from '../../components/contract/contractList';
+import Breadcrumbs from '../../components/contract/contractList';
 import LayoutLink from '../../layoutLink';
 
-const ContractList = () => {
+const ComponentsCenter = () => {
   return (
     <>
-      <LayoutLink title="Hợp đồng" titleLink={ Breadcrumbs }>
-        <ListEmloyee />
+      <LayoutLink title="Danh sách hợp đồng" titleLink={ Breadcrumbs }>
+        <ContractList />
       </LayoutLink>
     </>
   );
 };
-export default ContractList;
+export default ComponentsCenter;

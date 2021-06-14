@@ -18,7 +18,18 @@ import Login from '../pages/auth/login';
 import {
   Employee, Overview, Users, Room,
   Error404,
-  Contract
+  Contractlist,
+  AboutToExpire,
+  ContractReserve,
+  ContractTransfer,
+  ContractPay,
+  RoomList,
+  Species,
+  RoomEmpty,
+  Maintenance,
+  EmployeeList,
+  Permission,
+  NoLongerWorking
 } from './Lazy';
 
 const RouterMain = () => {
@@ -48,9 +59,22 @@ const RouterMain = () => {
           <PrivateRoute exact path="/branch/branch/listbranch" component={ Employee } />
           <PrivateRoute exact path="/user/member/member" component={ Users } />
           <PrivateRoute exact path="/room/room/listroom" component={ Room } />
+          {/* contract */ }
+          <PrivateRoute exact path="/admin/contract/contract-list" component={ Contractlist } />
+          <PrivateRoute exact path="/admin/contract/about-to-expire" component={ AboutToExpire } />
+          <PrivateRoute exact path="/admin/contract/reserve" component={ ContractReserve } />
+          <PrivateRoute exact path="/admin/contract/transfer" component={ ContractTransfer } />
+          <PrivateRoute exact path="/admin/contract/pay" component={ ContractPay } />
+          {/* room */ }
+          <PrivateRoute exact path="/admin/room/room-list" component={ RoomList } />
+          <PrivateRoute exact path="/admin/room/species" component={ Species } />
+          <PrivateRoute exact path="/admin/room/empty" component={ RoomEmpty } />
+          <PrivateRoute exact path="/admin/room/maintenance" component={ Maintenance } />
+          {/* employee */ }
+          <PrivateRoute exact path="/admin/employee/employee-list" component={ EmployeeList } />
+          <PrivateRoute exact path="/admin/employee/permission" component={ Permission } />
+          <PrivateRoute exact path="/admin/employee/no-longer-working" component={ NoLongerWorking } />
 
-
-          <PrivateRoute exact path="/admin/contract/contract-list" component={ Contract } />
           <Redirect to="/error/404" />
         </Switch>
       </Suspense>
