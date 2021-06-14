@@ -17,7 +17,8 @@ import Login from '../pages/auth/login';
 // import { openDialogLogin } from '../store/atoms/auth/user';
 import {
   Employee, Overview, Users, Room,
-  Error404
+  Error404,
+  Contract
 } from './Lazy';
 
 const RouterMain = () => {
@@ -47,6 +48,9 @@ const RouterMain = () => {
           <PrivateRoute exact path="/branch/branch/listbranch" component={ Employee } />
           <PrivateRoute exact path="/user/member/member" component={ Users } />
           <PrivateRoute exact path="/room/room/listroom" component={ Room } />
+
+
+          <PrivateRoute exact path="/admin/contract/contract-list" component={ Contract } />
           <Redirect to="/error/404" />
         </Switch>
       </Suspense>
