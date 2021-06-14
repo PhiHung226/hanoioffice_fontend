@@ -61,7 +61,7 @@ const Header = ({ mainContent }) => {
   return (
     <div className={ classes.root }>
       <CssBaseline />
-      <AppBar position="fixed" className={ classes.appBar }>
+      <AppBar id="header" position="fixed" className={ classes.appBar }>
         <Toolbar>
           <TopHeader />
         </Toolbar>

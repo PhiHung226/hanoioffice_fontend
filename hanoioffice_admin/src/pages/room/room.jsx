@@ -2,14 +2,14 @@ import React from 'react';
 
 import Room from '../../components/room';
 // import Filter from '../../components/room/filters';
-import LayoutNoFilter from '../../layoutNoFilter';
+import LayoutLink from '../../layoutLink';
 
 const Employee = () => {
   return (
     <>
-      <LayoutNoFilter title='Khách hàng'>
+      <LayoutLink title='Phòng'>
         <Room />
-      </LayoutNoFilter>
+      </LayoutLink>
     </>
   );
 };

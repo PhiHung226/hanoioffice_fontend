@@ -10,7 +10,7 @@ const LayoutNoFilter = (props) => {
   return (
     <div className="w-full responsive-p-4 main-container">
       <div className="md:mx-4 w-full flex md:pr-8">
-        <div className="w-full custom-layoutNotFilter">
+        <div className="w-full">
           <div className="w-full">
             {
               props.titleLink ?

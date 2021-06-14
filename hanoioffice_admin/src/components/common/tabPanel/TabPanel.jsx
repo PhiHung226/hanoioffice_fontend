@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 
 const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, nav, ...other } = props;
 
   return (
     <div
@@ -15,6 +15,10 @@ const TabPanel = (props) => {
       aria-labelledby={ `full-width-tab-${index}` }
       { ...other }
     >
+      { nav ?
+        <div>
+          { nav }
+        </div> : null }
       { value === index && (
         <Box p={ 3 }>
           <div>{ children }</div>
@@ -28,5 +32,6 @@ TabPanel.propTypes = {
   children: PropTypes.object,
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
+  nav: PropTypes.node
 };
 export default TabPanel;
