@@ -1,45 +1,45 @@
-import React from 'react';
+// import React from 'react';
 
-import AppBar from '@material-ui/core/AppBar';
-import { useTheme } from '@material-ui/core/styles';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
+// import AppBar from '@material-ui/core/AppBar';
+// import { useTheme } from '@material-ui/core/styles';
+// import Tab from '@material-ui/core/Tab';
+// import Tabs from '@material-ui/core/Tabs';
 
-import TabPanel from '../common/tabPanel/TabPanel';
-import { a11yProps, useStyles } from '../common/tabPanel/tabPanelProps';
+// import TabPanel from '../common/tabPanel/TabPanel';
+// import { a11yProps, useStyles } from '../common/tabPanel/tabPanelProps';
 
-const Users = () => {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [ value, setValue ] = React.useState(0);
+// const Users = () => {
+//   const classes = useStyles();
+//   const theme = useTheme();
+//   const [ value, setValue ] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+//   const handleChange = (event, newValue) => {
+//     setValue(newValue);
+//   };
 
-  return (
-    <div className={ classes.root }>
-      <AppBar position="static" color="default">
-        <Tabs
-          value={ value }
-          onChange={ handleChange }
-          indicatorColor="primary"
-          textColor="primary"
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable auto tabs example"
-        >
-          <Tab label="Danh sách khách hàng" { ...a11yProps(0) } />
-          <Tab label="Danh sách đen" { ...a11yProps(1) } />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={ value } index={ 0 } dir={ theme.direction }>
-        Danh sách nhân viên
-      </TabPanel>
-      <TabPanel value={ value } index={ 1 } dir={ theme.direction }>
-        Phân quyền
-      </TabPanel>
-    </div>
-  );
-};
-export default Users;
+//   return (
+//     <div className={ classes.root }>
+//       <AppBar position="static" color="default">
+//         <Tabs
+//           value={ value }
+//           onChange={ handleChange }
+//           indicatorColor="primary"
+//           textColor="primary"
+//           variant="scrollable"
+//           scrollButtons="auto"
+//           aria-label="scrollable auto tabs example"
+//         >
+//           <Tab label="Danh sách khách hàng" { ...a11yProps(0) } />
+//           <Tab label="Danh sách đen" { ...a11yProps(1) } />
+//         </Tabs>
+//       </AppBar>
+//       <TabPanel value={ value } index={ 0 } dir={ theme.direction }>
+//         Danh sách nhân viên
+//       </TabPanel>
+//       <TabPanel value={ value } index={ 1 } dir={ theme.direction }>
+//         Phân quyền
+//       </TabPanel>
+//     </div>
+//   );
+// };
+// export default Users;

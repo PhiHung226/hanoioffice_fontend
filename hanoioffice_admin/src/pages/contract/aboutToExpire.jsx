@@ -1,16 +1,16 @@
 import React from 'react';
 
 import AboutToExpire from '../../components/contract/aboutToExpire';
-import Breadcrumbs from '../../components/contract/aboutToExpire/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const listLink = [ 'Hợp đồng sắp hết hạn' ];
+const Contract = () => {
   return (
     <>
-      <LayoutLink title="Hợp đồng sắp hết hạn" titleLink={ Breadcrumbs }>
+      <LayoutLink title="Hợp đồng sắp hết hạn" listLink={ listLink }>
         <AboutToExpire />
       </LayoutLink>
     </>
   );
 };
-export default ComponentsCenter;
+export default Contract;

@@ -16,7 +16,10 @@ import { AUTH_USER_INFO_KEY } from '../constants/queryKey';
 import Login from '../pages/auth/login';
 // import { openDialogLogin } from '../store/atoms/auth/user';
 import {
-  Employee, Overview, Users, Room,
+  Employee, OverviewToDay,
+  OverviewReport,
+  OverviewRevenue,
+  Users, Room,
   Error404,
   Contractlist,
   AboutToExpire,
@@ -29,7 +32,12 @@ import {
   Maintenance,
   EmployeeList,
   Permission,
-  NoLongerWorking
+  NoLongerWorking,
+  CustomerList, Unregistered, CustomerBad,
+  BranchList, BranchHistory,
+  Equipment, ServiceOther,
+  ReportRevenue, ReportRevenuadebt,
+  ReportContract, ReportSpecies
 } from './Lazy';
 
 const RouterMain = () => {
@@ -54,11 +62,14 @@ const RouterMain = () => {
             { user ? <Redirect to={ { pathname: '/', state: { from: location } } } /> : <Login /> }
           </Route>
 
-          <PrivateRoute exact path="/" component={ Overview } />
           <PrivateRoute exact path="/admin/employee/employee" component={ Employee } />
           <PrivateRoute exact path="/branch/branch/listbranch" component={ Employee } />
           <PrivateRoute exact path="/user/member/member" component={ Users } />
           <PrivateRoute exact path="/room/room/listroom" component={ Room } />
+          {/* overview */ }
+          <PrivateRoute exact path="/" component={ OverviewToDay } />
+          <PrivateRoute exact path="/admin/overview/report" component={ OverviewReport } />
+          <PrivateRoute exact path="/admin/overview/revenue" component={ OverviewRevenue } />
           {/* contract */ }
           <PrivateRoute exact path="/admin/contract/contract-list" component={ Contractlist } />
           <PrivateRoute exact path="/admin/contract/about-to-expire" component={ AboutToExpire } />
@@ -74,7 +85,21 @@ const RouterMain = () => {
           <PrivateRoute exact path="/admin/employee/employee-list" component={ EmployeeList } />
           <PrivateRoute exact path="/admin/employee/permission" component={ Permission } />
           <PrivateRoute exact path="/admin/employee/no-longer-working" component={ NoLongerWorking } />
-
+          {/* customer */ }
+          <PrivateRoute exact path="/admin/customer/customer-list" component={ CustomerList } />
+          <PrivateRoute exact path="/admin/customer/unregistered" component={ Unregistered } />
+          <PrivateRoute exact path="/admin/customer/customer-bad" component={ CustomerBad } />
+          {/* branch */ }
+          <PrivateRoute exact path="/admin/branch/branch-list" component={ BranchList } />
+          <PrivateRoute exact path="/admin/branch/history" component={ BranchHistory } />
+          {/* service */ }
+          <PrivateRoute exact path="/admin/service/equipment" component={ Equipment } />
+          <PrivateRoute exact path="/admin/service/service-other" component={ ServiceOther } />
+          {/* report */ }
+          <PrivateRoute exact path="/admin/report/revenue" component={ ReportRevenue } />
+          <PrivateRoute exact path="/admin/report/revenuadebt" component={ ReportRevenuadebt } />
+          <PrivateRoute exact path="/admin/report/contract" component={ ReportContract } />
+          <PrivateRoute exact path="/admin/report/species" component={ ReportSpecies } />
           <Redirect to="/error/404" />
         </Switch>
       </Suspense>

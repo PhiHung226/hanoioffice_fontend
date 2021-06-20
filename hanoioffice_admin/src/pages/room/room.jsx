@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Room from '../../components/room';
+import Rooms from '../../components/room';
 // import Filter from '../../components/room/filters';
 import LayoutLink from '../../layoutLink';
 
-const Employee = () => {
+const Room = () => {
   return (
     <>
       <LayoutLink title='Phòng'>
-        <Room />
+        <Rooms />
       </LayoutLink>
     </>
   );
 };
-export default Employee;
+export default Room;

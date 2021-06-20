@@ -1,16 +1,16 @@
 import React from 'react';
 
 import Permission from '../../components/employees/Permission';
-import Breadcrumbs from '../../components/employees/Permission/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const listLink = [ 'Phân quyền' ];
+const Employee = () => {
   return (
     <>
-      <LayoutLink title="Phân quyền" titleLink={ Breadcrumbs }>
+      <LayoutLink title="Phân quyền" listLink={ listLink }>
         <Permission />
       </LayoutLink>
     </>
   );
 };
-export default ComponentsCenter;
+export default Employee;

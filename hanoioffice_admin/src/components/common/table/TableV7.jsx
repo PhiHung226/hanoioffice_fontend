@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import {
   DataGrid,
@@ -7,126 +7,19 @@ import {
 } from '@material-ui/data-grid';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
+import { useQueryClient } from 'react-query';
 
-import SelectInput from '../../../components/base/input/SelectInput';
-import InputLabel from '../../../components/common/InputLabel';
+import SelectInput from '../../base/input/SelectInput';
+import InputLabel from '../InputLabel';
 import CustomNoRowsOverlay from './tableDetail/CustomNoRowsOverlay';
 
-const getDemo = (params) => {
-  if (params.field === 'detail') {
-    console.log(params);
-  }
-};
-const columns = [
-  {
-    field: 'detail',
-    headerName: 'Chi tiết',
-    width: 90,
-    sortable: false,
-    cellClassName: 'cursor-pointer',
-  },
-  { field: 'id', headerName: 'ID', width: 90, sortable: false },
-  { field: 'firstName', headerName: 'First name', width: 150, sortable: false },
-  { field: 'lastName', headerName: 'Last name', width: 150, sortable: false },
-  {
-    field: 'age',
-    headerName: 'Age',
-    // type: 'number',
-    width: 80,
-    description: 'Tuổi',
-    // hide: false
-    sortable: false
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName1',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName2',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName3',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName4',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName5',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-  {
-    field: 'fullName6',
-    headerName: 'Full name',
-    description: 'Họ và tên',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''}`,
-  },
-];
-
-const rows = [
-  { detail: 'Xem', id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { detail: 'Xem', id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { detail: 'O', id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-  { id: 11, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 12, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 13, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 14, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 15, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 16, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 17, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 18, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 19, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
 
 const pageDemo = (prams) => {
-  console.log(prams);
-
+  if (prams.name === 'detail') {
+    console.log();
+  }
 };
 const listPageLimit = [ { id: 15, name: '15' }, { id: 30, name: '30' }, { id: 60, name: '60' } ];
 const CustomPagination = () => {
@@ -164,9 +57,40 @@ const CustomToolbar = () => {
     </GridToolbarContainer>
   );
 };
-const DataGridDemo = () => {
+const DataGridDemo = ({ columns, datas, queryKey, keyId, detailFunction, openDialog, setOpenDialog, idDetai }) => {
+  const [ dataTable, setDataTable ] = useState(datas.data);
+
+  React.useEffect(() => {
+    setDataTable(datas.data);
+  }, [ datas ]);
+  const queryClient = useQueryClient();
+  // eslint-disable-next-line no-unused-vars
+  const expandChange = async (event) => {
+    await queryClient.prefetchQuery(
+      [ queryKey, event.dataItem[ keyId ] ],
+      () => detailFunction(event.dataItem[ keyId ]),
+      { staleTime: 5000 }
+    );
+  };
+
+  const getDemo = async (event) => {
+    console.log(event.id);
+    if (event.field === idDetai) {
+      // let is_expanded = dataTable.findIndex(item => item[ keyId ] === event.id);
+      await queryClient.prefetchQuery(
+        [ queryKey, event.id ],
+        () => detailFunction(event.id),
+        { staleTime: 5000 }
+      );
+      setOpenDialog({
+        open: !openDialog.open,
+        id: event.id
+      });
+    }
+  };
+
   return (
-    <div style={ { height: 790, width: '100%' } }>
+    <div style={ { height: 690, width: '100%' } }>
       <DataGrid
         checkboxSelection={ true }// hộp kiểm thử
         disableSelectionOnClick={ true }// click trên cả thanh
@@ -177,12 +101,22 @@ const DataGridDemo = () => {
         } }
         disableColumnMenu={ true }// menu từng cột (dấu 3 chấm)
         disableColumnFilter={ true }//  bộ lọc tổng
-        rows={ rows }
+        rows={ dataTable }
         columns={ columns }
         pageSize={ 30 }// số lượng hàng trong bảng
         onCellClick={ getDemo }
       />
     </div>
   );
+};
+DataGridDemo.propTypes = {
+  columns: PropTypes.array,
+  datas: PropTypes.object,
+  queryKey: PropTypes.string,
+  keyId: PropTypes.string,
+  detailFunction: PropTypes.func,
+  openDialog: PropTypes.object,
+  setOpenDialog: PropTypes.func,
+  idDetai: PropTypes.string
 };
 export default DataGridDemo;

@@ -27,7 +27,7 @@ const MenuBar = () => {
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={ <ListSubheader component="div" id="nested-list-subheader">
-        Phong cách Hà Nội mới!
+        Phong cách làm việc mới!
       </ListSubheader> }
       className={ classes.root }
     >

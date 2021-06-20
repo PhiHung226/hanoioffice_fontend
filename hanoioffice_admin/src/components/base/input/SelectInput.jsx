@@ -18,7 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SelectInput = ({ dataArr, title, content, className, classNameItem, value }) => {
+const SelectInput = ({
+  dataArr = [],
+  title, content,
+  className, classNameItem,
+  value = { id: 0, name: 'Đang tải' }
+}) => {
   const [ valueItem, setValueItem ] = React.useState('');// xem xét để bỏ
   const classes = useStyles();
   const handleChange = (event) => {

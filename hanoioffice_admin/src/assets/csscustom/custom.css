@@ -36,3 +36,9 @@
 .customs-tabPanel div {
   padding: 0;
 }
+.max-w-searchBar {
+  max-width: 30rem;
+}
+.responsive-searchBar {
+  width: 100%;
+}

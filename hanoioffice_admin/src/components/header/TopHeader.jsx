@@ -193,7 +193,7 @@ const TopHeader = () => {
         <div className="flex items-center">
           { screenWidth < widthDefault && <MenuIcon onClick={ () => setStateMenu(true) } /> }
           <Typography className={ classes.title } variant="h6" noWrap>
-            <span className="pl-2">CS-Office</span>
+            <span className="pl-2">HaNoiOffice</span>
           </Typography>
         </div>
         <SwipeableDrawer anchor={ 'left' } open={ stateMenu } onClose={ () => setStateMenu(false) } onOpen={ () => setStateMenu(true) }>

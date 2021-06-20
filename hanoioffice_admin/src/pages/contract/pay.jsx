@@ -4,7 +4,7 @@ import Pay from '../../components/contract/pay';
 import Breadcrumbs from '../../components/contract/pay/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const Contract = () => {
   return (
     <>
       <LayoutLink title="Thanh toán hợp đồng" titleLink={ Breadcrumbs }>
@@ -13,4 +13,4 @@ const ComponentsCenter = () => {
     </>
   );
 };
-export default ComponentsCenter;
+export default Contract;

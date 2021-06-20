@@ -4,7 +4,7 @@ import Reserve from '../../components/contract/reserve';
 import Breadcrumbs from '../../components/contract/reserve/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const Contract = () => {
   return (
     <>
       <LayoutLink title="Bảo lưu hợp đồng" titleLink={ Breadcrumbs }>
@@ -13,4 +13,4 @@ const ComponentsCenter = () => {
     </>
   );
 };
-export default ComponentsCenter;
+export default Contract;

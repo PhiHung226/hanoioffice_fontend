@@ -4,7 +4,7 @@ import RoomEmpty from '../../components/room/roomEmpty';
 import Breadcrumbs from '../../components/room/roomEmpty/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const Room = () => {
   return (
     <>
       <LayoutLink title="Phòng trống" titleLink={ Breadcrumbs }>
@@ -13,4 +13,4 @@ const ComponentsCenter = () => {
     </>
   );
 };
-export default ComponentsCenter;
+export default Room;

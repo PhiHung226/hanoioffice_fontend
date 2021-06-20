@@ -1,16 +1,16 @@
 import React from 'react';
 
 import AboutToExpire from '../../components/employees/NoLongerWorking';
-import Breadcrumbs from '../../components/employees/NoLongerWorking/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
-const ComponentsCenter = () => {
+const listLink = [ 'Nhân viên đã nghỉ' ];
+const Employee = () => {
   return (
     <>
-      <LayoutLink title="Nhân viên đã nghỉ" titleLink={ Breadcrumbs }>
+      <LayoutLink title="Nhân viên đã nghỉ" listLink={ listLink }>
         <AboutToExpire />
       </LayoutLink>
     </>
   );
 };
-export default ComponentsCenter;
+export default Employee;

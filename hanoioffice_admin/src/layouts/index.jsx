@@ -8,11 +8,10 @@ import { showLeftSideState } from '../store/atoms/header/header';
 
 const Layout = (props) => {
   const { screenWidth } = useWindowDimensions();
-  // const tenant = localStorage.getItem('tenant');
   const showLeft = useRecoilValue(showLeftSideState);
 
   useEffect(() => {
-    document.title = props.title ? 'CS_Office - ' + props.title : 'CS_Office';
+    document.title = props.title ? 'HaNoiOffice - ' + props.title : 'HaNoiOffice';
   }, [ props.children ]);
 
   return (
