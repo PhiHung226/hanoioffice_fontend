@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Pay from '../../components/contract/pay';
-import Breadcrumbs from '../../components/contract/pay/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
+const listLink = [ 'Thanh toán hợp đồng' ];
 const Contract = () => {
   return (
     <>
-      <LayoutLink title="Thanh toán hợp đồng" titleLink={ Breadcrumbs }>
+      <LayoutLink title="Thanh toán hợp đồng" listLink={ listLink }>
         <Pay />
       </LayoutLink>
     </>

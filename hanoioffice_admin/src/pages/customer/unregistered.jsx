@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Overview from '../../components/customer/unregistered';
-import Breadcrumbs from '../../components/customer/unregistered/Breadcrumbs';
+import Unregistered from '../../components/customer/unregistered';
 import LayoutLink from '../../layoutLink';
 
+const listLink = [ 'Chưa đăng ký phòng' ];
 const Customer = () => {
   return (
     <>
-      <LayoutLink title='Chưa đăng ký phòng' titleLink={ Breadcrumbs }>
-        <Overview />
+      <LayoutLink title='Chưa đăng ký phòng' listLink={ listLink }>
+        <Unregistered />
       </LayoutLink>
     </>
   );

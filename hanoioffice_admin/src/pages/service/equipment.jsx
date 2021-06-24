@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Equiqment from '../../components/service/equiqment';
-import Breadcrumbs from '../../components/service/equiqment/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
+const listLink = [ 'Trang thiết bị' ];
 const Service = () => {
   return (
     <>
-      <LayoutLink title='Trang thiết bị' titleLink={ Breadcrumbs }>
+      <LayoutLink title='Trang thiết bị' listLink={ listLink }>
         <Equiqment />
       </LayoutLink>
     </>

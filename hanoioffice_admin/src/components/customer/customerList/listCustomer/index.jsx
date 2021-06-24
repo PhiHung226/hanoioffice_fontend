@@ -2,7 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from 'react-query';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  //  useRecoilState 
+} from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
 import { getListCustomer } from '../../../../service/customer/customerList/listCustomer';
@@ -31,11 +34,10 @@ const useStyles = makeStyles((theme) => ({
 const ListCustomer = () => {
   const classes = useStyles();
   const columnTable = useRecoilValue(listCustomerColumnTableState);
-  const pageLimit = useRecoilValue(listCustomerPageLimitState);
   const filterParams = useRecoilValue(listCustomerFilterParamsState);
-  const [ pagination,
-    // setPagination 
-  ] = useRecoilState(listCustomerPageState);
+
+  const pageLimit = useRecoilValue(listCustomerPageLimitState);
+  const page = useRecoilValue(listCustomerPageState);
   // console.log(columnTable);
   const getData = useCallback(async (page, pageLimit) => {
     const {
@@ -44,11 +46,11 @@ const ListCustomer = () => {
     return await getListCustomer().getList({
       page, pageLimit, strSearch
     });
-  }, [ pageLimit, filterParams, pagination.skip ]);
+  }, [ pageLimit, filterParams, page.skip ]);
 
   const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY_CUSTOMER', pagination.skip, JSON.stringify(filterParams) ],
-    () => getData(pagination.skip, pageLimit),
+    [ 'PRODUCT_LIST_KEY_CUSTOMER', page.skip, JSON.stringify(filterParams) ],
+    () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
@@ -56,7 +58,7 @@ const ListCustomer = () => {
   );
   useEffect(() => {
     refetch();
-  }, [ pageLimit, filterParams, pagination ]);
+  }, [ pageLimit, filterParams, page ]);
   const [ openDialog, setOpenDialog ] = useState({ open: false, id: null });
 
   return (
@@ -65,7 +67,10 @@ const ListCustomer = () => {
         queryKey='queryKey' idDetai='detail'
         keyId="id_employee" detailFunction={ getListCustomer().getDetail }
         openDialog={ openDialog }
-        setOpenDialog={ setOpenDialog } />
+        setOpenDialog={ setOpenDialog }
+        pageState={ listCustomerPageState }
+        pageLimitState={ listCustomerPageLimitState }
+      />
 
       { openDialog.open &&
         <DialogDetail

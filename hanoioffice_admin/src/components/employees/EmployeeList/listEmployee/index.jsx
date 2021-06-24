@@ -2,7 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from 'react-query';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  //  useRecoilState 
+} from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
 import { getListEmployees } from '../../../../service/employess/employeeList/listEmployee';
@@ -31,11 +34,10 @@ const useStyles = makeStyles((theme) => ({
 const ListEmployees = () => {
   const classes = useStyles();
   const columnTable = useRecoilValue(listEmployeesColumnTableState);
-  const pageLimit = useRecoilValue(listEmployeesPageLimitState);
   const filterParams = useRecoilValue(listEmployeesFilterParamsState);
-  const [ pagination,
-    // setPagination 
-  ] = useRecoilState(listEmployeesPageState);
+
+  const pageLimit = useRecoilValue(listEmployeesPageLimitState);
+  const page = useRecoilValue(listEmployeesPageState);
   // console.log(columnTable);
   const getData = useCallback(async (page, pageLimit) => {
     const {
@@ -44,11 +46,11 @@ const ListEmployees = () => {
     return await getListEmployees().getList({
       page, pageLimit, strSearch
     });
-  }, [ pageLimit, filterParams, pagination.skip ]);
+  }, [ pageLimit, filterParams, page.skip ]);
 
   const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY', pagination.skip, JSON.stringify(filterParams) ],
-    () => getData(pagination.skip, pageLimit),
+    [ 'PRODUCT_LIST_KEY', page.skip, JSON.stringify(filterParams) ],
+    () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
@@ -56,7 +58,7 @@ const ListEmployees = () => {
   );
   useEffect(() => {
     refetch();
-  }, [ pageLimit, filterParams, pagination ]);
+  }, [ pageLimit, filterParams, page ]);
   const [ openDialog, setOpenDialog ] = useState({ open: false, id: null });
 
   return (
@@ -65,7 +67,10 @@ const ListEmployees = () => {
         queryKey='queryKey' idDetai='detail'
         keyId="id_employee" detailFunction={ getListEmployees().getDetail }
         openDialog={ openDialog }
-        setOpenDialog={ setOpenDialog } />
+        setOpenDialog={ setOpenDialog }
+        pageState={ listEmployeesPageState }
+        pageLimitState={ listEmployeesPageLimitState }
+      />
 
       { openDialog.open &&
         <DialogDetail

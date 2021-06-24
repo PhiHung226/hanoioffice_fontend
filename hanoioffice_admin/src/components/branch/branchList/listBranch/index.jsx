@@ -2,7 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from 'react-query';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import {
+  useRecoilValue,
+  //  useRecoilState 
+} from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
 import { getListBranchs } from '../../../../service/branch/listBranch/branchList';
@@ -31,11 +34,10 @@ const useStyles = makeStyles((theme) => ({
 const BranchList = () => {
   const classes = useStyles();
   const columnTable = useRecoilValue(listBranchColumnTableState);
-  const pageLimit = useRecoilValue(listBranchPageLimitState);
   const filterParams = useRecoilValue(listBranchFilterParamsState);
-  const [ pagination,
-    // setPagination 
-  ] = useRecoilState(listBranchPageState);
+
+  const pageLimit = useRecoilValue(listBranchPageLimitState);
+  const page = useRecoilValue(listBranchPageState);
   // console.log(columnTable);
   const getData = useCallback(async (page, pageLimit) => {
     const {
@@ -44,11 +46,11 @@ const BranchList = () => {
     return await getListBranchs().getList({
       page, pageLimit, strSearch
     });
-  }, [ pageLimit, filterParams, pagination.skip ]);
+  }, [ pageLimit, filterParams, page.skip ]);
 
   const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY_BRANCH', pagination.skip, JSON.stringify(filterParams) ],
-    () => getData(pagination.skip, pageLimit),
+    [ 'PRODUCT_LIST_KEY_BRANCH', page.skip, JSON.stringify(filterParams) ],
+    () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
@@ -56,7 +58,7 @@ const BranchList = () => {
   );
   useEffect(() => {
     refetch();
-  }, [ pageLimit, filterParams, pagination ]);
+  }, [ pageLimit, filterParams, page ]);
   const [ openDialog, setOpenDialog ] = useState({ open: false, id: null });
 
   return (
@@ -65,7 +67,10 @@ const BranchList = () => {
         queryKey='queryKey' idDetai='detail'
         keyId="id_employee" detailFunction={ getListBranchs().getDetail }
         openDialog={ openDialog }
-        setOpenDialog={ setOpenDialog } />
+        setOpenDialog={ setOpenDialog }
+        pageState={ listBranchPageState }
+        pageLimitState={ listBranchPageLimitState }
+      />
 
       { openDialog.open &&
         <DialogDetail

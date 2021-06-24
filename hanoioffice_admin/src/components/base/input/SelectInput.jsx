@@ -22,17 +22,15 @@ const SelectInput = ({
   dataArr = [],
   title, content,
   className, classNameItem,
-  value = { id: 0, name: 'Đang tải' }
+  value = 15,
+  onChange
 }) => {
-  const [ valueItem, setValueItem ] = React.useState('');// xem xét để bỏ
+  // const [ valueItem, setValueItem ] = React.useState('');// xem xét để bỏ
   const classes = useStyles();
-  const handleChange = (event) => {
-    // setValue(event.target.value);
-    console.log(event.target.value);
-
-    setValueItem(event.target.value);
-  };
-  console.log(valueItem);
+  // const handleChange = (event) => {
+  //   setValueItem(event.target.value);
+  // };
+  // console.log(valueItem);
 
 
   return (
@@ -40,7 +38,7 @@ const SelectInput = ({
       <div className={ className }>
         <FormControl className={ classes.formControl + ` ${classNameItem}` }>
           <InputLabel >{ title }</InputLabel>
-          <Select value={ value.id } onChange={ handleChange }>
+          <Select value={ value } onChange={ onChange }>
             {
               dataArr.map((item, index) => {
                 return (
@@ -57,12 +55,16 @@ const SelectInput = ({
 };
 SelectInput.propTypes = {
   dataArr: PropTypes.array,
-  value: PropTypes.object,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   setValue: PropTypes.func,
   content: PropTypes.string,
   title: PropTypes.string,
   className: PropTypes.string,
-  classNameItem: PropTypes.string
+  classNameItem: PropTypes.string,
+  onChange: PropTypes.func
 };
 SelectInput.defaultProps = {
   title: ''

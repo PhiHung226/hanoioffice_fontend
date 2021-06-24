@@ -19,16 +19,6 @@ const EmployeeList = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  // const navFilter = () => {
-  //   switch (value) {
-  //     case 0:
-  //       return <FilterList />;
-  //     case 1:
-  //       return <FilterList />;
-  //     default:
-  //       return;
-  //   }
-  // };
   return (
     <>
       <Layout>

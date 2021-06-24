@@ -1,13 +1,13 @@
 import React from 'react';
 
 import RoomList from '../../components/room/RoomList';
-import Breadcrumbs from '../../components/room/RoomList/Breadcrumbs';
 import LayoutLink from '../../layoutLink';
 
+const listLink = [ 'Danh sách phòng' ];
 const Room = () => {
   return (
     <>
-      <LayoutLink title="Danh sách phòng" titleLink={ Breadcrumbs }>
+      <LayoutLink title="Danh sách phòng" listLink={ listLink }>
         <RoomList />
       </LayoutLink>
     </>

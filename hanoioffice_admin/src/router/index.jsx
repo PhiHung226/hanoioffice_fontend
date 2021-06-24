@@ -36,7 +36,7 @@ export const router = [
     type: 'contract',
     subMenu: [
       { id: 200, subIcon: <Group color={ color } />, subTitle: 'Danh sách', subPath: '/admin/contract/contract-list' },
-      { id: 201, subIcon: <Group color={ color } />, subTitle: 'Sắp hết hạn', subPath: '/admin/contract/about-to-expire' },
+      // { id: 201, subIcon: <Group color={ color } />, subTitle: 'Sắp hết hạn', subPath: '/admin/contract/about-to-expire' },
       { id: 202, subIcon: <Group color={ color } />, subTitle: 'Bảo lưu', subPath: '/admin/contract/reserve' },
       { id: 203, subIcon: <Group color={ color } />, subTitle: 'Chuyển nhượng', subPath: '/admin/contract/transfer' },
       { id: 204, subIcon: <Group color={ color } />, subTitle: 'Thanh toán', subPath: '/admin/contract/pay' },
@@ -49,10 +49,10 @@ export const router = [
     path: '/admin/room',
     type: 'room',
     subMenu: [
-      { id: 300, subIcon: <Group color={ color } />, subTitle: 'Danh sách', subPath: '/admin/room/room-list' },
+      { id: 300, subIcon: <Group color={ color } />, subTitle: 'Danh sách phòng', subPath: '/admin/room/room-list' },
       { id: 301, subIcon: <Group color={ color } />, subTitle: 'Loại phòng', subPath: '/admin/room/species' },
-      { id: 302, subIcon: <Group color={ color } />, subTitle: 'Phòng trống', subPath: '/admin/room/empty' },
-      { id: 303, subIcon: <Group color={ color } />, subTitle: 'Bảo trì', subPath: '/admin/room/maintenance' },
+      // { id: 302, subIcon: <Group color={ color } />, subTitle: 'Phòng trống', subPath: '/admin/room/empty' },
+      // { id: 303, subIcon: <Group color={ color } />, subTitle: 'Bảo trì', subPath: '/admin/room/maintenance' },
     ]
   },
   {
@@ -63,8 +63,8 @@ export const router = [
     type: 'employee',
     subMenu: [
       { id: 400, subIcon: <Group color={ color } />, subTitle: 'Danh sách', subPath: '/admin/employee/employee-list' },
-      { id: 401, subIcon: <Group color={ color } />, subTitle: 'Phân quyền', subPath: '/admin/employee/permission' },
-      { id: 402, subIcon: <Group color={ color } />, subTitle: 'Đã nghỉ', subPath: '/admin/employee/no-longer-working' },
+      // { id: 401, subIcon: <Group color={ color } />, subTitle: 'Phân quyền', subPath: '/admin/employee/permission' },
+      // { id: 402, subIcon: <Group color={ color } />, subTitle: 'Đã nghỉ', subPath: '/admin/employee/no-longer-working' },
     ]
   },
   {
@@ -76,7 +76,7 @@ export const router = [
     subMenu: [
       { id: 500, subIcon: <PersonAdd color={ color } />, subTitle: 'Danh sách', subPath: '/admin/customer/customer-list' },
       { id: 501, subIcon: <Group color={ color } />, subTitle: 'Chưa đăng ký phòng', subPath: '/admin/customer/unregistered' },
-      { id: 502, subIcon: <Group color={ color } />, subTitle: 'Báo xấu', subPath: '/admin/customer/customer-bad' }
+      // { id: 502, subIcon: <Group color={ color } />, subTitle: 'Báo xấu', subPath: '/admin/customer/customer-bad' }
     ]
   },
   {
@@ -87,7 +87,7 @@ export const router = [
     type: 'branch',
     subMenu: [
       { id: 600, subIcon: <EmojiTransportation color={ color } />, subTitle: 'Danh sách', subPath: '/admin/branch/branch-list' },
-      { id: 601, subIcon: <EmojiTransportation color={ color } />, subTitle: 'Lịch sử', subPath: '/admin/branch/history' },
+      // { id: 601, subIcon: <EmojiTransportation color={ color } />, subTitle: 'Lịch sử', subPath: '/admin/branch/history' },
     ]
   },
   {

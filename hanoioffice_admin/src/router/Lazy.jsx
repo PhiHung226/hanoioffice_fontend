@@ -11,7 +11,6 @@ export const OverviewReport = lazy(() => import('../pages/overview/report'));
 export const OverviewRevenue = lazy(() => import('../pages/overview/revenue'));
 // contract
 export const Contractlist = lazy(() => import('../pages/contract/contractlist'));
-export const AboutToExpire = lazy(() => import('../pages/contract/aboutToExpire'));
 export const ContractReserve = lazy(() => import('../pages/contract/reserve'));
 export const ContractTransfer = lazy(() => import('../pages/contract/transfer'));
 export const ContractPay = lazy(() => import('../pages/contract/pay'));

@@ -22,7 +22,6 @@ import {
   Users, Room,
   Error404,
   Contractlist,
-  AboutToExpire,
   ContractReserve,
   ContractTransfer,
   ContractPay,
@@ -72,7 +71,6 @@ const RouterMain = () => {
           <PrivateRoute exact path="/admin/overview/revenue" component={ OverviewRevenue } />
           {/* contract */ }
           <PrivateRoute exact path="/admin/contract/contract-list" component={ Contractlist } />
-          <PrivateRoute exact path="/admin/contract/about-to-expire" component={ AboutToExpire } />
           <PrivateRoute exact path="/admin/contract/reserve" component={ ContractReserve } />
           <PrivateRoute exact path="/admin/contract/transfer" component={ ContractTransfer } />
           <PrivateRoute exact path="/admin/contract/pay" component={ ContractPay } />
