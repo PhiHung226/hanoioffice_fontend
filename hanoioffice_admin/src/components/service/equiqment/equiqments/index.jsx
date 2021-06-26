@@ -10,11 +10,11 @@ import {
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
 import { getListCustomer } from '../../../../service/customer/customerList/listCustomer';
 import {
-  listCustomerColumnTableState,
-  listCustomerFilterParamsState,
-  listCustomerPageState,
-  listCustomerPageLimitState
-} from '../../../../store/atoms/customer/customerList/listCustomer';
+  equiqmentListColumnTableState,
+  equiqmentListFilterParamsState,
+  equiqmentListPageState,
+  equiqmentListPageLimitState
+} from '../../../../store/atoms/service/equiqment/equiqmentList';
 import TableV7 from '../../../common/table/TableV7';
 import DetailInfo from '../equiqments/Dialog/DetailInfo';
 import DialogDetail from '../equiqments/Dialog/DialogDetail';
@@ -33,11 +33,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Equiqments = () => {
   const classes = useStyles();
-  const columnTable = useRecoilValue(listCustomerColumnTableState);
-  const filterParams = useRecoilValue(listCustomerFilterParamsState);
+  const columnTable = useRecoilValue(equiqmentListColumnTableState);
+  const filterParams = useRecoilValue(equiqmentListFilterParamsState);
 
-  const pageLimit = useRecoilValue(listCustomerPageLimitState);
-  const page = useRecoilValue(listCustomerPageState);
+  const pageLimit = useRecoilValue(equiqmentListPageLimitState);
+  const page = useRecoilValue(equiqmentListPageState);
 
   const getData = useCallback(async (page, pageLimit) => {
     const {
@@ -68,8 +68,8 @@ const Equiqments = () => {
         keyId="id_employee" detailFunction={ getListCustomer().getDetail }
         openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
-        pageState={ listCustomerPageState }
-        pageLimitState={ listCustomerPageLimitState } />
+        pageState={ equiqmentListPageState }
+        pageLimitState={ equiqmentListPageLimitState } />
 
       { openDialog.open &&
         <DialogDetail

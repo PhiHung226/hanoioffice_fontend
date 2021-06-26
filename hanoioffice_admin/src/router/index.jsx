@@ -24,8 +24,8 @@ export const router = [
     type: 'overview',
     subMenu: [
       { id: 100, subIcon: <Apps color={ color } />, subTitle: 'Hàng ngày', subPath: '/' },
-      { id: 101, subIcon: <Apps color={ color } />, subTitle: 'Báo cáo', subPath: '/admin/overview/report' },
-      { id: 102, subIcon: <Apps color={ color } />, subTitle: 'Doanh thu', subPath: '/admin/overview/revenue' }
+      { id: 101, subIcon: <Apps color={ color } />, subTitle: 'Chi tiết', subPath: '/admin/overview/report' },//subTitle: Báo cáo
+      // { id: 102, subIcon: <Apps color={ color } />, subTitle: 'Doanh thu', subPath: '/admin/overview/revenue' }
     ]
   },
   {

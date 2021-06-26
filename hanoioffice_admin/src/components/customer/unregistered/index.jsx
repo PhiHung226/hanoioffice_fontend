@@ -33,10 +33,11 @@ const Unregistered = () => {
               scrollButtons="auto"
               aria-label="scrollable auto tabs example"
             >
-              <Tab label="Chưa đăng ký phòng" { ...a11yProps(0) } />
+              <Tab label="Hết hạn đăng ký" { ...a11yProps(0) } />
+              <Tab label="Chưa đăng ký phòng" { ...a11yProps(1) } />
             </Tabs>
           </AppBar>
-          <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
+          <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
             <Unregistereds />
           </TabPanel>
         </div>
