@@ -5,7 +5,8 @@ import RevenueChart from './chart/RevenueChart';
 import RoomChart from './chart/RoomChart.';
 import { data, data1, data2 } from './data';
 import TotalCustomer from './totalChart/TotalCustomer';
-import TotalPrice from './totalChart/TotalPrice';
+import TotalDebtPrice from './totalChart/TotalDebtPrice';
+import TotalPriceRevenue from './totalChart/TotalPriceRevenue';
 import TotalRoom from './totalChart/TotalRoom';
 
 
@@ -14,10 +15,10 @@ const Overview = () => {
     <>
       <div>
         <div className="grid md:grid-cols-4 gap-4 grid-cols-1">
-          <TotalPrice title={ 'Doanh thu' } value={ '800,000,000,000' } />
-          <TotalPrice title={ 'Công nợ' } value={ '400,000,000,000' } />
-          <TotalCustomer title={ 'Tổng số khách hàng' } value={ '1,500' } />
-          <TotalRoom title={ 'Tổng số phòng' } value={ '96' } totalRoom={ '100' } />
+          <TotalPriceRevenue />
+          <TotalDebtPrice />
+          <TotalCustomer />
+          <TotalRoom />
         </div>
         <div className="grid md:grid-cols-3 gap-4 grid-cols-1 mt-4">
           <div className="col-span-2">

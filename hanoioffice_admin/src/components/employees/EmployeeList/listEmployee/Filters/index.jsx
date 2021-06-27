@@ -4,8 +4,9 @@ import {
   listContractFilterParamsState
 } from '../../../../../store/atoms/contract/contractList/listContract';
 import ButtonBase from '../../../../base/button/ButtonBase';
+import DateSelection from '../../../../base/dateTime/DateSelection';
 import CardBranch from '../../../../common/filter/CardBranch';
-import SelectInput from '../../../../common/filter/CardPosition';
+import CardPosition from '../../../../common/filter/CardPosition';
 import CardSex from '../../../../common/filter/CardSex';
 // import Dialog from '../../../../common/Dialog/Dialog';
 import DialogAdd from '../DialogAdd/DialogAdd';
@@ -19,11 +20,13 @@ const Filters = () => {
         <div className="m-2">
           <div className='flex gap-4'>
             <SearchBar />
-            < CardBranch filterParams={ listContractFilterParamsState } />
-            <SelectInput filterParams={ listContractFilterParamsState } />
+            <CardBranch filterParams={ listContractFilterParamsState } />
+            <CardPosition filterParams={ listContractFilterParamsState } />
           </div>
-          <div>
+          <div className='flex gap-4'>
+
             <CardSex filterParams={ listContractFilterParamsState } />
+            <DateSelection title="Thời gian vào" />
           </div>
           <div className="flex justify-end ">
             <ButtonBase title={ 'Thêm nhân viên' } color={ 'primary' } className='m-3' onClick={ () => setOpenAdd(!openAdd) } />

@@ -33,36 +33,38 @@ const RadioSex = ({ values = '0' }) => {
   // ];
   return (
     <>
-      <div className="flex items-center">
-        <span className='pr-6 pl-4'>Chức vụ</span>
-        <FormControl component="fieldset">
-          <RadioGroup row aria-label="position" defaultValue={ '0' } name="position" onChange={ handleChange }>
-            <FormControlLabel
-              value={ '0' }
-              control={ <Radio color="primary" /> }
-              label="Tất cả"
-              labelPlacement="end"
-              onChange={ handleChange }
-              checked={ value === '0' }
-            />
-            <FormControlLabel
-              value={ '1' }
-              control={ <Radio color="primary" /> }
-              label="Nam"
-              labelPlacement="end"
-              onChange={ handleChange }
-              checked={ value === '1' }
-            />
-            <FormControlLabel
-              value={ '2' }
-              control={ <Radio color="primary" /> }
-              label="Nữ"
-              labelPlacement="end"
-              onChange={ handleChange }
-              checked={ value === '2' }
-            />
-          </RadioGroup>
-        </FormControl>
+      <div className="shadow-md bg-white">
+        <div className="flex items-center">
+          <span className='pr-6 pl-4 font-medium'>Chức vụ</span>
+          <FormControl component="fieldset">
+            <RadioGroup row aria-label="position" defaultValue={ '0' } name="position" onChange={ handleChange }>
+              <FormControlLabel
+                value={ '0' }
+                control={ <Radio color="primary" /> }
+                label="Tất cả"
+                labelPlacement="end"
+                onChange={ handleChange }
+                checked={ value === '0' }
+              />
+              <FormControlLabel
+                value={ '1' }
+                control={ <Radio color="primary" /> }
+                label="Nam"
+                labelPlacement="end"
+                onChange={ handleChange }
+                checked={ value === '1' }
+              />
+              <FormControlLabel
+                value={ '2' }
+                control={ <Radio color="primary" /> }
+                label="Nữ"
+                labelPlacement="end"
+                onChange={ handleChange }
+                checked={ value === '2' }
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
       </div>
     </>
   );

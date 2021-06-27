@@ -3,15 +3,20 @@ import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 import PropTypes from 'prop-types';
 
+import DateYear from '../../../base/dateTime/DateYear';
+
 const RoomChart = ({ title = 'Báo cáo', data }) => {
   return (
     <>
       <div className="w-full bg-white shadow-lg rounded-lg">
-        <p className="text-xl font-medium antialiased px-3 pt-3">{ title }</p>
+        <div className="flex justify-between">
+          <p className="text-xl font-medium antialiased px-3 pt-3">{ title }</p>
+          <div className="mx-3"><DateYear /></div>
+        </div>
         <div className="w-full h-230">
           <ResponsivePie
             data={ data }
-            margin={ { top: 40, right: 80, bottom: 80, left: -50 } }
+            margin={ { top: 10, right: 80, bottom: 10, left: 0 } }
             activeOuterRadiusOffset={ 8 }
             borderWidth={ 1 }
             borderColor={ { from: 'color', modifiers: [ [ 'darker', 0.2 ] ] } }
@@ -118,6 +123,9 @@ const RoomChart = ({ title = 'Báo cáo', data }) => {
               }
             ] }
           />
+          <div className="pb-3 px-4 flex justify-start">
+            <p className="hover:text-blue-700 cursor-pointer">Xem chi tiết</p>
+          </div>
         </div>
       </div>
     </>

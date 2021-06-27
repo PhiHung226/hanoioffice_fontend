@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
-// import InputLabel from '@material-ui/core/InputLabel';
+import InputLabel from '@material-ui/core/InputLabel';
+import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   chip: {
     margin: 2,
+    backgroundColor: '#cccccc'
   },
   noLabel: {
     marginTop: theme.spacing(3),
@@ -49,7 +52,8 @@ const getStyles = (name, personName, theme) => {
 const MultipleSelect = ({
   data = [ { id: 1, name: 'Đang tải...' } ],
   personName, setPersonName,
-  minWidth = '360px'
+  minWidth = '360px',
+  context, noCheckbox = false, oneChip = false
 }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -69,8 +73,9 @@ const MultipleSelect = ({
     <>
       <div>
         <FormControl className={ classes.formControl } style={ { minWidth: minWidth } }>
-          {/* <InputLabel id="demo-mutiple-chip-label" className="">Chọn chi nhánh</InputLabel> */ }
+          <InputLabel id="demo-mutiple-chip-label" className="">{ context }</InputLabel>
           <Select
+            className="py-2"
             labelId="demo-mutiple-chip-label"
             id="demo-mutiple-chip"
             multiple
@@ -79,16 +84,38 @@ const MultipleSelect = ({
             input={ <Input id="select-multiple-chip" /> }
             renderValue={ (selected) => (
               <div className={ classes.chips }>
-                { selected.map((value, index) => (
-                  <Chip key={ index } label={ nameSelect(value) } className={ classes.chip } />
-                )) }
+                { !oneChip &&
+                  selected.map((value, index) => (
+                    <Chip key={ index } label={ nameSelect(value) } className={ classes.chip } />
+                  ))
+                }
+                {
+                  oneChip &&
+                  <>
+                    <Chip label={ nameSelect(selected[ 0 ]) } className={ classes.chip } />
+                    {
+                      selected.length > 1 &&
+                      <Chip label={ `+ ${selected.length - 1}` } className={ classes.chip } />
+                    }
+                  </>
+                }
               </div>
             ) }
             MenuProps={ MenuProps }
           >
             { data.map((item, index) => (
               <MenuItem key={ index } value={ item.id } style={ getStyles(item.name, personName, theme) }>
-                { item.name }
+                {
+                  noCheckbox &&
+                  <span>{ item.name }</span>
+                }
+                {
+                  !noCheckbox &&
+                  <>
+                    <Checkbox checked={ personName.indexOf(item.id) > -1 } />
+                    <ListItemText primary={ item.name } />
+                  </>
+                }
               </MenuItem>
             )) }
           </Select>
@@ -102,6 +129,9 @@ MultipleSelect.propTypes = {
   data: PropTypes.array,
   personName: PropTypes.array,
   setPersonName: PropTypes.func,
-  minWidth: PropTypes.string
+  minWidth: PropTypes.string,
+  context: PropTypes.string,
+  noCheckbox: PropTypes.bool,
+  oneChip: PropTypes.bool
 };
 export default MultipleSelect;

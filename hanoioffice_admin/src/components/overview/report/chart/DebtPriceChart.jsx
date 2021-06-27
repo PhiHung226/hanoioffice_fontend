@@ -3,17 +3,22 @@ import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 import PropTypes from 'prop-types';
 
-const DebtPriceChart = ({ title = 'Báo cáo', data }) => {
+import DateYear from '../../../base/dateTime/DateYear';
+
+const DebtPriceChart = ({ data }) => {
   return (
     <>
       <div className="w-full bg-white shadow-lg rounded-lg">
-        <p className="text-xl font-medium antialiased px-3 pt-3">{ title }</p>
-        <div className="h-5/6 w-full">
+        <div className="flex justify-between">
+          <p className="text-xl font-medium antialiased px-3 pt-3">Doanh thu / Công nợ</p>
+          <div className="mx-3"><DateYear /></div>
+        </div>
+        <div className="h-190 w-full">
           <ResponsiveBar
             data={ data }
             keys={ [ 'hot dog', 'burger' ] }
             indexBy="country"
-            margin={ { top: 50, right: 130, bottom: 50, left: 60 } }
+            margin={ { top: 10, right: 130, bottom: 40, left: 60 } }
             padding={ 0.3 }
             valueScale={ { type: 'linear' } }
             indexScale={ { type: 'band', round: true } }
@@ -102,6 +107,9 @@ const DebtPriceChart = ({ title = 'Báo cáo', data }) => {
             motionStiffness={ 90 }
             motionDamping={ 15 }
           />
+          <div className="pb-3 px-4 flex justify-start">
+            <p className="hover:text-blue-700 cursor-pointer">Xem chi tiết</p>
+          </div>
         </div>
       </div>
     </>

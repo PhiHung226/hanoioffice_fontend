@@ -3,15 +3,20 @@ import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 import PropTypes from 'prop-types';
 
-const CompareRevenueChart = ({ title = 'Báo cáo', data }) => {
+import DateYear from '../../../base/dateTime/DateYear';
+
+const CompareRevenueChart = ({ data }) => {
   return (
     <>
       <div className="w-full bg-white shadow-lg rounded-lg">
-        <p className="text-xl font-medium antialiased px-3 pt-3">{ title }</p>
-        <div className="h-275 w-full">
+        <div className="flex justify-between">
+          <p className="text-xl font-medium antialiased px-3 pt-3">Doanh thu so với cùng kỳ năm trước</p>
+          <div className="mx-3"><DateYear /></div>
+        </div>
+        <div className="h-237 w-full">
           <ResponsiveLine
             data={ data }
-            margin={ { top: 50, right: 110, bottom: 50, left: 60 } }
+            margin={ { top: 15, right: 110, bottom: 50, left: 60 } }
             xScale={ { type: 'point' } }
             yScale={ { type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false } }
             yFormat=" >-.2f"
@@ -68,6 +73,9 @@ const CompareRevenueChart = ({ title = 'Báo cáo', data }) => {
               }
             ] }
           />
+        </div>
+        <div className="pb-3 px-4 flex justify-start">
+          <p className="hover:text-blue-700 cursor-pointer">Xem chi tiết</p>
         </div>
       </div>
     </>

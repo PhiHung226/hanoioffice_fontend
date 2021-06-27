@@ -32,7 +32,7 @@ const CardBranch = ({ filterParams }) => {
     <>
       <div className="flex items-center">
         <span>Chi nhánh</span>
-        <MultipleSelect data={ data1 } personName={ branch } setPersonName={ setBranch } minWidth='360px' />
+        <MultipleSelect data={ data1 } personName={ branch } setPersonName={ setBranch } minWidth='360px' oneChip={ true } />
       </div>
     </>
   );

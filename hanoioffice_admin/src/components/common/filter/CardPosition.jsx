@@ -11,7 +11,7 @@ const CardPosition = ({ filterParams }) => {
   // const queryClient = useQueryClient();
   // const { data } = queryClient.getQueryData(AUTH_USER_INFO_KEY);
   const [ position, setPosition ] = useState([]);
-  const branchSearch = useSetRecoilState(filterParams);
+  const positionSearch = useSetRecoilState(filterParams);
   // console.log(data);
 
   const data1 = [
@@ -21,7 +21,7 @@ const CardPosition = ({ filterParams }) => {
     { id: 4, name: 'Lễ tân' }
   ];
   useEffect(() => {
-    branchSearch(search => {
+    positionSearch(search => {
       return {
         ...search,
         positionSearch: position
