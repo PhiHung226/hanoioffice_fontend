@@ -108,7 +108,7 @@ const RouterMain = () => {
 const Router = () => {
   return (
     <>
-      { <Header mainContent={ <RouterMain /> } /> }
+      <Header mainContent={ <RouterMain /> } />
     </>
   );
 };

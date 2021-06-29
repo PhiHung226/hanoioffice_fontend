@@ -1,7 +1,7 @@
 import './App.css';
 import './plugins/fontAwesomeIcon';
 
-import Routers from './router/Routers';
+import Routers from './router/Router';
 
 const App = () => {
   return (

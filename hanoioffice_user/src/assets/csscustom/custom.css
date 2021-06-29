@@ -36,3 +36,50 @@
 .custom-layoutNotFilter .makeStyles-root-34 div .MuiBox-root-42 {
   padding: 24px 0 0 0;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4040bf;
+  min-width: 290px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px 16px 10px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.hover-Icon {
+  display: none;
+}
+.hover-item:hover .hover-Icon {
+  display: inline;
+}
+
+.dropdown-item {
+  position: relative;
+  /* display: inline-block; */
+}
+.dropdown-content-item {
+  display: none;
+  position: absolute;
+  background-color: #4040bf;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px 16px 10px 16px;
+  z-index: 2;
+}
+.hover-item:hover .dropdown-content-item {
+  display: inline;
+}
+.hover-Icon-item {
+  display: none;
+}
+.hover-item-item:hover .hover-Icon-item {
+  display: inline;
+  padding-right: 4px;
+}

@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import App from './App';
-import LoadingSpinner from './components/common/LoadingSpinner';
+import LoadingSpinner from './component/common/LoadingSpinner';
 // import ToastAppContainer from './components/common/ToastAppContainer';
 import reportWebVitals from './reportWebVitals';
 
