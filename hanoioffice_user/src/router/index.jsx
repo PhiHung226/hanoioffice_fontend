@@ -67,7 +67,7 @@ export const router = [
     path: '/place',
     type: 'place',
     subMenu: [
-      { id: 301, subTitle: 'Lê văn Lương - Thanh Xuân', subPath: '/luong-the-vinh-thanh-xuan' },
+      { id: 301, subTitle: 'Lê văn Lương - Thanh Xuân', subPath: '/le-van-luong-thanh-xuan' },
       { id: 302, subTitle: 'Khuất Duy tiến - Thanh xuân', subPath: '/khuat-duy-tien-thanh-xuan' },
       { id: 303, subTitle: 'Tam chinh - Hoàng Mai', subPath: '/tam-chinh-hoang-mai' },
       { id: 304, subTitle: 'Trần phú - Hà Đông', subPath: '/tran-phu-ha-dong' },
@@ -121,10 +121,10 @@ export const router = [
   {
     id: 8,
     icon: null,
-    title: 'Đặt văn phòng',
+    title: 'Đăng ký phòng',
     path: '/dat-van-phong',
     type: 'book_an_office',
     subMenu: [
-      { id: 801, subTitle: 'Đăng văn phòng', subPath: '/dat-van-phong', subItem: [] }, ]
+      { id: 801, subTitle: 'Đăng ký phòng', subPath: '/dang-ky-phong', subItem: [] }, ]
   },
 ];
