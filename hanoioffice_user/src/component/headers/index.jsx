@@ -38,6 +38,9 @@ const Hearder = () => {
               <Typography variant="h6" className={ classes.title }>
                 <div className="flex">
                   <div className="cursor-pointer">
+                    <img className="w-64 h-10 mx-auto " src="https://hanoioffice.vn/wp-content/uploads/2021/02/logo-black.png" />
+                  </div>
+                  <div className="cursor-pointer">
                     <span ><Phone className="mb-1 mr-3" /></span>
                     <span className="text-base">085 339 4567 - 0904 388 909</span>
                   </div>
