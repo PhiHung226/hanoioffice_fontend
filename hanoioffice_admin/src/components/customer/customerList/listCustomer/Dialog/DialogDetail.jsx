@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,6 +10,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
+import { FormProvider, useForm } from 'react-hook-form';
+
+import { getYearMonthDay } from '../../../../../helpers/helper';
 
 const styles = (theme) => ({
   root: {
@@ -60,31 +63,56 @@ const ConfirmationDialogRaw = (props) => {
       open: !openDialog.open
     });
   };
-
+  const [ values, setValues ] = React.useState({
+    code_customer: '',
+    fist_name: '',
+    last_name: '',
+    sex: '0',
+    phone_customer: '',
+    email_customer: '',
+    address_customer: '',
+    hktt_customer: '',
+    user_customer: '',
+    pass_customer: ''
+  });
+  const [ form, setForm ] = useState({
+    birthday: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
+    start_day: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
+  });
+  const methods = useForm({ defaultValues: values });
 
   return (
     <Dialog
       disableBackdropClick
       disableEscapeKeyDown
       fullWidth={ true }
+      maxWidth={ 'lg' }
       onEntering={ handleEntering }
       aria-labelledby="confirmation-dialog-title"
       open={ openDialog.open }
       { ...other }
       height={ '180px' }
     >
-      <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Thông tin khách hàng</DialogTitle>
-      <DialogContent dividers>
-        <Detail />
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={ handleOk } color="primary">
-          Cập nhật
-        </Button>
-        <Button autoFocus onClick={ handleCancel } color="primary">
-          Hủy
-        </Button>
-      </DialogActions>
+      <FormProvider { ...methods } setValues={ setValues }>
+        <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Thông tin khách hàng chi tiết</DialogTitle>
+        <DialogContent dividers>
+          <Detail form={ form } setForm={ setForm } isAdd={ false } />
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={ handleCancel } variant="contained" color="primary">
+            Lịch sử
+          </Button>
+          <Button onClick={ handleOk } variant="contained" color="primary">
+            Cập nhật
+          </Button>
+          <Button autoFocus onClick={ handleCancel } variant="contained" color="primary">
+            Báo xấu
+          </Button>
+          <Button autoFocus onClick={ handleCancel } variant="contained" color="secondary">
+            Hủy
+          </Button>
+        </DialogActions>
+      </FormProvider>
     </Dialog>
   );
 };

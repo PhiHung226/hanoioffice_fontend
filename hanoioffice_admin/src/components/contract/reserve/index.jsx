@@ -33,7 +33,7 @@ const Reserve = () => {
               scrollButtons="auto"
               aria-label="scrollable auto tabs example"
             >
-              <Tab label="Bảo lưu hợp đồng" { ...a11yProps(0) } />
+              <Tab label="Danh sách bảo lưu" { ...a11yProps(0) } />
             </Tabs>
           </AppBar>
           <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>

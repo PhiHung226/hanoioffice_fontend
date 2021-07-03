@@ -8,10 +8,10 @@ import Tabs from '@material-ui/core/Tabs';
 import TabPanel from '../../../components/common/tabPanel/TabPanel';
 import { a11yProps, useStyles } from '../../../components/common/tabPanel/tabPanelProps';
 import Layout from '../../../layouts';
-import BadCustomer from '../customerList/badCustomer';
-import FilterBad from '../customerList/badCustomer/Filters';
 import ListCustomer from '../customerList/listCustomer';
-import Filter from '../customerList/listCustomer/Filters';
+import FilterList from '../customerList/listCustomer/Filters';
+// import Unregistereds from '../unregistered/unregistereds';
+// import Filter from '../unregistered/unregistereds/Filters';
 
 const CustomerList = () => {
   const classes = useStyles();
@@ -36,15 +36,15 @@ const CustomerList = () => {
               aria-label="scrollable auto tabs example"
             >
               <Tab label="Danh sách khách hàng" { ...a11yProps(0) } />
-              <Tab label="Danh sách đen" { ...a11yProps(0) } />
+              {/* <Tab label="Hết hạn dùng phòng" { ...a11yProps(1) } /> */ }
             </Tabs>
           </AppBar>
-          <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
+          <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ FilterList }>
             <ListCustomer />
           </TabPanel>
-          <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ FilterBad }>
-            <BadCustomer />
-          </TabPanel>
+          {/* <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
+            <Unregistereds />
+          </TabPanel> */}
         </div>
       </Layout>
     </>

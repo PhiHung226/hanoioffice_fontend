@@ -30,9 +30,9 @@ const CardPosition = ({ filterParams }) => {
   }, [ position ]);
   return (
     <>
-      <div className="flex items-center">
-        <span>Chức vụ</span>
-        <MultipleSelect data={ data1 } personName={ position } setPersonName={ setPosition } minWidth='240px' />
+      <div className="flex items-center w-full">
+        <span className="w-1/5">Chức vụ</span>
+        <MultipleSelect data={ data1 } personName={ position } setPersonName={ setPosition } minWidth='90%' />
       </div>
     </>
   );

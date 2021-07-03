@@ -26,10 +26,11 @@ export const equiqmentListColumnTableState = atom({
   key: 'equiqmentListColumnTableState',
   default: [
     { field: 'detail', headerName: 'Chi tiết', width: 80, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
-    { field: 'id_contract', headerName: 'Mã thiết bị', width: 120, sortable: false, description: 'Mã thiết bị' },
-    { field: 'name_contract', headerName: 'Tên thiết bị', width: 150, sortable: false, description: 'Tên thiết bị' },
+    { field: 'id_contract', headerName: 'Mã tiện ích', width: 200, sortable: false, description: 'Mã tiện ích' },
+    { field: 'name_contract', headerName: 'Tên tiện ích', width: 350, sortable: false, description: 'Tên tiện ích' },
     { field: 'name_branch', headerName: 'Số lượng', width: 150, sortable: false, description: 'Số lượng' },
-    { field: 'name_room_type', headerName: 'Thời gian lưu', width: 150, sortable: false, description: 'Thời gian bắt đầu lưu' },
-    { field: 'note', headerName: 'Ghi chú', width: 150, sortable: false, description: 'Ghi chú' },
+    { field: 'data_start', headerName: 'Thời gian bắt đầu', width: 200, sortable: false, description: 'Thời gian bắt đầu sử dụng tiện ích' },
+    { field: 'date_stop', headerName: 'Thời gian kết thúc', width: 200, sortable: false, description: 'Thời gian kết thúc sử dụng tiên ích' },
+    { field: 'note', headerName: 'Ghi chú', width: 270, sortable: false, description: 'Ghi chú' },
   ]
 });

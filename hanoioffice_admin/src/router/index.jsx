@@ -75,7 +75,7 @@ export const router = [
     type: 'customer',
     subMenu: [
       { id: 500, subIcon: <PersonAdd color={ color } />, subTitle: 'Danh sách', subPath: '/admin/customer/customer-list' },
-      { id: 501, subIcon: <Group color={ color } />, subTitle: 'Chưa đăng ký phòng', subPath: '/admin/customer/unregistered' },
+      // { id: 501, subIcon: <Group color={ color } />, subTitle: 'Chưa đăng ký phòng', subPath: '/admin/customer/unregistered' },
       // { id: 502, subIcon: <Group color={ color } />, subTitle: 'Báo xấu', subPath: '/admin/customer/customer-bad' }
     ]
   },
@@ -93,25 +93,35 @@ export const router = [
   {
     id: 7,
     icon: <ClassRounded color={ color } />,
-    title: 'Dịch vụ',
+    title: 'Tiện ích',
     path: '/admin/service',
     type: 'service',
     subMenu: [
-      { id: 700, subIcon: <CallToActionRounded color={ color } />, subTitle: 'Trang thiết bị', subPath: '/admin/service/equipment' },
-      { id: 701, subIcon: <DonutSmallRounded color={ color } />, subTitle: 'Dịch vụ thêm', subPath: '/admin/service/service-other' },
+      { id: 700, subIcon: <CallToActionRounded color={ color } />, subTitle: 'Danh sách', subPath: '/admin/service/equipment' },
+      { id: 701, subIcon: <DonutSmallRounded color={ color } />, subTitle: 'Tiện ích khác', subPath: '/admin/service/service-other' },
     ]
   },
+  // {
+  //   id: 8,
+  //   icon: <ClassRounded color={ color } />,
+  //   title: 'Thiết bị',
+  //   path: '/admin/device',
+  //   type: 'device',
+  //   subMenu: [
+  //     { id: 800, subIcon: <CallToActionRounded color={ color } />, subTitle: 'Danh sách', subPath: '/admin/device/device-list' }
+  //   ]
+  // },
   {
-    id: 8,
+    id: 9,
     icon: <LocalLaundryService color={ color } />,
     title: 'Báo cáo',
     path: '/admin/report',
     type: 'report',
     subMenu: [
-      { id: 800, subIcon: <TrackChanges color={ color } />, subTitle: 'Doanh thu', subPath: '/admin/report/revenue' },
-      { id: 801, subIcon: <TrackChanges color={ color } />, subTitle: 'Công nợ', subPath: '/admin/report/revenuadebt' },
-      { id: 802, subIcon: <TrackChanges color={ color } />, subTitle: 'Hợp đồng', subPath: '/admin/report/contract' },
-      { id: 803, subIcon: <TrackChanges color={ color } />, subTitle: 'Loại phòng', subPath: '/admin/report/species' },
+      { id: 900, subIcon: <TrackChanges color={ color } />, subTitle: 'Doanh thu', subPath: '/admin/report/revenue' },
+      { id: 901, subIcon: <TrackChanges color={ color } />, subTitle: 'Công nợ', subPath: '/admin/report/revenuadebt' },
+      { id: 902, subIcon: <TrackChanges color={ color } />, subTitle: 'Hợp đồng', subPath: '/admin/report/contract' },
+      { id: 903, subIcon: <TrackChanges color={ color } />, subTitle: 'Loại phòng', subPath: '/admin/report/species' },
     ]
   }
 ];

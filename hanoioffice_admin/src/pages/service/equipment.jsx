@@ -3,11 +3,11 @@ import React from 'react';
 import Equiqment from '../../components/service/equiqment';
 import LayoutLink from '../../layoutLink';
 
-const listLink = [ 'Trang thiết bị' ];
+const listLink = [ 'Danh sách tiện ích' ];
 const Service = () => {
   return (
     <>
-      <LayoutLink title='Trang thiết bị' listLink={ listLink }>
+      <LayoutLink title='Danh sách tiện ích' listLink={ listLink }>
         <Equiqment />
       </LayoutLink>
     </>

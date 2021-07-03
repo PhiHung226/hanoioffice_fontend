@@ -41,6 +41,8 @@ export const listCustomerColumnTableState = atom({
     { field: 'image_customer', headerName: 'Ảnh', width: 100, sortable: false, description: 'Ảnh' },
     { field: 'name_customer', headerName: 'Họ tên', width: 150, sortable: false, description: 'Họ và tên' },
     { field: 'branch', headerName: 'Chi nhánh', width: 250, sortable: false, description: 'Chi nhánh' },
+    { field: 'completion_rate', headerName: 'Tỉ lệ hoàn thành', width: 160, sortable: false, description: 'Tỉ lệ hoàn thành' },
+    { field: 'status', headerName: 'Trạng thái hoàng thành', width: 200, sortable: false, description: 'Trạng thái hoàng thành' },
     { field: 'sex_customer', headerName: 'Giới tính', width: 150, sortable: false, description: 'Giới tính' },
     { field: 'birthday', headerName: 'Ngày sinh', width: 150, sortable: false, description: 'Ngày sinh' },
     { field: 'phone', headerName: 'Số điện thoại', width: 150, sortable: false, description: 'Số điện thoại nhân viên' },

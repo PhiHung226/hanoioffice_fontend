@@ -16,9 +16,6 @@ import SelectInput from '../../base/input/SelectInput';
 import InputLabel from '../InputLabel';
 import CustomNoRowsOverlay from './tableDetail/CustomNoRowsOverlay';
 
-
-
-
 const listPageLimit = [ { id: 15, name: '15' }, { id: 30, name: '30' }, { id: 60, name: '60' }, { id: 90, name: '90' } ];
 const CustomToolbar = () => {
   return (
@@ -30,7 +27,8 @@ const CustomToolbar = () => {
 };
 const DataGridDemo = ({ columns, datas, queryKey,
   keyId, detailFunction, openDialog,
-  setOpenDialog, idDetai, pageState, pageLimitState
+  setOpenDialog, idDetai, pageState, pageLimitState,
+  heightTable = 690
   //  page, setPage, pageLimit, setPageLimit 
 }) => {
   // console.log(pageState);
@@ -111,7 +109,7 @@ const DataGridDemo = ({ columns, datas, queryKey,
   };
 
   return (
-    <div style={ { height: 690, width: '100%' } }>
+    <div style={ { height: heightTable, width: '100%' } }>
       <DataGrid
         checkboxSelection={ true }// hộp kiểm thử
         disableSelectionOnClick={ true }// click trên cả thanh
@@ -140,6 +138,7 @@ DataGridDemo.propTypes = {
   setOpenDialog: PropTypes.func,
   idDetai: PropTypes.string,// khóa được chọn khi click vào bảng
   pageState: PropTypes.object,
-  pageLimitState: PropTypes.object
+  pageLimitState: PropTypes.object,
+  heightTable: PropTypes.number
 };
 export default DataGridDemo;

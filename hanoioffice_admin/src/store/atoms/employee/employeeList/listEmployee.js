@@ -36,7 +36,7 @@ export const listEmployeesPageState = atom({
 export const listEmployeesColumnTableState = atom({
   key: 'listEmployeesColumnTableState',
   default: [
-    { field: 'detail', headerName: 'Chi tiết', width: 100, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
+    { field: 'detail', headerName: 'Chi tiết', width: 80, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
     { field: 'id_employee', headerName: 'Mã nhân viên', width: 150, sortable: false, description: 'Mã nhân viên' },
     { field: 'image', headerName: 'Ảnh', width: 100, sortable: false, description: 'Ảnh' },
     { field: 'name', headerName: 'Họ tên', width: 150, sortable: false, description: 'Họ và tên' },

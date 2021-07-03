@@ -1,11 +1,10 @@
 import React from 'react';
 
-const RoomEmpty = () => {
+const Filters = () => {
   return (
     <>
-
 
     </>
   );
 };
-export default RoomEmpty;
+export default Filters;

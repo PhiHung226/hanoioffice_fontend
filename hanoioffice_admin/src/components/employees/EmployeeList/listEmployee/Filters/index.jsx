@@ -10,6 +10,7 @@ import CardPosition from '../../../../common/filter/CardPosition';
 import CardSex from '../../../../common/filter/CardSex';
 // import Dialog from '../../../../common/Dialog/Dialog';
 import DialogAdd from '../DialogAdd/DialogAdd';
+import CardWork from '../Filters/CardWork';
 import SearchBar from '../Filters/SearchBar';
 
 const Filters = () => {
@@ -18,15 +19,15 @@ const Filters = () => {
     <>
       <div className="rounded w-full bg-gray-100 my-2">
         <div className="m-2">
-          <div className='flex gap-4'>
+          <div className='flex grid grid-cols-3 gap-4'>
             <SearchBar />
             <CardBranch filterParams={ listContractFilterParamsState } />
             <CardPosition filterParams={ listContractFilterParamsState } />
           </div>
           <div className='flex gap-4'>
-
             <CardSex filterParams={ listContractFilterParamsState } />
             <DateSelection title="Thời gian vào" />
+            <CardWork filterParams={ listContractFilterParamsState } />
           </div>
           <div className="flex justify-end ">
             <ButtonBase title={ 'Thêm nhân viên' } color={ 'primary' } className='m-3' onClick={ () => setOpenAdd(!openAdd) } />

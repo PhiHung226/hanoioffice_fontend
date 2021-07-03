@@ -16,8 +16,8 @@ import {
   listEmployeesPageLimitState
 } from '../../../../store/atoms/employee/employeeList/listEmployee';
 import TableV7 from '../../../common/table/TableV7';
-import DetailInfo from '../listEmployee/Dialog/DetailInfo';
 import DialogDetail from '../listEmployee/Dialog/DialogDetail';
+import DetailInfo from '../listEmployee/DialogAdd/DialogAddInfo';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -36,12 +36,14 @@ export const listBranchPageState = atom({
 export const listBranchColumnTableState = atom({
   key: 'listBranchColumnTableState',
   default: [
-    { field: 'detail', headerName: 'Chi tiết', width: 100, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
+    { field: 'detail', headerName: 'Chi tiết', width: 80, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
     { field: 'id_branch', headerName: 'Mã chi nhánh', width: 150, sortable: false, description: 'Mã chi nhánh' },
-    { field: 'name_branch', headerName: 'Tên chi nhánh', width: 250, sortable: false, description: 'Tên chi nhánh' },
+    { field: 'name_branch', headerName: 'Tên chi nhánh', width: 220, sortable: false, description: 'Tên chi nhánh' },
     { field: 'address_branch', headerName: 'Địa chỉ', width: 350, sortable: false, description: 'Địa chỉ' },
-    { field: 'service_component', headerName: 'Thành phần dịch vụ', width: 200, sortable: false, description: 'Thành phần dịch vụ chi nhánh' },
-    { field: 'number_employees', headerName: 'Số lượng nhân viên', width: 200, sortable: false, description: 'Số lượng nhân viên của chi nhánh' },
-    { field: 'note', headerName: 'Ghi chú', width: 350, sortable: false, description: 'Ghi chú' },
+    { field: 'type_room', headerName: 'Loại phòng', width: 350, sortable: false, description: 'Các loại phòng có trong chi nhánh' },
+    { field: 'service_component', headerName: 'Số lượng dịch vụ', width: 200, sortable: false, description: 'Số lượng dịch vụ chi nhánh' },
+    { field: 'number_employees', headerName: 'Số lượng nhân viên', width: 170, sortable: false, description: 'Số lượng nhân viên của chi nhánh' },
+    { field: 'date_start', headerName: 'Ngày tạo', width: 170, sortable: false, description: 'Ngày tạo chi nhánh' },
+    { field: 'note', headerName: 'Ghi chú', width: 290, sortable: false, description: 'Ghi chú' },
   ]
 });

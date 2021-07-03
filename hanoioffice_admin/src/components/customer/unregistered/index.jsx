@@ -8,8 +8,8 @@ import Tabs from '@material-ui/core/Tabs';
 import TabPanel from '../../../components/common/tabPanel/TabPanel';
 import { a11yProps, useStyles } from '../../../components/common/tabPanel/tabPanelProps';
 import Layout from '../../../layouts';
-import Unregistereds from '../unregistered/unregistereds';
-import Filter from '../unregistered/unregistereds/Filters';
+import BadCustomer from '../customerList/badCustomer';
+import FilterBad from '../customerList/badCustomer/Filters';
 
 const Unregistered = () => {
   const classes = useStyles();
@@ -33,12 +33,12 @@ const Unregistered = () => {
               scrollButtons="auto"
               aria-label="scrollable auto tabs example"
             >
-              <Tab label="Hết hạn đăng ký" { ...a11yProps(0) } />
-              <Tab label="Chưa đăng ký phòng" { ...a11yProps(1) } />
+              <Tab label="Chưa đăng ký phòng" { ...a11yProps(0) } />
+              {/* <Tab label="Danh sách đen" { ...a11yProps(1) } /> */ }
             </Tabs>
           </AppBar>
-          <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
-            <Unregistereds />
+          <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ FilterBad }>
+            <BadCustomer />
           </TabPanel>
         </div>
       </Layout>

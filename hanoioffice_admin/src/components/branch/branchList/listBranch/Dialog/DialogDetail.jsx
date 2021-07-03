@@ -10,6 +10,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
+import { FormProvider, useForm } from 'react-hook-form';
+
+import { getYearMonthDay } from '../../../../../helpers/helper';
 
 const styles = (theme) => ({
   root: {
@@ -61,30 +64,47 @@ const ConfirmationDialogRaw = (props) => {
     });
   };
 
+  const [ values, setValues ] = React.useState({
+    code_branch: '',
+    name_branch: '',
+    address_branch: '',
+    number_employee: 0,
+    note: ''
+  });
+  const [ form, setForm ] = React.useState({
+    date_created: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
+  });
+  const methods = useForm({ defaultValues: values });
 
   return (
     <Dialog
       disableBackdropClick
       disableEscapeKeyDown
       fullWidth={ true }
+      maxWidth={ 'sm' }
       onEntering={ handleEntering }
       aria-labelledby="confirmation-dialog-title"
       open={ openDialog.open }
       { ...other }
       height={ '180px' }
     >
-      <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Chi nhánh chi tiết</DialogTitle>
-      <DialogContent dividers>
-        <Detail />
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={ handleOk } color="primary">
-          Cập nhật
-        </Button>
-        <Button autoFocus onClick={ handleCancel } color="primary">
-          Bỏ qua
-        </Button>
-      </DialogActions>
+      <FormProvider { ...methods } setValues={ setValues }>
+        <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Chi nhánh chi tiết</DialogTitle>
+        <DialogContent dividers>
+          <Detail form={ form } setForm={ setForm } />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={ handleOk } color="primary" variant="contained">
+            Cập nhật
+          </Button>
+          <Button onClick={ handleOk } color="secondary" variant="contained">
+            Xóa
+          </Button>
+          <Button autoFocus onClick={ handleCancel } color="secondary" variant="contained">
+            Bỏ qua
+          </Button>
+        </DialogActions>
+      </FormProvider>
     </Dialog>
   );
 };

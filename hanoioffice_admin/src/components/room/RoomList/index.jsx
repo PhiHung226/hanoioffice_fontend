@@ -10,8 +10,8 @@ import { a11yProps, useStyles } from '../../../components/common/tabPanel/tabPan
 import Layout from '../../../layouts';
 import ListRoom from '../RoomList/listRoom';
 import Filter from '../RoomList/listRoom/Filters';
-import RoomEmpty from '../RoomList/roomEmpty';
-import FilterEmpty from '../RoomList/roomEmpty/Filters';
+// import RoomEmpty from '../RoomList/roomEmpty';
+// import FilterEmpty from '../RoomList/roomEmpty/Filters';
 
 const RoomList = () => {
   const classes = useStyles();
@@ -36,15 +36,15 @@ const RoomList = () => {
               aria-label="scrollable auto tabs example"
             >
               <Tab label="Danh sách phòng" { ...a11yProps(0) } />
-              <Tab label="Phòng trống" { ...a11yProps(1) } />
+              {/* <Tab label="Phòng trống" { ...a11yProps(1) } /> */ }
             </Tabs>
           </AppBar>
           <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>
             <ListRoom />
           </TabPanel>
-          <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ FilterEmpty }>
+          {/* <TabPanel value={ value } index={ 1 } dir={ theme.direction } className="customs-tabPanel" nav={ FilterEmpty }>
             <RoomEmpty />
-          </TabPanel>
+          </TabPanel> */}
         </div>
       </Layout>
     </>

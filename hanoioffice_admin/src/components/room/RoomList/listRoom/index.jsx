@@ -10,11 +10,11 @@ import {
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
 import { getListCustomer } from '../../../../service/customer/customerList/listCustomer';
 import {
-  listCustomerColumnTableState,
-  listCustomerFilterParamsState,
-  listCustomerPageState,
-  listCustomerPageLimitState
-} from '../../../../store/atoms/customer/customerList/listCustomer';
+  listRoomColumnTableState,
+  listRoomFilterParamsState,
+  listRoomPageState,
+  listRoomPageLimitState
+} from '../../../../store/atoms/room/listRoom/listRoom';
 import TableV7 from '../../../common/table/TableV7';
 import DetailInfo from '../listRoom/Dialog/DetailInfo';
 import DialogDetail from '../listRoom/Dialog/DialogDetail';
@@ -33,11 +33,11 @@ const useStyles = makeStyles((theme) => ({
 
 const BadCustomer = () => {
   const classes = useStyles();
-  const columnTable = useRecoilValue(listCustomerColumnTableState);
-  const filterParams = useRecoilValue(listCustomerFilterParamsState);
+  const columnTable = useRecoilValue(listRoomColumnTableState);
+  const filterParams = useRecoilValue(listRoomFilterParamsState);
 
-  const pageLimit = useRecoilValue(listCustomerPageLimitState);
-  const page = useRecoilValue(listCustomerPageState);
+  const pageLimit = useRecoilValue(listRoomPageLimitState);
+  const page = useRecoilValue(listRoomPageState);
 
   const getData = useCallback(async (page, pageLimit) => {
     const {
@@ -68,8 +68,8 @@ const BadCustomer = () => {
         keyId="id_employee" detailFunction={ getListCustomer().getDetail }
         openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
-        pageState={ listCustomerPageState }
-        pageLimitState={ listCustomerPageLimitState } />
+        pageState={ listRoomPageState }
+        pageLimitState={ listRoomPageLimitState } />
 
       { openDialog.open &&
         <DialogDetail

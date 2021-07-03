@@ -121,7 +121,7 @@ const DateSelection = ({ title }) => {
             <div>
               {
                 openDefault === '0' &&
-                <div className="flex">
+                <div className="flex pt-4">
                   {
                     defaultDate.map((item, index) => {
                       return (

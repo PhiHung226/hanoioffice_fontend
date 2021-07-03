@@ -70,6 +70,7 @@ const BranchList = () => {
         setOpenDialog={ setOpenDialog }
         pageState={ listBranchPageState }
         pageLimitState={ listBranchPageLimitState }
+        heightTable={ 690 }
       />
 
       { openDialog.open &&

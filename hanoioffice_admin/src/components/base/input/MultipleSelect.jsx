@@ -13,10 +13,10 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(0),
     // minWidth: 360,
     maxWidth: '100%',
-    minHeight: 20
+    minHeight: 40,
   },
   chips: {
     display: 'flex',
@@ -52,7 +52,7 @@ const getStyles = (name, personName, theme) => {
 const MultipleSelect = ({
   data = [ { id: 1, name: 'Đang tải...' } ],
   personName, setPersonName,
-  minWidth = '360px',
+  minWidth = '100%',
   context, noCheckbox = false, oneChip = false
 }) => {
   const classes = useStyles();
@@ -71,9 +71,9 @@ const MultipleSelect = ({
 
   return (
     <>
-      <div>
+      <div className="w-full">
         <FormControl className={ classes.formControl } style={ { minWidth: minWidth } }>
-          <InputLabel id="demo-mutiple-chip-label" className="">{ context }</InputLabel>
+          <InputLabel id="demo-mutiple-chip-label">{ context }</InputLabel>
           <Select
             className="py-2"
             labelId="demo-mutiple-chip-label"
@@ -81,7 +81,7 @@ const MultipleSelect = ({
             multiple
             value={ personName }
             onChange={ handleChange }
-            input={ <Input id="select-multiple-chip" /> }
+            input={ <Input id="select-multiple-chip" className="pt-2" /> }
             renderValue={ (selected) => (
               <div className={ classes.chips }>
                 { !oneChip &&
