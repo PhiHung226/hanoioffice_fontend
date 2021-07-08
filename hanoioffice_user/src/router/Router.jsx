@@ -23,7 +23,8 @@ import {
   Document, Recruitment,
   DuyTan, KhuatDuyTien, LeDucTho,
   LeVanLuong, NguyenThaiHoc, TamChinh,
-  ToHieu, TranPhu, Contact, Quotation
+  ToHieu, TranPhu, Contact, Quotation,
+  BookAnOffice
 } from './Lazy';
 
 const Body = () => {
@@ -70,7 +71,7 @@ const Body = () => {
           {/* quotation: Bảng báo giá */ }
           <Route exact path="/bang-bao-gia" component={ Quotation } />
           {/* book_an_office: Đăng ký phòng */ }
-          <Route exact path="/dang-ky-phong" component={ OnlineMeetingRoom } />
+          <Route exact path="/dang-ky-phong" component={ BookAnOffice } />
         </Switch>
       </Suspense>
     </>

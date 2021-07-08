@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import {
   ArrowRightAlt, Add, MailOutline,
   Phone, YouTube, Twitter, Facebook,
-  Instagram, Pinterest
+  Instagram, Pinterest, AccountCircle
 } from '@material-ui/icons';
 // import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink } from 'react-router-dom';
@@ -56,6 +56,7 @@ const Hearder = () => {
                   <Pinterest className="text-gray-500 hover:text-blue-500 mx-2" />
                   <Facebook className="text-gray-500 hover:text-blue-500 mx-2" />
                   <Instagram className="text-gray-500 hover:text-blue-500 mx-2" />
+                  <AccountCircle className="text-gray-500 hover:text-blue-500 ml-16 mr-4" />
                 </div>
               </Typography>
             </Toolbar>

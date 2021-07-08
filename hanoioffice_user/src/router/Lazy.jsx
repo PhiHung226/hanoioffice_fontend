@@ -38,3 +38,5 @@ export const Introduce = lazy(() => import('../page/introduces/introduce'));
 export const Contact = lazy(() => import('../page/contacts/contact'));
 // Quotation
 export const Quotation = lazy(() => import('../page/quotations/Quotation'));
+// book_an_office
+export const BookAnOffice = lazy(() => import('../page/bookAnOffice/bookAnOffice'));

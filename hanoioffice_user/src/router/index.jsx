@@ -127,4 +127,14 @@ export const router = [
     subMenu: [
       { id: 801, subTitle: 'Đăng ký phòng', subPath: '/dang-ky-phong', subItem: [] }, ]
   },
+  {
+    id: 10,
+    icon: null,
+    title: 'Chính sách chuyển nhượng',
+    path: '/chinh-sach-chuyen-nhuong',
+    type: '',
+    subMenu: [
+      { id: 110, subTitle: 'Chính sách chuyển nhượng', subPath: '/chinh-sach-chuyen-nhuong', subItem: [] }
+    ]
+  }
 ];

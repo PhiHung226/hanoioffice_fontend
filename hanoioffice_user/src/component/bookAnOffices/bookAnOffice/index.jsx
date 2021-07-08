@@ -1,9 +1,19 @@
 import React from 'react';
 
+// import BranchDetail from './BranchDetail';
+// import LoginBook from './LoginBook';
+// import SelectedBranch from './SelectedBranch';
+import ProceedToPlace from './proceedToPlace';
+
 const BookAnOffice = () => {
   return (
     <>
-      <h1>Đăng ký phòng</h1>
+      <div className="md:container md:mx-auto">
+        {/* <LoginBook /> */ }
+        {/* <SelectedBranch /> */ }
+        {/* <BranchDetail /> */ }
+        <ProceedToPlace />
+      </div>
     </>
   );
 };
