@@ -20,19 +20,19 @@ import {
 const VirtualOffice = () => {
   return (
     <>
-      <div className="bg-gray-500">
+      <div className="">
         <div className="grid grid-cols-2 gap-2">
           {/*<div> </div>*/}
-          <div className="bg-gray-600 mt-20 mb-24 mr-5 pl-2">
-            <h2 className="text-white  text-center text-3xl font-bold">CHO THUÊ VĂN PHÒNG ẢO</h2>
-            <h4 className="text-white  text-center border-b-2 border-fuchsia-600 font-medium ">Một địa chỉ kinh doanh chuyên nghiệp ở vị trí đắc địa tại Thủ đô Hà Nội</h4>
+          <div className="bg-gray-500 mt-20 mb-24 mr-5 pl-2">
+            <h2 className="text-white text-center text-3xl font-bold">CHO THUÊ VĂN PHÒNG ẢO</h2>
+            <h4 className="text-white text-center border-b-2 border-fuchsia-600 font-medium ">Một địa chỉ kinh doanh chuyên nghiệp ở vị trí đắc địa tại Thủ đô Hà Nội</h4>
             <div className="mt-4">
               <p className="text-white text-center">Giải pháp Cho Thuê Văn Phòng Ảo sẽ giúp bạn tạo dựng hình ảnh chuyên nghiệp và hiện đại. Dịch vụ Văn Phòng Ảo của
                             Hanoi Office giải quyết toàn bộ nhu cầu của mọi doanh nghiệp và sẽ giúp do
                             anh nghiệp tận dụng được tối đa các cơ hội kinh doanh.</p>
             </div>
             <div className="mt-10">
-              <p className="text-red-700"><ChevronRight  url=""/> Tìm hiểu Văn phòng ảo là gì?</p>
+              <p className="text-red-500"><ChevronRight  url=""/> Tìm hiểu Văn phòng ảo là gì?</p>
             </div>
             <div className="pb-20">
               <p>Chọn một địa điểm</p>
@@ -42,9 +42,9 @@ const VirtualOffice = () => {
               <button className="border border-blue-500 bg-blue-500 text-white pl-16 pr-20 py-1.5 max-w-max hover:bg-gray-600">TÌM</button>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+          <div className="">
             <div>
-              <img src="" alt=""/>
+              <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/cho-thue-van-phong-ao.jpg" alt="" />
             </div>
           </div>
         </div>

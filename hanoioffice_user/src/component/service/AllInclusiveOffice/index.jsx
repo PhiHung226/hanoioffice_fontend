@@ -1,19 +1,20 @@
 import React from 'react';
 
 import {ChevronRight} from '@material-ui/icons';
+import {NavLink} from 'react-router-dom';
 
 
 const AllInclusiveOffice = () => {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+      <div className="grid grid-cols-2">
+        <div className="my-4 mx-16">
           <div>
-            <img src="" alt=""/>
+            <img src="https://hanoioffice.vn/wp-content/uploads/2020/10/van-phong-tron-goi-1-1.jpg" alt=""/>
           </div>
         </div>
-        <div className="mt-20 mb-24 mr-5 pl-2 pl-2">
+        <div className="my-36 mr-8">
           <h2 className="text-center text-3xl font-bold text-blue-500">CHO THUÊ VĂN PHÒNG TRỌN GÓI</h2>
           <h4 className="text-center border-b-2 border-fuchsia-600 font-bold">Cho thuê không gian làm việc
                         sang trọng, trọn gói tiện ích tại Hà Nội</h4>
@@ -29,7 +30,7 @@ const AllInclusiveOffice = () => {
             <p className="text-red-400 font-bold text-xl"><ChevronRight url=""/>Tìm hiểu văn phòng trọn gói
                             là gì?</p>
           </div>
-          <div className="pb-20">
+          <div className="">
             <p>Chọn một địa điểm</p>
             <select className="pl-8 pr-96 py-2 mr-2 border border-gray-300" placeholder="Tất cả địa điểm">
               <option value="">Tất cả địa điểm</option>
@@ -113,26 +114,26 @@ const AllInclusiveOffice = () => {
       </div>
       <div className="grid grid-cols-2 mx-80 px-4 gap-4 pt-16">
         <div>
-          <a href=""><img
-            src="https://hanoioffice.vn/wp-content/uploads/2020/10/van-phong-tron-goi-1.jpg"/></a>
+          <NavLink to=""><img
+            src="https://hanoioffice.vn/wp-content/uploads/2020/10/van-phong-tron-goi-1.jpg" alt=""/></NavLink>
         </div>
         <div>
-          <a href=""> <img
-            src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-phong-lam-viec-phong-hop.jpg"/></a>
+          <NavLink to=""> <img
+            src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-phong-lam-viec-phong-hop.jpg" alt=""/></NavLink>
         </div>
       </div>
       <div className="grid grid-cols-2 mx-80 px-4 gap-4 pt-2">
         <div>
-          <a href="">
+          <NavLink to="">
             <img
-              src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec-phong-khach.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec-phong-khach.jpg" alt=""/>
+          </NavLink>
         </div>
         <div>
-          <a href="">
+          <NavLink to="">
             <img
-              src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec-le-tan.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec-le-tan.jpg" alt=""/>
+          </NavLink>
         </div>
       </div>
       <h3 className="font-bold mx-80 text-xl pt-4 border-b-2">TIẾT KIỆM 5 LOẠI CHI PHÍ KHI CHỌN THUÊ VĂN PHÒNG
@@ -396,7 +397,7 @@ const AllInclusiveOffice = () => {
       <div className="pt-3">
         <div className="mx-80">
           <span>Hanoi Office linh động trong việc </span>
-          <a href=""><span className="font-bold text-blue-500">cho thuê văn phòng. </span></a>
+          <NavLink to=""><span className="font-bold text-blue-500">cho thuê văn phòng. </span></NavLink>
           <span>Giá thuê văn phòng tại Hà Nội có thể theo giờ, theo ngày, theo tuần tùy theo nhu cầu của khách hàng. Qúy khách vui</span>
         </div>
         <div className="mx-80">
@@ -410,7 +411,7 @@ const AllInclusiveOffice = () => {
           <span>Giá thuê Văn phòng trọn gói </span>
           <span className="font-bold">chỉ từ 4.000.000 VNĐ/ tháng</span>
           <span>, tùy từng khu vực lựa chọn, vui lòng </span>
-          <a href=""><span className="font-bold text-blue-500 text-xl">LIÊN HỆ</span></a>
+          <NavLink to=""><span className="font-bold text-blue-500 text-xl">LIÊN HỆ</span></NavLink>
         </div>
       </div>
       <div className="grid grid-cols-4 mx-64 pt-16">
@@ -458,55 +459,55 @@ const AllInclusiveOffice = () => {
           <p className="text-xl text-center">Hãy lựa chọn địa điểm thuận tiện nhất!</p>
           <div className="pt-12 grid grid-cols-6 text-center px-6 mx-80">
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">1 Cơ sở</p>
               <p className="font-bold text-xl">Quận Ba Đình</p>
               <p className="font-bold text-xl">Hà Nội</p>
             </div>
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">1 Cơ sở</p>
               <p className="font-bold text-xl">Quận Cầu Giấy</p>
               <p className="font-bold text-xl">Hà Nội</p>
             </div>
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">2 Cơ sở</p>
               <p className="font-bold text-xl">Quận Hà Đông</p>
               <p className="font-bold text-xl">Hà Nội</p>
             </div>
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">1 Cơ sở</p>
               <p className="font-bold text-xl">Quận Hoàng Mai</p>
               <p className="font-bold text-xl">Hà Nội</p>
             </div>
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">1 Cơ sở</p>
               <p className="font-bold text-xl">Quận Nam Từ Liêm</p>
               <p className="font-bold text-xl">Hà Nội</p>
             </div>
             <div className="">
-              <a href="">
+              <NavLink to="">
                 <img className="w-40 h-52 mx-auto"
-                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg"/>
-              </a>
+                  src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg" alt=""/>
+              </NavLink>
               <p className="font-bold text-xl">2 Cơ sở</p>
               <p className="font-bold text-xl">Quận Thanh Xuân</p>
               <p className="font-bold text-xl">Hà Nội</p>
@@ -538,7 +539,7 @@ const AllInclusiveOffice = () => {
       <div className="pt-4">
         <div className="mx-80 pl-6">
           <span>Với dịch vụ </span>
-          <a href=""><span className="font-bold text-blue-500">cho thuê văn phòng</span></a>
+          <NavLink to=""><span className="font-bold text-blue-500">cho thuê văn phòng</span></NavLink>
           <span>này bạn hay doanh nghiệp của bạn chỉ cần tập trung toàn bộ sức mạnh và nguồn lực vào lĩnh vực kinh doanh chính của mình còn các vấn</span>
         </div>
         <div className="mx-80 pl-6">

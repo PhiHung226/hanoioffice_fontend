@@ -1,14 +1,16 @@
 import React from 'react';
 
 import {ChevronRight, FiberManualRecord} from '@material-ui/icons';
+import {NavLink} from 
+  'react-router-dom';
 
 const WorkingSeat = () => {
   return (
     <>
-      <div className="bg-gray-500">
+      <div className="">
         <div className="grid grid-cols-2 gap-2">
           {/*<div> </div>*/}
-          <div className="mt-20 mb-24 mr-5 pl-2">
+          <div className="mt-20 mb-24 mr-5 pl-2 bg-gray-500">
             <h2 className="text-white text-center text-3xl font-bold">CHỖ NGỒI LÀM VIỆC CHO THUÊ</h2>
             <h4 className="text-white text-center border-b-2 border-white font-medium ">Không gian chỗ ngồi làm việc tràn đầy năng lượng thỏa sức sáng tạo.</h4>
             <div className="mt-4">
@@ -31,9 +33,9 @@ const WorkingSeat = () => {
               <button className="border border-blue-500 bg-blue-500 text-white pl-16 pr-20 py-1.5 max-w-max hover:bg-gray-600">TÌM</button>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+          <div className="">
             <div>
-              <img src="" alt=""/>
+              <img className="mx-auto my-4" src="https://hanoioffice.vn/wp-content/uploads/2020/10/cho-ngoi-lam-viec-1.jpg" alt=""/>
             </div>
           </div>
         </div>
@@ -185,9 +187,9 @@ const WorkingSeat = () => {
           <p className="text-center font-bold">THUÊ THEO GIỜ</p>
           <p className="text-center pt-3">Chỉ từ 50.000đ/ 4 giờ</p>
           <div className="pt-9 pb-9 text-center">
-            <a href="">
+            <NavLink to="">
               <span className="text-xs font-bold text-white border rounded hover:border-blue-500 hover:text-black hover:bg-white bg-blue-500 py-3 px-12">NHẬN BÁO GIÁ</span>
-            </a>
+            </NavLink>
           </div>
         </div>
         <div>
@@ -195,9 +197,9 @@ const WorkingSeat = () => {
           <p className="text-center font-bold">THUÊ THEO NGÀY</p>
           <p className="text-center pt-3">Chỉ từ 80.000đ/ ngày</p>
           <div className="pt-9 pb-9 text-center">
-            <a href="">
+            <NavLink to="">
               <span className="text-xs font-bold text-white border rounded hover:border-blue-500 hover:text-black hover:bg-white bg-blue-500 py-3 px-12">NHẬN BÁO GIÁ</span>
-            </a>
+            </NavLink>
           </div>
         </div>
         <div>
@@ -205,9 +207,9 @@ const WorkingSeat = () => {
           <p className="text-center font-bold">THUÊ THEO TUẦN</p>
           <p className="text-center pt-3">Chỉ từ 390.000đ/ tuần</p>
           <div className="pt-9 pb-9 text-center">
-            <a href="">
+            <NavLink to="">
               <span className="text-xs font-bold text-white border rounded hover:border-blue-500 hover:text-black hover:bg-white bg-blue-500 py-3 px-12">NHẬN BÁO GIÁ</span>
-            </a>
+            </NavLink>
           </div>
         </div>
         <div>
@@ -215,9 +217,9 @@ const WorkingSeat = () => {
           <p className="text-center font-bold">THUÊ THEO THÁNG</p>
           <p className="text-center pt-3">Chỉ từ 1.200.000đ/ tháng</p>
           <div className="pt-9 pb-9 text-center">
-            <a href="">
+            <NavLink to="">
               <span className="text-xs font-bold text-white border rounded hover:border-blue-500 hover:text-black hover:bg-white bg-blue-500 py-3 px-12">NHẬN BÁO GIÁ</span>
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -287,55 +289,55 @@ const WorkingSeat = () => {
       </div>
       <div className="pt-12 grid grid-cols-6 text-center px-6 mx-80">
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg" alt=""/>
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Ba Đình</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg" alt=""/>
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Cầu Giấy</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hà Đông</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg" alt=""/>
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hoàng Mai</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Nam Từ Liêm</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
+          <NavLink to="">
             <img className="w-40 h-52 mx-auto"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg"/>
-          </a>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg" alt=""/>
+          </NavLink>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Thanh Xuân</p>
           <p className="font-bold text-xl">Hà Nội</p>
@@ -395,13 +397,13 @@ const WorkingSeat = () => {
         </div>
         <div className="pt-6 pl-80 ml-8">
           <span className="font-bold">Hãy GỌI NGAY cho chúng tôi để nhận tư vấn tốt nhất! HOTLINE: </span>
-          <a href="" className="font-bold text-blue-500">
+          <NavLink to="" className="font-bold text-blue-500">
             085.339.4567
-          </a>
+          </NavLink>
           <span className="font-bold"> - </span>
-          <a href="" className="font-bold text-blue-500">
+          <NavLink to="" className="font-bold text-blue-500">
             0904.388.909
-          </a>
+          </NavLink>
           <span className="italic"> Chỗ ngồi làm việc chuẩn 5 sao Hanoi Office</span>
         </div>
       </div>
@@ -441,28 +443,28 @@ const WorkingSeat = () => {
       </div>
       <div className="pt-4 pl-80 ml-8">
         <div>
-          <a href="">
+          <NavLink to="">
             <span className="font-bold">1.</span>
             <span className="font-bold text-blue-700">Văn phòng ảo</span>
-          </a>
+          </NavLink>
         </div>
         <div className="pt-2">
-          <a href="">
+          <NavLink to="">
             <span className="font-bold">2.</span>
             <span className="font-bold text-blue-700">Cho thuê văn phòng trọn gói</span>
-          </a>
+          </NavLink>
         </div>
         <div className="pt-2">
-          <a href="">
+          <NavLink to="">
             <span className="font-bold">3.</span>
             <span className="font-bold text-blue-700">Cho thuê phòng họp</span>
-          </a>
+          </NavLink>
         </div>
         <div className="pt-2">
-          <a href="">
+          <NavLink to="">
             <span className="font-bold">4.</span>
             <span className="font-bold text-blue-700">Phòng họp trực tuyến</span>
-          </a>
+          </NavLink>
         </div>
       </div>
       <div className="pt-6 pl-80 ml-8">
@@ -494,9 +496,9 @@ const WorkingSeat = () => {
       <div className="pt-8 mx-80 pl-8">
         <span className="font-bold text-red-500">Bất ngờ chưa</span>
         <span className="font-bold">: Chỉ từ 7.000Đ/giờ đã có ngay </span>
-        <a href="" className="font-bold text-blue-500">
+        <NavLink to="" className="font-bold text-blue-500">
           chỗ ngồi làm việc cho thuê tại hệ thống văn phòng 8 cơ sở thuộc trung tâm Hà Nội
-        </a>
+        </NavLink>
         <span className="font-bold"> – Yên tâm an cư lập nghiệp</span>
       </div>
       <div className="pt-8 pl-80 ml-8">

@@ -3,6 +3,7 @@ import React from 'react';
 import {
   BusinessCenter, EventSeat, MeetingRoomRounded, Money, YouTube
 } from '@material-ui/icons';
+import {NavLink} from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -87,22 +88,22 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-9 pt-16">
         <div className="ml-80 col-span-3">
-          <a href="">
+          <NavLink to="">
             <img className="w-72 h-60"
               src="https://hanoioffice.vn/wp-content/uploads/2020/09/va%CC%86n-pho%CC%80ng-a%CC%89o.jpg"
               alt=""/>
             <p className="font-bold text-center">VĂN PHÒNG ẢO</p>
-          </a>
+          </NavLink>
           <p>Bạn sẽ được sử dụng văn phòng ảo ở Hà Nội để: làm văn phòng đại diện, địa chỉ giao dịch, tiếp đối
                         tác – khách hàng, địa chỉ nhận bưu thư…</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
-          <a href="">
+          <NavLink to="">
             <img className="w-72 h-60"
               src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec.jpg"
               alt=""/>
             <p className="font-bold text-center">VĂN PHÒNG TRỌN GÓI</p>
-          </a>
+          </NavLink>
           <p>Bạn sẽ sở hữu: 1 phòng làm việc riêng, phòng họp – phòng khách sang trọng, thiết bị văn phòng
                         hiện đại,… Và không lo đóng phí điện – nước, internet.</p>
         </div>
@@ -141,24 +142,24 @@ const Home = () => {
             </div>
           </div>
           <div className="col-span-2">
-            <a href="">
+            <NavLink to="">
               <img className="w-72 h-60"
                 src="https://hanoioffice.vn/wp-content/uploads/2020/08/Va%CC%86n-pho%CC%80ng-lu%CC%9Bu-do%CC%A3%CC%82ng.jpg"
                 alt=""/>
               <p className="font-bold pl-12">VĂN PHÒNG LƯU ĐỘNG</p>
-            </a>
+            </NavLink>
             <div>
               <p className="pr-16">Bạn có thể sử dụng không gian văn phòng trên toàn bộ hệ thống Hanoi
                                 Office. Phù hợp với nhu cầu liên tục di chuyển tại trung tâm Hà Nội.</p>
             </div>
           </div>
           <div className="col-span-2">
-            <a href="">
+            <NavLink to="">
               <img className="w-72 h-60"
                 src="https://hanoioffice.vn/wp-content/uploads/2020/08/cho-thue-van-phong-lam-viec.jpg"
-                alt=""/>
+                alt="" />
               <p className="font-bold text-center pr-32">CHỖ NGỒI LÀM VIỆC</p>
-            </a>
+            </NavLink>
             <p className="pr-28">Bạn chỉ phải trả tiền cho một chỗ ngồi làm việc nhưng lại được sử dụng đầy
                             đủ tiện ích văn phòng, thiết bị hiện đại trong một không gian yên tĩnh.</p>
           </div>
@@ -167,20 +168,20 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-9 pt-16">
         <div className="ml-80 col-span-3">
-          <a href="">
+          <NavLink to="">
             <img className="w-72 h-60"
               src="https://hanoioffice.vn/wp-content/uploads/2020/08/phong-hop-cho-thue.jpg" alt=""/>
             <p className="font-bold text-center">PHÒNG HỌP CHO THUÊ</p>
-          </a>
+          </NavLink>
           <p>Phòng họp có sức chứa từ 10-30 người sẽ phù hợp với các nhu cầu khác nhau của bạn. Được trang bị
                         đầy đủ thiết bị hiện đại trong không gian sang trọng.</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
-          <a href="">
+          <NavLink to="">
             <img className="w-72 h-60"
               src="https://hanoioffice.vn/wp-content/uploads/2020/08/phong-hop-truc-tuyen.jpg" alt=""/>
             <p className="font-bold text-center">PHÒNG HỌP TRỰC TUYẾN</p>
-          </a>
+          </NavLink>
           <p>Cho thuê phòng họp giá rẻ – hội nghị trực tuyến tại Hà Nội với công nghệ âm thanh, video call
                         hiện đại, sắc nét với chi phí chỉ từ 400.000đ/giờ.</p>
         </div>
@@ -373,7 +374,7 @@ const Home = () => {
         <div className="text-left col-span-6 ml-6 mr-80">
           <div className="">
             <img className="mx-auto pb-4"
-              src="https://hanoioffice.vn/wp-content/uploads/2020/10/cho-thue-van-phong-chi-tu-7000-vnd.png"/>
+              src="https://hanoioffice.vn/wp-content/uploads/2020/10/cho-thue-van-phong-chi-tu-7000-vnd.png" alt="" />
             <div className="grid grid-cols-2">
               <div className="inline-block mr-3">
                 <label>Họ và tên:*</label>
@@ -423,31 +424,31 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-4 text-center gap-4 px-80 pt-12">
         <div>
-          <a href=""><img
-            src="https://hanoioffice.vn/wp-content/uploads/2020/10/bao-hiem-xa-hoi-dien-tu-400x230.png"/></a>
+          <NavLink to=""><img
+            src="https://hanoioffice.vn/wp-content/uploads/2020/10/bao-hiem-xa-hoi-dien-tu-400x230.png" alt="" /></NavLink>
           <h1 className="font-bold text-center">BẢO HIỂM XÃ HỘI ĐIỆN TỬ</h1>
           <p className="text-gray-400 text-center">Cung cấp phần mềm BHXH điện tử với</p>
           <p className="text-gray-400 text-center">10+ tiện ích,giúp các doanh nghiệp rút</p>
           <p className="text-gray-400 text-center">ngắn thời gian và linh hoạt.</p>
         </div>
         <div>
-          <a href=""><img src="https://hanoioffice.vn/wp-content/uploads/2020/10/chu-ky-so-400x230.png"/></a>
+          <NavLink to=""><img src="https://hanoioffice.vn/wp-content/uploads/2020/10/chu-ky-so-400x230.png" alt="" /></NavLink>
           <h1 className="font-bold text-center">CHỮ KÝ SỐ</h1>
           <p className="text-gray-400 text-center">Hỗ trợ doanh nghiệp đăng ký chữ ký số</p>
           <p className="text-gray-400 text-center">(token), kích hoạt và hướng dẫn sử</p>
           <p className="text-gray-400 text-center">dụng chi tiết.</p>
         </div>
         <div>
-          <a href=""><img
-            src="https://hanoioffice.vn/wp-content/uploads/2020/10/hoa-don-dien-tu-400x230.png"/></a>
+          <NavLink to=""><img
+            src="https://hanoioffice.vn/wp-content/uploads/2020/10/hoa-don-dien-tu-400x230.png" alt="" /></NavLink>
           <h1 className="font-bold text-center">HÓA ĐƠN ĐIỆN TỬ</h1>
           <p className="text-gray-400 text-center">Hanoi Office sẽ tư vấn và giúp bạn làm</p>
           <p className="text-gray-400 text-center">mọi thủ tục để tạo hóa đơn điện tử cho</p>
           <p className="text-gray-400 text-center">doanh nghiệp</p>
         </div>
         <div>
-          <a href=""><img
-            src="https://hanoioffice.vn/wp-content/uploads/2020/10/thanh-lap-doanh-nghiep-400x230.png"/></a>
+          <NavLink to=""><img
+            src="https://hanoioffice.vn/wp-content/uploads/2020/10/thanh-lap-doanh-nghiep-400x230.png" alt="" /></NavLink>
           <h1 className="font-bold text-center">THÀNH LẬP DOANH NGHIỆP</h1>
           <p className="text-gray-400 text-center">Hanoi Office sẽ tư vấn và giúp bạn xử</p>
           <p className="text-gray-400 text-center">lý mọi thủ tục để thành lập một doanh</p>
@@ -486,56 +487,57 @@ const Home = () => {
       </div>
       <div className="pt-16 grid grid-cols-6 text-center px-6 mx-80">
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Ba Đình</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Cầu Giấy</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hà Đông</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hoàng Mai</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Nam Từ Liêm</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
         <div className="">
-          <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg" />
-          </a>
+          <NavLink to="">
+            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg" alt="" />
+          </NavLink>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Thanh Xuân</p>
           <p className="font-bold text-xl">Hà Nội</p>
         </div>
       </div>
       <div className="pt-3">
-        <img className="mx-auto" src="https://static.vncommerce.com/maps/600x250/T%E1%BA%A7ng+6,T%C3%B2a+Nh%C3%A0+Vi%E1%BB%87t+%C3%81,9+Ph%E1%BB%91+Duy+T%C3%A2n,Qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,H%C3%A0+N%E1%BB%99i,Vi%E1%BB%87t+Nam.png"  />
+        <img className="mx-auto" src="https://static.vncommerce.com/maps/600x250/T%E1%BA%A7ng+6,T%C3%B2a+Nh%C3%A0+Vi%E1%BB%87t+%C3%81,9+Ph%E1%BB%91+Duy+T%C3%A2n,Qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,H%C3%A0+N%E1%BB%99i,Vi%E1%BB%87t+Nam.png" 
+          alt="" />
       </div>
       <div className="text-center pt-16">
         <h1 className="inline-block pr-1.5 text-2xl">GIỚI THIỆU VỀ</h1>
@@ -580,24 +582,26 @@ const Home = () => {
       <div className="pt-4">
         <div className="grid grid-cols-4 gap-2 mx-96">
           <div>
-            <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/van-phong-cho-thue-quan-ha-dong-day-du-tien-ich-chi-tu-650000-VND-thang-2.jpg" />
-            </a>
+            <NavLink to="" title="Tin Tức">
+              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/van-phong-cho-thue-quan-ha-dong-day-du-tien-ich-chi-tu-650000-VND-thang-2.jpg" 
+                alt="" />
+            </NavLink>
           </div>
           <div>
-            <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/kham-pha-tien-ich-uu-viet-tai-van-phong-cho-thue-hanoi-office-co-so-khuat-duy-tien-thanh-xuan-2.jpg" />
-            </a>
+            <NavLink to="" title="Tin Tức">
+              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/kham-pha-tien-ich-uu-viet-tai-van-phong-cho-thue-hanoi-office-co-so-khuat-duy-tien-thanh-xuan-2.jpg" 
+                alt="" />
+            </NavLink>
           </div>
           <div>
-            <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/nam-giu-bi-quyet-dieu-hanh-doanh-nghiep-lam-viec-tu-xa-hieu-qua.jpg" />
-            </a>
+            <NavLink to="" title="Tin Tức">
+              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/nam-giu-bi-quyet-dieu-hanh-doanh-nghiep-lam-viec-tu-xa-hieu-qua.jpg" alt="" />
+            </NavLink>
           </div>
           <div>
-            <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/05/5-loi-ich-uu-viet-tu-mo-hinh-van-phong-chia-se-da-nang-2-1.jpg" />
-            </a>
+            <NavLink to="" title="Tin Tức">
+              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/05/5-loi-ich-uu-viet-tu-mo-hinh-van-phong-chia-se-da-nang-2-1.jpg" alt="" />
+            </NavLink>
           </div>
         </div>
       </div>
