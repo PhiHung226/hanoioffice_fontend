@@ -266,7 +266,7 @@ const CustomizedSteppers = () => {
           </Step>
         )) }
       </Stepper> */}
-      <div className="flex justify-end">
+      <div>
         { activeStep === steps.length ?
           (<div>
             <div>
@@ -278,10 +278,10 @@ const CustomizedSteppers = () => {
               Đặt lại
             </Button>
           </div>
-          ) : (<div className="flex justify-end">
+          ) : (<div >
             <div>
               { getStepContent(activeStep) }
-              <div>
+              <div className="flex justify-end">
                 <Button disabled={ activeStep === 0 } onClick={ handleBack } className={ classes.button }>
                   Back
                 </Button>

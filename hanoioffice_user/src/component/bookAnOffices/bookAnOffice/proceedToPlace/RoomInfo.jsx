@@ -3,7 +3,11 @@ import React from 'react';
 const RoomInfo = () => {
   return (
     <>
-      <h1>Thông tin phòng đặt</h1>
+      <div className="w-full">
+        <div className="border-2 mx-48">
+          <h1>Thông tin phòng</h1>
+        </div>
+      </div>
     </>
   );
 };
