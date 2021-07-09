@@ -547,42 +547,42 @@ const WorkingSeat = () => {
       </div>
       <div className="pt-3 pl-80 ml-8">
         <span>1. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Lê Văn Lương</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Lê Văn Lương</NavLink>
         <span>: Golden Palm, 21 Lê Văn Lương, Thanh Xuân, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>2. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Thanh Xuân</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Thanh Xuân</NavLink>
         <span>: Zen Tower, 12 Khuất Duy Tiến, Thanh Xuân, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>3. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Hà Đông</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Hà Đông</NavLink>
         <span>: HUD3 Tower,121-123 Tô Hiệu, Hà Đông, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>4. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Trần Phú Hà Đông</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Trần Phú Hà Đông</NavLink>
         <span>: Tòa nhà Sông Đà, 131 Trần Phú, Hà Đông, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>5. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Nam Từ Liêm</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Nam Từ Liêm</NavLink>
         <span>: AT Building, 9 ngõ 7 Lê Đức Thọ, Nam Từ Liêm, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>6. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Ba Đình</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Ba Đình</NavLink>
         <span>: VMQ Building, 87 Nguyễn Thái Học, Ba Đình, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>7. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Cầu Giấy</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Cầu Giấy</NavLink>
         <span>: Tòa nhà Sannam, 78 Duy Tân, Dịch Vọng Hậu, Cầu Giấy, Hà Nội</span>
       </div>
       <div className="pl-80 ml-8">
         <span>8. </span>
-        <a href="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Hoàng Mai</a>
+        <NavLink to="" className="font-bold text-blue-500">Cho thuê chỗ ngồi làm việc tại Hoàng Mai</NavLink>
         <span>: Tòa nhà Helios, 75 Tam Trinh, Hoàng Mai, Hà Nội</span>
       </div>
       <div className="grid grid-cols-2 bg-blue-500 py-6">
