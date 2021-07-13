@@ -2,8 +2,11 @@ import React from 'react';
 
 // import { branchFilterParamsState } from '../../../store/actom/branch/branch';
 // import CardBranch from '../../common/filters/CardBranch';
+import PropTypes from 'prop-types';
+
 import SelectedInput from '../../common/SelectedInput';
 import ItemCard from './ItemCard';
+
 
 const arrBranch = [
   { id: '1', text: 'Chi nhánh Thanh Xuân' },
@@ -33,7 +36,7 @@ const dataArr = [
   {},
   {}
 ];
-const SelectedBranch = () => {
+const SelectedBranch = ({ setState }) => {
 
   const [ value, setValue ] = React.useState('');
   const onChange = (value) => {
@@ -59,7 +62,6 @@ const SelectedBranch = () => {
             <SelectedInput title={ 'Chi nhánh' } dataArr={ arrBranch } value={ value } onChange={ e => onChange(e.target.value) } />
             <SelectedInput title={ 'Loại phòng' } dataArr={ pyteRoom } value={ room } onChange={ e => onChangeRoom(e.target.value) } />
             <SelectedInput title={ 'Số người tối đa' } dataArr={ people_max } value={ people } onChange={ e => onChangePeople(e.target.value) } />
-            <h1>Thời gian bắt đầu</h1>
           </div>
         </div>
         <div className="col-span-3 border">
@@ -69,7 +71,7 @@ const SelectedBranch = () => {
               {
                 dataArr.map((item, index) => {
                   return (
-                    <ItemCard key={ index } dataItem={ item } />
+                    <ItemCard key={ index } dataItem={ item } setState={ setState } />
                   );
                 })
               }
@@ -79,5 +81,8 @@ const SelectedBranch = () => {
       </div>
     </>
   );
+};
+SelectedBranch.propTypes = {
+  setState: PropTypes.func
 };
 export default SelectedBranch;

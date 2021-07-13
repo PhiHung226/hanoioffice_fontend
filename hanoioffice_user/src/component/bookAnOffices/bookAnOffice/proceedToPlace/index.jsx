@@ -193,7 +193,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     // textAlign: 'center'
-    margin: '10px 0 140px',
+    margin: '0px 0 140px',
   },
   button: {
     marginRight: theme.spacing(1),
@@ -205,19 +205,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getSteps = () => {
-  return [ 'Điều khoản và chính sách đặt phòng', 'Kiển tra thông tin khách hàng', 'Kiểm tra thông tin phòng đặt' ];
+  return [ 'Thông tin phòng chi tiết', 'Cập nhật thông tin cá nhân', 'Chấp nhận yêu cầu và chính sách' ];
 };
 
-const CustomizedSteppers = () => {
+const CustomizedSteppers = ({ setState }) => {
 
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return (<Rules />);
+        return (<RoomInfo />);
       case 1:
         return (<CustomerInfo />);
       case 2:
-        return (<RoomInfo />);
+        return (<Rules />);
       default:
         return 'Unknown step';
     }
@@ -242,62 +242,70 @@ const CustomizedSteppers = () => {
   };
 
   return (
-    <div className={ classes.root }>
-      <div className="flex justify-center">
-        <Stepper alternativeLabel activeStep={ activeStep }>
-          { steps.map((label, index) => (
-            <Step key={ index }>
-              <StepLabel onClick={ () => handleClick(index) } className='cursor-pointer'>{ label }</StepLabel>
-            </Step>
-          )) }
-        </Stepper>
+    <>
+      <div className='mt-4 pl-24 cursor-pointer hover:text-blue-800 text-blue-500' onClick={ () => setState('detail') }>
+        <p>{ '<< Quay lại tìm kiếm' }</p>
       </div>
-      {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <QontoConnector /> }>
+      <div className={ classes.root }>
+        <div className="flex justify-center">
+          <Stepper alternativeLabel activeStep={ activeStep }>
+            { steps.map((label, index) => (
+              <Step key={ index }>
+                <StepLabel onClick={ () => handleClick(index) } className='cursor-pointer'>{ label }</StepLabel>
+              </Step>
+            )) }
+          </Stepper>
+        </div>
+        {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <QontoConnector /> }>
         { steps.map((label) => (
           <Step key={ label }>
             <StepLabel StepIconComponent={ QontoStepIcon } onClick={ handleNext }>{ label }</StepLabel>
           </Step>
         )) }
       </Stepper> */}
-      {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <ColorlibConnector /> }>
+        {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <ColorlibConnector /> }>
         { steps.map((label) => (
           <Step key={ label }>
             <StepLabel StepIconComponent={ ColorlibStepIcon } onClick={ handleNext } className="cursor-pointer">{ label }</StepLabel>
           </Step>
         )) }
       </Stepper> */}
-      <div>
-        { activeStep === steps.length ?
-          (<div>
-            <div>
-              {
-                'Tiến hành đăng ký'
-              }
-            </div>
-            <Button onClick={ handleReset } className={ classes.button }>
-              Đặt lại
-            </Button>
-          </div>
-          ) : (<div >
-            <div>
-              { getStepContent(activeStep) }
-              <div className="flex justify-end">
-                <Button disabled={ activeStep === 0 } onClick={ handleBack } className={ classes.button }>
-                  Back
-                </Button>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={ handleNext }
-                  className={ classes.button }
-                >
-                  { activeStep === steps.length - 1 ? 'Hoàn thành thông tin' : 'Tiếp' }
-                </Button>
+        <div>
+          { activeStep === steps.length ?
+            (<div>
+              <div>
+                {
+                  'Tiến hành đăng ký'
+                }
               </div>
+              <Button onClick={ handleReset } className={ classes.button }>
+                Đặt lại
+              </Button>
             </div>
-          </div>) }
+            ) : (<div >
+              <div>
+                { getStepContent(activeStep) }
+                <div className="flex justify-end">
+                  <Button disabled={ activeStep === 0 } onClick={ handleBack } className={ classes.button }>
+                    Back
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={ handleNext }
+                    className={ classes.button }
+                  >
+                    { activeStep === steps.length - 1 ? 'Tiến hành đặt' : 'Tiếp' }
+                  </Button>
+                </div>
+              </div>
+            </div>) }
+        </div>
       </div>
-    </div>
+    </>
   );
+};
+CustomizedSteppers.propTypes = {
+  setState: PropTypes.func
 };
 export default CustomizedSteppers;
