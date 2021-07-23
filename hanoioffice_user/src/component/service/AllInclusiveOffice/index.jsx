@@ -448,7 +448,7 @@ const AllInclusiveOffice = () => {
         <h2 className="font-bold text-center text-2xl">TRẢI NGHIỆM KHÔNG GIAN VĂN PHÒNG TRỌN GÓI CHO THUÊ</h2>
       </div>
       <div className="text-center mt-16">
-                Slide Ảnh
+        <img className="mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/11/cho-thue-van-phong-tron-goi-5.jpg" alt="" />
       </div>
       <div className="mt-12 bg-gray-200">
         <div className="py-12">

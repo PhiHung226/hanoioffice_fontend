@@ -1,7 +1,17 @@
 import React from 'react';
 
 import {
-  BusinessCenter, EventSeat, MeetingRoomRounded, Money, YouTube
+  Alarm,
+  AttachMoneyOutlined,
+  BusinessCenter,
+  CardGiftcardOutlined,
+  DoneOutline,
+  EventSeat,
+  GroupSharp,
+  MeetingRoomRounded,
+  Person,
+  ThumbUpOutlined,
+  Wifi
 } from '@material-ui/icons';
 import {NavLink} from 'react-router-dom';
 
@@ -65,7 +75,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <h1>Slide Ảnh</h1>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/08/phòng-khách-sang-trọng-banner.jpg" alt="" />
         </div>
       </div>
       <div className="bg-blue-500 py-6">
@@ -94,7 +104,7 @@ const Home = () => {
               alt=""/>
             <p className="font-bold text-center">VĂN PHÒNG ẢO</p>
           </NavLink>
-          <p>Bạn sẽ được sử dụng văn phòng ảo ở Hà Nội để: làm văn phòng đại diện, địa chỉ giao dịch, tiếp đối
+          <p className="text-justify">Bạn sẽ được sử dụng văn phòng ảo ở Hà Nội để: làm văn phòng đại diện, địa chỉ giao dịch, tiếp đối
                         tác – khách hàng, địa chỉ nhận bưu thư…</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
@@ -104,7 +114,7 @@ const Home = () => {
               alt=""/>
             <p className="font-bold text-center">VĂN PHÒNG TRỌN GÓI</p>
           </NavLink>
-          <p>Bạn sẽ sở hữu: 1 phòng làm việc riêng, phòng họp – phòng khách sang trọng, thiết bị văn phòng
+          <p className="text-justify">Bạn sẽ sở hữu: 1 phòng làm việc riêng, phòng họp – phòng khách sang trọng, thiết bị văn phòng
                         hiện đại,… Và không lo đóng phí điện – nước, internet.</p>
         </div>
         <div className="mr-56 col-span-4 pt-36">
@@ -149,7 +159,7 @@ const Home = () => {
               <p className="font-bold pl-12">VĂN PHÒNG LƯU ĐỘNG</p>
             </NavLink>
             <div>
-              <p className="pr-16">Bạn có thể sử dụng không gian văn phòng trên toàn bộ hệ thống Hanoi
+              <p className="pr-16 text-justify">Bạn có thể sử dụng không gian văn phòng trên toàn bộ hệ thống Hanoi
                                 Office. Phù hợp với nhu cầu liên tục di chuyển tại trung tâm Hà Nội.</p>
             </div>
           </div>
@@ -160,7 +170,7 @@ const Home = () => {
                 alt="" />
               <p className="font-bold text-center pr-32">CHỖ NGỒI LÀM VIỆC</p>
             </NavLink>
-            <p className="pr-28">Bạn chỉ phải trả tiền cho một chỗ ngồi làm việc nhưng lại được sử dụng đầy
+            <p className="pr-28 text-justify">Bạn chỉ phải trả tiền cho một chỗ ngồi làm việc nhưng lại được sử dụng đầy
                             đủ tiện ích văn phòng, thiết bị hiện đại trong một không gian yên tĩnh.</p>
           </div>
 
@@ -173,7 +183,7 @@ const Home = () => {
               src="https://hanoioffice.vn/wp-content/uploads/2020/08/phong-hop-cho-thue.jpg" alt=""/>
             <p className="font-bold text-center">PHÒNG HỌP CHO THUÊ</p>
           </NavLink>
-          <p>Phòng họp có sức chứa từ 10-30 người sẽ phù hợp với các nhu cầu khác nhau của bạn. Được trang bị
+          <p className="text-justify">Phòng họp có sức chứa từ 10-30 người sẽ phù hợp với các nhu cầu khác nhau của bạn. Được trang bị
                         đầy đủ thiết bị hiện đại trong không gian sang trọng.</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
@@ -182,7 +192,7 @@ const Home = () => {
               src="https://hanoioffice.vn/wp-content/uploads/2020/08/phong-hop-truc-tuyen.jpg" alt=""/>
             <p className="font-bold text-center">PHÒNG HỌP TRỰC TUYẾN</p>
           </NavLink>
-          <p>Cho thuê phòng họp giá rẻ – hội nghị trực tuyến tại Hà Nội với công nghệ âm thanh, video call
+          <p className="text-justify">Cho thuê phòng họp giá rẻ – hội nghị trực tuyến tại Hà Nội với công nghệ âm thanh, video call
                         hiện đại, sắc nét với chi phí chỉ từ 400.000đ/giờ.</p>
         </div>
         <div className="mr-48 col-span-4 pt-36">
@@ -208,86 +218,60 @@ const Home = () => {
       <div className="grid grid-cols-5 text-center pt-20">
         <div className="text-right pl-96 pr-10 text-justify col-span-2">
           <div>
-            <span className="text-blue-500 pr-2"><YouTube className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><ThumbUpOutlined className="mb-2"/></span>
             <span className="font-bold text-xl">CHUYÊN NGHIỆP</span>
-            <p className="text-justify">Xây dựng một hình ảnh doanh nghiệp chuyên</p>
-            <p className="text-justify">nghiệp trong mắt đối tác của bạn thông qua</p>
-            <p className="text-justify">không gian văn phòng cho thuê hiện đại của</p>
-            <p className="text-justify">Hanoi Office.</p>
+            <p className="text-justify">Xây dựng một hình ảnh doanh nghiệp chuyên nghiệp trong mắt đối tác của bạn thông qua không gian văn phòng cho thuê hiện đại của Hanoi Office.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><YouTube className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><Wifi className="mb-2"/></span>
             <span className="font-bold text-xl">KẾT NỐI</span>
-            <p className="text-justify">Giải pháp cho thuê Văn phòng công ty thông</p>
-            <p className="text-justify">minh - Văn phòng chia sẻ tạo nên một cộng</p>
-            <p className="text-justify">đồng các doanh nghiệp trong và ngoài nước,</p>
-            <p className="text-justify">mở ra những cơ hội kết nối mới.</p>
+            <p className="text-justify">Giải pháp cho thuê Văn phòng công ty thông minh - Văn phòng chia sẻ tạo nên một cộng đồng các doanh nghiệp trong và ngoài nước, mở ra những cơ hội kết nối mới.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><YouTube className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><Alarm className="mb-2"/></span>
             <span className="font-bold text-xl">LINH HOẠT</span>
-            <p className="text-justify">Hanoi Office cho thuê văn phòng trọn gói linh</p>
-            <p className="text-justify">hoạt thời gian với 4 hình thức: Theo giờ, theo</p>
-            <p className="text-justify">ngày, theo tuần và theo tháng.</p>
+            <p className="text-justify">Hanoi Office cho thuê văn phòng trọn gói linh hoạt thời gian với 4 hình thức: Theo giờ, theo ngày, theo tuần và theo tháng.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><YouTube className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><GroupSharp className="mb-2"/></span>
             <span className="font-bold text-xl">AN TÂM</span>
-            <p className="text-justify">Luôn sát cánh, hỗ trợ các doanh nghiệp như</p>
-            <p className="text-justify">một người bạn đồng hành tận tâm. Bạn sẽ </p>
-            <p className="text-justify">thực sự an tâm khi thuê văn phòng thông </p>
-            <p>minh tại Hanoi Office.</p>
+            <p className="text-justify">Luôn sát cánh, hỗ trợ các doanh nghiệp như một người bạn đồng hành tận tâm. Bạn sẽ thực sự an tâm khi thuê văn phòng thông minh tại Hanoi Office.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><YouTube className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><ThumbUpOutlined className="mb-2"/></span>
             <span className="font-bold text-xl">HIỆN ĐẠI</span>
-            <p className="text-justify text-s">Hanoi Office được trang bị những trang thiết bị</p>
-            <p className="text-justify text-s">văn phòng hiện đại hàng đầu Việt Nam, giúp</p>
-            <p className="text-justify text-s">bộ máy của bạn hoạt động trơn tru hơn. </p>
+            <p className="text-justify">Hanoi Office được trang bị những trang thiết bị văn phòng hiện đại hàng đầu Việt Nam, giúp bộ máy của bạn hoạt động trơn tru hơn.</p>
           </div>
         </div>
         <div className="col-span-1">
           <img src="https://hanoioffice.vn/wp-content/uploads/2020/08/hanoi-office-cho-thue-van-phong.jpg"
             alt=""/>
         </div>
-        <div className="text-left col-span-2 pl-10">
+        <div className="text-left col-span-2 pl-10 pr-96">
           <div className="">
-            <span className="text-blue-500 pr-2"><Money className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><AttachMoneyOutlined className="mb-2"/></span>
             <span className="font-bold text-xl">TIẾT KIỆM</span>
-            <p className="text-justify text-s">Hanoi Office tin rằng văn phòng chia sẻ sẽ giúp</p>
-            <p className="text-justify text-s">bạn tiết kiệm nhiều thời gian quản lý và chi phí</p>
-            <p className="text-justify text-s">hoạt động. Đem lại những giá trị cốt lõi cho </p>
-            <p>bạn!</p>
+            <p className="text-justify">Hanoi Office tin rằng văn phòng chia sẻ sẽ giúp bạn tiết kiệm nhiều thời gian quản lý và chi phí hoạt động. Đem lại những giá trị cốt lõi cho bạn!</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><Money className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><CardGiftcardOutlined className="mb-2"/></span>
             <span className="font-bold text-xl">ƯU ĐÃI</span>
-            <p className="text-justify text-s">Luôn có những chính sách ưu đãi với các gói </p>
-            <p className="text-justify text-s">dịch vụ cho thuê Văn Phòng công ty thông </p>
-            <p className="text-justify text-s">minh - Coworking Space tại Hà Nội cho những</p>
-            <p>khách hàng thân thiết.</p>
+            <p className="text-justify">Luôn có những chính sách ưu đãi với các gói dịch vụ cho thuê Văn Phòng công ty thông minh - Coworking Space tại Hà Nội cho những khách hàng thân thiết.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><Money className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><DoneOutline className="mb-2"/></span>
             <span className="font-bold text-xl">HIỆU QUẢ</span>
-            <p className="text-justify ">Giải pháp cho thuê văn phòng chia sẻ - văn</p>
-            <p className="text-justify ">phòng thông minh giúp doanh nghiệp lựa chọn</p>
-            <p className="text-justify ">dịch vụ phù hợp để đạt hiệu quả tốt nhất.</p>
+            <p className="text-justify">Giải pháp cho thuê văn phòng chia sẻ - văn phòng thông minh giúp doanh nghiệp lựa chọn dịch vụ phù hợp để đạt hiệu quả tốt nhất.</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><Money className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><Person className="mb-2"/></span>
             <span className="font-bold text-xl">DỊCH VỤ HỖ TRỢ</span>
-            <p className="">Cho thuê văn phòng coworking tư vấn thành</p>
-            <p className="">lập Doanh nghiệp, thiết kế website, kế toán,</p>
-            <p className="">biên - phiên dịch, soạn thảo văn bản, chữ ký số,</p>
-            <p>hóa đơn điện tử, BHXH điện tử...</p>
+            <p className="text-justify">Cho thuê văn phòng coworking tư vấn thành lập Doanh nghiệp, thiết kế website, kế toán, biên - phiên dịch, soạn thảo văn bản, chữ ký số, hóa đơn điện tử, BHXH điện tử...</p>
           </div>
           <div className="pt-2">
-            <span className="text-blue-500 pr-2"><Money className="mb-2"/></span>
+            <span className="bg-blue-500 text-white px-2 py-2 mr-2"><ThumbUpOutlined className="mb-2"/></span>
             <span className="font-bold text-xl">RIÊNG TƯ - BẢO MẬT</span>
-            <p className="text-justify ">Không gian văn phòng Hanoi Office được thiết</p>
-            <p className="text-justify ">kế riêng tư cho từng doanh nghiệp. Camera an</p>
-            <p className="text-justify ">ninh và Bảo vệ 24/7 giúp bạn an toàn tuyệt đối.</p>
+            <p className="text-justify">Không gian văn phòng Hanoi Office được thiết kế riêng tư cho từng doanh nghiệp. Camera an ninh và Bảo vệ 24/7 giúp bạn an toàn tuyệt đối.</p>
           </div>
         </div>
       </div>
@@ -459,7 +443,9 @@ const Home = () => {
         <h1 className="inline-block pr-1.5 text-2xl">KHÁM PHÁ KHÔNG GIAN VR 360</h1>
         <h1 className="font-bold inline-block text-2xl">VĂN PHÒNG CHO THUÊ TẠI HANOI OFFICE</h1>
       </div>
-      <div className="text-center py-3">Slide Ảnh</div>
+      <div className="text-center py-3">
+        <img className="mx-auto" src="https://spaceshare.s3.amazonaws.com/media/space_photos/59-min_opt_mSJ5Fdt.jpg" alt="" />
+      </div>
       <div className="bg-blue-500 py-6">
         <div className="grid grid-cols-3 gap-2">
           <div className="pl-20 mr-24 pl-24 col-span-2">
@@ -536,8 +522,7 @@ const Home = () => {
         </div>
       </div>
       <div className="pt-3">
-        <img className="mx-auto" src="https://static.vncommerce.com/maps/600x250/T%E1%BA%A7ng+6,T%C3%B2a+Nh%C3%A0+Vi%E1%BB%87t+%C3%81,9+Ph%E1%BB%91+Duy+T%C3%A2n,Qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,H%C3%A0+N%E1%BB%99i,Vi%E1%BB%87t+Nam.png" 
-          alt="" />
+        <iframe className="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465.5039911494467!2d105.78332143147404!3d21.03140839889308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8fe6212079%3A0xd65f64c19a84118d!2sHanoi%20Office!5e0!3m2!1svi!2s!4v1627030979350!5m2!1svi!2s" width={ 600 } height={ 450 } style={ { border: 0 } } allowFullScreen loading="lazy" />
       </div>
       <div className="text-center pt-16">
         <h1 className="inline-block pr-1.5 text-2xl">GIỚI THIỆU VỀ</h1>
@@ -605,8 +590,22 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="text-center pt-3">
-        Slide Ảnh
+      <div className="pt-4 grid grid-cols-5 ml-36">
+        <div>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/logo-cgv-telecom.gif" alt="" />
+        </div>
+        <div>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/logo-gau-do.png" alt="" />
+        </div>
+        <div>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/logo-ecomart-1.png" alt="" />
+        </div>
+        <div>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/logo-uni-english.png" alt="" />
+        </div>
+        <div>
+          <img src="https://hanoioffice.vn/wp-content/uploads/2020/09/logo-asia-food.png" alt="" />
+        </div>
       </div>
     </>
   );

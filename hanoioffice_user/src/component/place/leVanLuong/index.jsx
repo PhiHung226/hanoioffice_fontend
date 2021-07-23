@@ -548,7 +548,7 @@ const LeVanLuong = () => {
                 </div>
                 <div className="pt-6 border-b border-gray-300"></div>
                 <div className="py-10">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.7899771476042!2d105.80759165312749!3d21.007077761058323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad90bdc697ef%3A0xaa9308cc6fc91083!2sHanoi%20Office!5e0!3m2!1svi!2s!4v1626623877795!5m2!1svi!2s" width={ 600 } height={ 450 } style={ { border: 0 } } allowFullScreen loading="lazy" />
+                  <iframe className="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.7899771476042!2d105.80759165312749!3d21.007077761058323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad90bdc697ef%3A0xaa9308cc6fc91083!2sHanoi%20Office!5e0!3m2!1svi!2s!4v1626623877795!5m2!1svi!2s" width={ 600 } height={ 450 } style={ { border: 0 } } allowFullScreen loading="lazy" />
                 </div>
                 <div className="grid grid-cols-2 gap-2 border-b-2 pb-4">
                   <div className="">

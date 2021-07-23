@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 
+import {Menu, Transition} from '@headlessui/react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
@@ -9,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import {
   ArrowRightAlt, Add, MailOutline,
   Phone, YouTube, Twitter, Facebook,
-  Instagram, Pinterest
+  Instagram, Pinterest, AccountCircleOutlined
 } from '@material-ui/icons';
 // import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink } from 'react-router-dom';
@@ -27,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
+
+
+function classNames (...classes) {
+  return classes.filter(Boolean).join(' ');
+}
 const Hearder = () => {
   const classes = useStyles();
   return (
@@ -59,6 +65,88 @@ const Hearder = () => {
                   <Pinterest className="text-gray-500 hover:text-blue-500 mx-2" />
                   <Facebook className="text-gray-500 hover:text-blue-500 mx-2" />
                   <Instagram className="text-gray-500 hover:text-blue-500 mx-2" />
+                  <Menu as="div" className="relative inline-block text-left ml-16">
+                    {({ open }) => (
+                      <>
+                        <div>
+                          <Menu.Button className=" justify-center w-full rounded-md border border-gray-300 shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                            <AccountCircleOutlined className="text-gray-500 hover:text-blue-500 ml-24 mr-4" />
+                          </Menu.Button>
+                        </div>
+
+                        <Transition
+                          show={ open }
+                          as={ Fragment }
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items
+                            static
+                            className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                          >
+                            <div className="py-1">
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <NavLink
+                                    to="/login"
+                                    className={ classNames(
+                                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                      'block px-4 py-2 text-sm'
+                                    ) }
+                                  >
+                                        Đăng nhập
+                                  </NavLink>
+                                )}
+                              </Menu.Item>
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <NavLink
+                                    to="/register"
+                                    className={ classNames(
+                                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                      'block px-4 py-2 text-sm'
+                                    ) }
+                                  >
+                                        Đăng ký
+                                  </NavLink>
+                                )}
+                              </Menu.Item>
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <NavLink
+                                    to="/changepassword"
+                                    className={ classNames(
+                                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                      'block px-4 py-2 text-sm'
+                                    ) }
+                                  >
+                                        Đổi mật khẩu
+                                  </NavLink>
+                                )}
+                              </Menu.Item>
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <NavLink
+                                    to="/profile"
+                                    className={ classNames(
+                                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                      'block px-4 py-2 text-sm'
+                                    ) }
+                                  >
+                                        Thông tin cá nhân
+                                  </NavLink>
+                                )}
+                              </Menu.Item>
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </>
+                    )}
+                  </Menu>
                 </div>
               </Typography>
             </Toolbar>

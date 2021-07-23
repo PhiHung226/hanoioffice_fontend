@@ -38,3 +38,17 @@ export const Introduce = lazy(() => import('../page/introduces/introduce'));
 export const Contact = lazy(() => import('../page/contacts/contact'));
 // Quotation
 export const Quotation = lazy(() => import('../page/quotations/Quotation'));
+// // book_an_office
+// export const BookAnOffice = lazy(() => import('../page/bookAnOffice/bookAnOffice'));
+// chính sách nhượng quyền
+export const CSNQ = lazy(() => import('../page/CSNQ/csnq'));
+//đăng nhập
+export const Login = lazy(() => import('../page/Login/login'));
+//đăng ký
+export const Register = lazy(() => import('../page/Register/register'));
+//đổi mật khẩu
+export const ChangePassword = lazy(() => import('../page/ChangePassword/changepassword'));
+//tìm kiếm lại mật khẩu
+export const ForgotPassword = lazy(() => import('../page/ForgotPassword/forgotpass'));
+//thông tin cá nhân
+export const Profile = lazy(() => import('../page/Profile/profile'));
