@@ -56,6 +56,7 @@ const ListEmployees = () => {
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
     }
   );
+  console.log(data);
   useEffect(() => {
     refetch();
   }, [ pageLimit, filterParams, page ]);

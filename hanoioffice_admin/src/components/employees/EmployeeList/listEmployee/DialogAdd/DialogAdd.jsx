@@ -13,7 +13,8 @@ import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { getYearMonthDay } from '../../../../../helpers/helper';
-import DialogAddInfo from '../DialogAdd/DialogAddInfo';
+import DialogAddInfo from './DialogAddInfo';
+
 const styles = (theme) => ({
   root: {
     margin: 0,

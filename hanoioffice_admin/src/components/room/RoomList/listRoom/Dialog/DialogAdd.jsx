@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState} from 'react';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -11,9 +11,13 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
+// import {useQuery} from 'react-query';
 
+// import {LIST_ORDER_PLACEHOLDER_DATA} from '../../../../../fixedData/dataEmployee';
 import { getYearMonthDay } from '../../../../../helpers/helper';
+import {getListCustomer} from '../../../../../service/customer/customerList/listCustomer';
 import DialogAddInfo from '../Dialog/DetailInfo';
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -62,13 +66,26 @@ const DialogAdd = (props) => {
   const handleCancel = () => {
     setOpenDialog(!openDialog);
   };
+  
   const onSubmitForm = (values) => {
     // setOpenDialog(!openDialog);
     console.log(values);
-    console.log(form);
-
+    const {
+      branch, code_room, code_utilities, location_room, name_room, name_utilities,
+      note, number_customer, number_utilities, position
+    } = values;
+    const {
+      date_created
+    } = form;
+    const value = {
+      branch, code_room, code_utilities, location_room, name_room, name_utilities,
+      note, number_customer, number_utilities, position, date_created
+    };
+    const getData = async () => {
+      return await getListCustomer().addRoom(value);
+    };
+    console.log(getData());
   };
-
   const methods = useForm({ defaultValues: values });
   return (
     <Dialog

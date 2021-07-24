@@ -41,10 +41,11 @@ const BadCustomer = () => {
 
   const getData = useCallback(async (page, pageLimit) => {
     const {
-      strSearch
+      strSearch,
+      nameRoom, numberPeople, branchRoom, kindOfRoom
     } = filterParams;
     return await getListCustomer().getList({
-      page, pageLimit, strSearch
+      page, pageLimit, strSearch, nameRoom, numberPeople, branchRoom, kindOfRoom
     });
   }, [ pageLimit, filterParams, page.skip ]);
 
@@ -56,6 +57,7 @@ const BadCustomer = () => {
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
     }
   );
+  console.log(data);
   useEffect(() => {
     refetch();
   }, [ pageLimit, filterParams, page ]);
@@ -77,6 +79,7 @@ const BadCustomer = () => {
             paper: classes.paper,
           } }
           id="ringtone-menu"
+          data={ data }
           openDialog={ openDialog }
           setOpenDialog={ setOpenDialog }
           detail={ DetailInfo } />

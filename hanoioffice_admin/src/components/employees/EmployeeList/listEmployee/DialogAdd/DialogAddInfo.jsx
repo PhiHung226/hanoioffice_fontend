@@ -35,7 +35,7 @@ const DialogAddInfo = ({ setForm, form, isAdd }) => {
 
   return (
     <>
-      <div style={ { height: '600px' } }>
+      <div style={ { height: '500px' } }>
         <div>
           <h4 className='text-base text-blue-700'>Thông tin cá nhân</h4>
           <div className='grid grid-cols-3'>
@@ -220,19 +220,19 @@ const DialogAddInfo = ({ setForm, form, isAdd }) => {
                     error={ errors?.pass_employee?.type === 'required' ? 'Mật khẩu không được bỏ trống!' : null } /> } />
             }
           </div>
-          <div>
-            <Controller
-              name={ 'node_work' }
-              control={ control }
-              rules={ {} }
-              render={ ({ field: { onChange, value } }) =>
-                <TextFieldInput label="Ghi chú công việc" className="w-full" multiline rows={ 3 } id="standard-multiline-static"
-                  onChange={ e => {
-                    onChange(e.target.value);
-                  } }
-                  value={ value }
-                  error={ null } /> } />
-          </div>
+          {/*<div>*/}
+          {/*  <Controller*/}
+          {/*    name={ 'node_work' }*/}
+          {/*    control={ control }*/}
+          {/*    rules={ {} }*/}
+          {/*    render={ ({ field: { onChange, value } }) =>*/}
+          {/*      <TextFieldInput label="Ghi chú công việc" className="w-full" multiline rows={ 3 } id="standard-multiline-static"*/}
+          {/*        onChange={ e => {*/}
+          {/*          onChange(e.target.value);*/}
+          {/*        } }*/}
+          {/*        value={ value }*/}
+          {/*        error={ null } /> } />*/}
+          {/*</div>*/}
         </div>
       </div>
     </>

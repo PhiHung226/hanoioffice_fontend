@@ -18,7 +18,6 @@ const BookAnOffice = () => {
           state === 'pay' && <ProceedToPlace setState={ setState } />
         }
         {/* <BranchDetail /> */ }
-
       </div>
     </>
   );

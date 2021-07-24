@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import { listRoomFilterParamsState } from '../../../../../store/atoms/room/listRoom/listRoom';
 import ButtonBase from '../../../../base/button/ButtonBase';
-import DateSelection from '../../../../base/dateTime/DateSelection';
+// import DateSelection from '../../../../base/dateTime/DateSelection';
 import CardBranch from '../../../../common/filter/CardBranch';
 import DialogAdd from '../Dialog/DialogAdd';
-import CardMaintenance from '../Filters/CardMaintenance';
+// import CardMaintenance from '../Filters/CardMaintenance';
 import CardTypeRoom from '../Filters/CardTypeRoom';
-import CardWork from '../Filters/Cardwork';
+// import CardWork from '../Filters/Cardwork';
 import SearchBar from '../Filters/SearchBar';
 
 const listType = [
@@ -28,11 +28,11 @@ const Filters = () => {
             <CardBranch filterParams={ listRoomFilterParamsState } />
             <CardTypeRoom title={ 'Loại phòng' } dataArr={ listType } filterParams={ listRoomFilterParamsState } />
           </div>
-          <div className='flex gap-4'>
-            <DateSelection title="Ngày tạo" />
-            <CardWork filterParams={ listRoomFilterParamsState } />
-            <CardMaintenance filterParams={ listRoomFilterParamsState } />
-          </div>
+          {/*<div className='flex gap-4'>*/}
+          {/*  <DateSelection title="Ngày tạo" />*/}
+          {/*  <CardWork filterParams={ listRoomFilterParamsState } />*/}
+          {/*  <CardMaintenance filterParams={ listRoomFilterParamsState } />*/}
+          {/*</div>*/}
           <div className="flex justify-end ">
             <ButtonBase title={ 'Thêm phòng' } color={ 'primary' } className='m-3' onClick={ () => setOpenAdd(!openAdd) } />
             {

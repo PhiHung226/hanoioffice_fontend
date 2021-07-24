@@ -18,11 +18,10 @@ import Popover from '../../../../common/Popover';
 const SearchBar = ({ ...props }) => {
   const [ search, setSearch ] = useState({
     strSearch: '',
-    codeSearch: '',
-    emailSearch: '',
-    telSearch: ''
+    nameRoom: '',
+    numberPeople: '',
   });
-  const { strSearch, codeSearch, emailSearch, telSearch } = search;
+  const { strSearch, nameRoom, numberPeople } = search;
   const [ isOpen, setIsOpen ] = useState(false);
   const [ isFocusInput, setIsFocusInput ] = useState(false);
   const filterParams = useSetRecoilState(employeeFilterParamsState);
@@ -40,14 +39,12 @@ const SearchBar = ({ ...props }) => {
   };
   const searchStr = () => {
     const str = document.getElementById('strSearch').value;
-    const code = document.getElementById('codeSearch').value;
-    const email = document.getElementById('emailSearch').value;
-    const tel = document.getElementById('telSearch').value;
+    const name = document.getElementById('name').value;
+    const number = document.getElementById('number').value;
     setSearch({
       strSearch: str,
-      codeSearch: code,
-      emailSearch: email,
-      telSearch: tel
+      nameRoom: name,
+      numberPeople: number
     });
   };
 
@@ -65,9 +62,8 @@ const SearchBar = ({ ...props }) => {
       return {
         ...search,
         strSearch: strSearch,
-        codeSearch: codeSearch,
-        emailSearch: emailSearch,
-        telSearch: telSearch
+        nameRoom: nameRoom,
+        numberPeople: numberPeople,
       };
     });
   }, [ search ]);
@@ -84,7 +80,7 @@ const SearchBar = ({ ...props }) => {
             type="text"
             className="w-full focus:outline-none focus:shadow-2xl border-0 p-2"
             style={ { border: 'none !important' } }
-            placeholder="Tìm kiếm..."
+            placeholder="Tìm kiếm theo mã phòng"
             onChange={ onChange }
             onBlur={ onFocusInput }
             onFocus={ onFocusInput }
@@ -92,9 +88,9 @@ const SearchBar = ({ ...props }) => {
           />
           <Popover isVisible={ isOpen } className='z-10 w-full top-6' >
             <div className="m-4">
-              <BaseInput id='codeSearch' placeholder="Theo mã phòng" onChange={ onChange } onKeyDown={ onEnter } />
-              <BaseInput id='emailSearch' placeholder="Theo tên phòng " onChange={ onChange } onKeyDown={ onEnter } />
-              <BaseInput id='emailSearch' placeholder="Theo số lượng người " onChange={ onChange } onKeyDown={ onEnter } />
+              {/*<BaseInput id='codeSearch' placeholder="Theo mã phòng" onChange={ onChange } onKeyDown={ onEnter } />*/}
+              <BaseInput id='name' placeholder="Theo tên phòng " onChange={ onChange } onKeyDown={ onEnter } />
+              <BaseInput id='number' placeholder="Theo số lượng người " onChange={ onChange } onKeyDown={ onEnter } />
               <div className="flex justify-end" style={ { marginTop: 28 } }>
                 <BaseButton title="Tìm kiếm" onClick={ searchStr } className="bg-green-500 btn--green mb-3" />
               </div>

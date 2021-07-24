@@ -41,7 +41,7 @@ const DialogTitle = withStyles(styles)((props) => {
 });
 
 const DialogDetail = (props) => {
-  const { setOpenDialog, openDialog, ...other } = props;
+  const { setOpenDialog, openDialog, data, ...other } = props;
   const ref = useRef(null);
 
   const handleEntering = () => {
@@ -49,17 +49,16 @@ const DialogDetail = (props) => {
       ref.current.focus();
     }
   };
-
+  const {} = data; // lấy dữ liệu detail
   const [ values, setValues ] = React.useState({
-    code_utilities: '',
-    name_utilities: '',
-    number_utilities: 0
+    //hiển thị dữ liệu detail
   });
   const [ form, setForm ] = useState({
     date_created: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
     date_end: getYearMonthDay(new Date(), 'yyyy-MM-dd')
   });
   const handleCancel = () => {
+    //xóa thông tin tại đây
     setOpenDialog(!openDialog);
   };
   const onSubmitForm = (values) => {
@@ -68,11 +67,11 @@ const DialogDetail = (props) => {
     console.log(form);
 
   };
-  const [ stop, setStop ] = useState(true);
+  // const [ stop, setStop ] = useState(true);
 
-  const stopUsing = () => {
-    setStop(!stop);
-  };
+  // const stopUsing = () => {
+  //   setStop(!stop);
+  // };
 
   const methods = useForm({ defaultValues: values });
   return (
@@ -96,18 +95,18 @@ const DialogDetail = (props) => {
           <Button color="primary" variant="contained" onClick={ () => methods.handleSubmit(onSubmitForm)() }>
             Cập nhật
           </Button>
-          {
-            stop &&
-            <Button color="secondary" variant="contained" onClick={ stopUsing }>
-              Ngừng sử dụng
-            </Button>
-          }
-          {
-            !stop &&
-            <Button color="primary" variant="contained" onClick={ stopUsing }>
-              Tiếp tục sử dụng
-            </Button>
-          }
+          {/*{*/}
+          {/*  stop &&*/}
+          {/*  <Button color="secondary" variant="contained" onClick={ stopUsing }>*/}
+          {/*    Ngừng sử dụng*/}
+          {/*  </Button>*/}
+          {/*}*/}
+          {/*{*/}
+          {/*  !stop &&*/}
+          {/*  <Button color="primary" variant="contained" onClick={ stopUsing }>*/}
+          {/*    Tiếp tục sử dụng*/}
+          {/*  </Button>*/}
+          {/*}*/}
           <Button color="secondary" variant="contained" onClick={ handleCancel }>
             Xóa
           </Button>
@@ -122,6 +121,7 @@ const DialogDetail = (props) => {
 
 DialogDetail.propTypes = {
   setOpenDialog: PropTypes.func,
-  openDialog: PropTypes.bool
+  openDialog: PropTypes.object,
+  data: PropTypes.array
 };
 export default DialogDetail;

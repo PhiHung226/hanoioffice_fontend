@@ -3,7 +3,8 @@ import {
   // HomeWork,
   // Person,
   FaceRounded, TrackChanges,
-  PeopleAlt, DonutSmallRounded,
+  PeopleAlt,
+  // DonutSmallRounded,
   PersonAdd, ClassRounded,
   Group, Apps, LocalLaundryService,
   EmojiTransportation,
@@ -24,24 +25,24 @@ export const router = [
     type: 'overview',
     subMenu: [
       { id: 100, subIcon: <Apps color={ color } />, subTitle: 'Hàng ngày', subPath: '/' },
-      { id: 101, subIcon: <Apps color={ color } />, subTitle: 'Chi tiết', subPath: '/admin/overview/report' },//subTitle: Báo cáo
+      // { id: 101, subIcon: <Apps color={ color } />, subTitle: 'Chi tiết', subPath: '/admin/overview/report' },//subTitle: Báo cáo
       // { id: 102, subIcon: <Apps color={ color } />, subTitle: 'Doanh thu', subPath: '/admin/overview/revenue' }
     ]
   },
-  {
-    id: 2,
-    icon: <FaceRounded color={ color } />,
-    title: 'Hợp đồng',
-    path: '/admin/contract',
-    type: 'contract',
-    subMenu: [
-      { id: 200, subIcon: <Group color={ color } />, subTitle: 'Danh sách', subPath: '/admin/contract/contract-list' },
-      // { id: 201, subIcon: <Group color={ color } />, subTitle: 'Sắp hết hạn', subPath: '/admin/contract/about-to-expire' },
-      { id: 202, subIcon: <Group color={ color } />, subTitle: 'Bảo lưu', subPath: '/admin/contract/reserve' },
-      { id: 203, subIcon: <Group color={ color } />, subTitle: 'Chuyển nhượng', subPath: '/admin/contract/transfer' },
-      { id: 204, subIcon: <Group color={ color } />, subTitle: 'Thanh toán', subPath: '/admin/contract/pay' },
-    ]
-  },
+  // {
+  //   id: 2,
+  //   icon: <FaceRounded color={ color } />,
+  //   title: 'Hợp đồng',
+  //   path: '/admin/contract',
+  //   type: 'contract',
+  //   subMenu: [
+  //     { id: 200, subIcon: <Group color={ color } />, subTitle: 'Danh sách', subPath: '/admin/contract/contract-list' },
+  //     // { id: 201, subIcon: <Group color={ color } />, subTitle: 'Sắp hết hạn', subPath: '/admin/contract/about-to-expire' },
+  //     { id: 202, subIcon: <Group color={ color } />, subTitle: 'Bảo lưu', subPath: '/admin/contract/reserve' },
+  //     { id: 203, subIcon: <Group color={ color } />, subTitle: 'Chuyển nhượng', subPath: '/admin/contract/transfer' },
+  //     { id: 204, subIcon: <Group color={ color } />, subTitle: 'Thanh toán', subPath: '/admin/contract/pay' },
+  //   ]
+  // },
   {
     id: 3,
     icon: <FaceRounded color={ color } />,
@@ -97,8 +98,8 @@ export const router = [
     path: '/admin/service',
     type: 'service',
     subMenu: [
-      { id: 700, subIcon: <CallToActionRounded color={ color } />, subTitle: 'Danh sách', subPath: '/admin/service/equipment' },
-      { id: 701, subIcon: <DonutSmallRounded color={ color } />, subTitle: 'Tiện ích khác', subPath: '/admin/service/service-other' },
+      { id: 700, subIcon: <CallToActionRounded color={ color } />, subTitle: 'Tiện ích', subPath: '/admin/service/equipment' },
+      // { id: 701, subIcon: <DonutSmallRounded color={ color } />, subTitle: 'Tiện ích khác', subPath: '/admin/service/service-other' },
     ]
   },
   // {

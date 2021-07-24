@@ -6,6 +6,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
+import DateSingle from '../../../base/dateTime/DateSingle';
+import UseDate from './useDate';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -28,7 +31,7 @@ const RoomInfo = () => {
   const classes = useStyles();
 
   const [ state, setState ] = React.useState(listUtilities);
-
+  const [ form, setForm ] = React.useState({});
   const handleChange = (event) => {
     setState(state.map((item) => {
       return {
@@ -76,13 +79,16 @@ const RoomInfo = () => {
               </div>
               <div className="border-2 bg-gray-100 px-4 py-2">
                 <h3 className="text-blue-800 font-bold">Chọn thời gian sử dụng</h3>
-                <p>Ngày bắt đầu sử dụng: 20/10/2021</p>
-
+                <p className={ 'font-medium' }>Số buổi sử dụng: 10</p>
+                <div className="flex items-end pb-3 w-full">
+                  <DateSingle title="Ngày bắt đầu sử dụng" classNameTitle="w-1/3"  keySearch="start_day" onChange={ setForm } value={ form }/>
+                </div>
+                <UseDate />
               </div>
             </div>
             <div className="border-2 bg-gray-100">
               <h3 className='text-center text-blue-800 font-bold'>Giá thành thanh toán</h3>
-
+              
             </div>
           </div>
         </div>
