@@ -6,9 +6,6 @@ import PropTypes from 'prop-types';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-import { getYearMonthDay } from '../../../helpers/helper';
-
-
 const MONTHS = [
   'Tháng 1',
   'Tháng 2',
@@ -34,7 +31,7 @@ const WEEKDAYS_LONG = [
 ];
 const WEEKDAYS_SHORT = [ 'CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7' ];
 
-const DateSingle = ({ title, classNameTitle, onChange, value, keySearch, disabledDays = new Date() }) => {
+const DateSingle = ({ title, classNameTitle, onChange, value, disabledDays = new Date() }) => {
   const [ anchorEl, setAnchorEl ] = useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,18 +39,18 @@ const DateSingle = ({ title, classNameTitle, onChange, value, keySearch, disable
   const handleClose = () => {
     setAnchorEl(!anchorEl);
   };
-
-  const [ fromDay, setFromDay ] = useState(new Date());
-  const handleFromDayClick = (day, { selected }) => {
-    setFromDay(selected ? undefined : day);
-  };
-
-  React.useEffect(() => {
-    onChange({
-      ...value,
-      [ keySearch ]: getYearMonthDay(fromDay, 'yyyy-MM-dd')
-    });
-  }, [ fromDay ]);
+  
+  // const [ fromDay, setFromDay ] = useState(new Date());
+  // const handleFromDayClick = (day, { selected }) => {
+  //   setFromDay(selected ? undefined : day);
+  // };
+  
+  // React.useEffect(() => {
+  //   onChange({
+  //     ...value,
+  //     [ keySearch ]: getYearMonthDay(fromDay, 'yyyy-MM-dd')
+  //   });
+  // }, [ fromDay ]);
   
   return (
     <>
@@ -62,7 +59,7 @@ const DateSingle = ({ title, classNameTitle, onChange, value, keySearch, disable
           <span className={ `font-medium ${classNameTitle}` }>{ title }</span>
           <div className="flex mr-3 w-full" aria-controls="simple-menu" aria-haspopup="true" onClick={ handleClick }>
             <p className='border-b-1 px-10 border-gray-500 cursor-pointer w-full'>
-              { fromDay ? fromDay.toLocaleDateString() : null }
+              { value ? value.toLocaleDateString() : null }
             </p>
             <DateRange className="cursor-pointer" />
           </div>
@@ -78,11 +75,11 @@ const DateSingle = ({ title, classNameTitle, onChange, value, keySearch, disable
             <div className="">
               <div className="flex items-start">
                 <DayPicker
-                  selectedDays={ fromDay }
+                  selectedDays={ value }
                   disabledDays={ [
                     { before: disabledDays },
                   ] }
-                  onDayClick={ handleFromDayClick }
+                  onDayClick={ onChange }
                   todayButton="Tháng này"
                   locale={ 'vi' }
                   months={ MONTHS }
@@ -104,7 +101,7 @@ DateSingle.propTypes = {
   classNameTitle: PropTypes.string,
   value: PropTypes.object,
   onChange: PropTypes.func,
-  keySearch: PropTypes.string,
+  // keySearch: PropTypes.string,
   disabledDays: PropTypes.object
 };
 export default DateSingle;

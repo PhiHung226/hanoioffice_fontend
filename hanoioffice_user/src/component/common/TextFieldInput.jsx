@@ -42,6 +42,6 @@ TextFieldInput.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 export default React.memo(TextFieldInput);

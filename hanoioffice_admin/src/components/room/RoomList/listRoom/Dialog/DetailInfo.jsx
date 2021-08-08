@@ -40,12 +40,12 @@ const DetailInfo = ({ form, setForm }) => {
             control={ control }
             rules={ { required: true } }
             render={ ({ field: { onChange, value } }) =>
-              <TextFieldInput label="Mã phòng" className="w-full"
+              <TextFieldInput label="Tên phòng" className="w-full"
                 onChange={ e => {
                   onChange(e.target.value);
                 } }
                 value={ value }
-                error={ errors?.name_room?.type === 'required' ? 'Mã không được bỏ trống!' : null } /> } />
+                error={ errors?.name_room?.type === 'required' ? 'Tên không được bỏ trống!' : null } /> } />
           <Controller
             name={ 'position' }
             control={ control }
@@ -74,23 +74,23 @@ const DetailInfo = ({ form, setForm }) => {
                 } }
               /> }
           />
-          <Controller
-            name={ 'location_room' }
-            control={ control }
-            rules={ { required: true } }
-            render={ ({ field: { onChange, value } }) =>
-              <TextFieldInput label="Vị trí phòng" className="w-full"
-                onChange={ e => {
-                  onChange(e.target.value);
-                } }
-                value={ value }
-                error={ errors?.location_room?.type === 'required' ? 'Vị trí phòng không được bỏ trống!' : null } /> } />
+          {/*<Controller*/}
+          {/*  name={ 'location_room' }*/}
+          {/*  control={ control }*/}
+          {/*  rules={ { required: true } }*/}
+          {/*  render={ ({ field: { onChange, value } }) =>*/}
+          {/*    <TextFieldInput label="Vị trí phòng" className="w-full"*/}
+          {/*      onChange={ e => {*/}
+          {/*        onChange(e.target.value);*/}
+          {/*      } }*/}
+          {/*      value={ value }*/}
+          {/*      error={ errors?.location_room?.type === 'required' ? 'Vị trí phòng không được bỏ trống!' : null } /> } />*/}
           <Controller
             name={ 'number_customer' }
             control={ control }
             rules={ { required: true } }
             render={ ({ field: { onChange, value } }) =>
-              <TextFieldInput label="Phòng chứa tối đa" className="w-full"
+              <TextFieldInput label="Phòng chứa tối đa" className="w-full" type={ 'number' }
                 onChange={ e => {
                   onChange(e.target.value);
                 } }

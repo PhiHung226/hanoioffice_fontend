@@ -11,9 +11,9 @@ import CardTypeRoom from '../Filters/CardTypeRoom';
 import SearchBar from '../Filters/SearchBar';
 
 const listType = [
-  { id: '1', name: 'Phòng họp' },
-  { id: '2', name: 'Phòng làm việc' },
-  { id: '3', name: 'Chỗ ngồi làm việc' }
+  { id: 1, name: 'Phòng họp' },
+  { id: 2, name: 'Phòng làm việc' },
+  { id: 3, name: 'Chỗ ngồi làm việc' }
 ];
 
 const Filters = () => {

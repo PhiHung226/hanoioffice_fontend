@@ -18,7 +18,7 @@ const CardBranch = ({ filterParams, dataArr, title }) => {
     branchSearch(search => {
       return {
         ...search,
-        branchSearch: branch
+        kindOfRoom: branch
       };
     });
   }, [ branch ]);

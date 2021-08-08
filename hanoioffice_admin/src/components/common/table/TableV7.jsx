@@ -43,10 +43,10 @@ const DataGridDemo = ({ columns, datas, queryKey,
   const handleChange = (event) => {
     setPageLimit(event.target.value);
   };// hàm nhận về giá trị số lượng bản ghi
-  const totalPage = Math.ceil(datas.meta.total_data / pageLimit);
+  const totalPage = Math.ceil(datas.meta.total_dataPage / pageLimit);
 
   const fromPage = page * pageLimit - pageLimit + 1;
-  const toPage = page * pageLimit <= datas.meta.total_data ? page * pageLimit : datas.meta.total_data;
+  const toPage = page * pageLimit <= datas.meta.total_dataNew ? page * pageLimit : datas.meta.total_dataNew;
   React.useEffect(() => {
     setPage(1);
   }, [ pageLimit ]);

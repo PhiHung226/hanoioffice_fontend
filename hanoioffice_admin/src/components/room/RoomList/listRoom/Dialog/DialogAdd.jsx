@@ -55,9 +55,12 @@ const DialogAdd = (props) => {
   };
 
   const [ values, setValues ] = React.useState({
-    code_utilities: '',
-    name_utilities: '',
-    number_utilities: 0
+    code_room: '',
+    name_room: '',
+    position: '',
+    branch: '',
+    number_customer: 0,
+    note: ''
   });
   const [ form, setForm ] = useState({
     date_created: getYearMonthDay(new Date(), 'yyyy-MM-dd'),

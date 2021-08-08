@@ -24,7 +24,7 @@ const CardBranch = ({ filterParams }) => {
     branchSearch(search => {
       return {
         ...search,
-        branchSearch: branch
+        branchRoom: branch
       };
     });
   }, [ branch ]);

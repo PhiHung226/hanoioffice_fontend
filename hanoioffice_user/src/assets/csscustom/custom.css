@@ -83,3 +83,41 @@
   display: inline;
   padding-right: 4px;
 }
+.customs-tabPanel div {
+  padding: 0;
+}
+.max-w-searchBar {
+  max-width: 30rem;
+}
+.responsive-searchBar {
+  width: 100%;
+}
+.h-640 {
+  height: 640px;
+}
+.h-560 {
+  height: 560px;
+}
+.h-230 {
+  height: 230px;
+}
+.h-484 {
+  height: 484px;
+}
+.h-275 {
+  height: 275px;
+}
+.h-237 {
+  height: 237px;
+}
+.h-190 {
+  height: 190px;
+}
+.border-b-1 {
+  border-bottom: 1px solid gray;
+}
+.border-dashed {
+  border: 2px dashed gray;
+}
+
+

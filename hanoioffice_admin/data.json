@@ -337,5 +337,229 @@
     "meta": {
       "total_data": 45
     }
-  }
+  },
+  "demo-demo": [
+    {
+      "id": 204,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Phòng họp",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 205,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 2,
+      "nameBranch": "Chi nhánh Hai Bà Trưng",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 206,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Phòng họp",
+      "idBranch": 3,
+      "nameBranch": "Chi nhánh Hoàng Mai",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 207,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 208,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 209,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 210,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 211,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 212,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 213,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 5,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 214,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 2,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 215,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 2,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 216,
+      "nameRoom": "Phòng 303",
+      "peopleRoom": 6,
+      "typeRoom": 1,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 217,
+      "nameRoom": "Phòng 304",
+      "peopleRoom": 7,
+      "typeRoom": 2,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 218,
+      "nameRoom": "Phòng 305",
+      "peopleRoom": 7,
+      "typeRoom": 2,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 219,
+      "nameRoom": "Phòng 306",
+      "peopleRoom": 8,
+      "typeRoom": 2,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    },
+    {
+      "id": 220,
+      "nameRoom": "Phòng 308",
+      "peopleRoom": 8,
+      "typeRoom": 3,
+      "nameType": "Chỗ làm việc",
+      "idBranch": 1,
+      "nameBranch": "Chi nhánh Thanh Xuân",
+      "detail": "Chi tiết"
+    }
+  ],
+  "demo-2": [
+    {
+      "id": 200,
+      "detail": "Xem",
+      "id_branch": "CN0200",
+      "name_branch": "Chi nhánh Thanh Xuân",
+      "address_branch": "123 - Nguyễn Trãi - Thanh Xuân - Hà Nội",
+      "service_component": "Xem thành phần",
+      "number_employees": "20",
+      "note": null
+    },
+    {
+      "id": 201,
+      "detail": "Xem",
+      "id_branch": "CN0201",
+      "name_branch": "Chi nhánh Hà Đông",
+      "address_branch": "23 - Quang Trung - Hà Đông - Hà Nội",
+      "service_component": "Xem thành phần",
+      "number_employees": "25",
+      "note": null
+    },
+    {
+      "id": 202,
+      "detail": "Xem",
+      "id_branch": "CN0202",
+      "name_branch": "Chi nhánh Từ Liêm",
+      "address_branch": "56 - Cầu Diễn - Từ Liêm - Hà Nội",
+      "service_component": "Xem thành phần",
+      "number_employees": "19",
+      "note": null
+    },
+    {
+      "id": 203,
+      "detail": "Xem",
+      "id_branch": "CN0203",
+      "name_branch": "Chi nhánh Mỹ Đình",
+      "address_branch": "340 - Phạm Hùng - Mỹ Đình - Hà Nội",
+      "service_component": "Xem thành phần",
+      "number_employees": "26",
+      "note": null
+    },
+    {
+      "id": 204,
+      "detail": "Xem",
+      "id_branch": "CN0204",
+      "name_branch": "Chi nhánh Đống Đa",
+      "address_branch": "162 - Phạm Ngọc Thạch - Đống Đa - Hà Nội",
+      "service_component": "Xem thành phần",
+      "number_employees": "17",
+      "note": null
+    }
+  ]
 }

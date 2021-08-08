@@ -125,7 +125,9 @@ export const router = [
     path: '/dat-van-phong',
     type: 'book_an_office',
     subMenu: [
-      { id: 801, subTitle: 'Đăng ký phòng', subPath: '/dang-ky-phong', subItem: [] }, ]
+      { id: 801, subTitle: 'Đăng ký phòng', subPath: '/dang-ky-phong', subItem: [] },
+      { id: 802, subTitle: 'Lịch sử dụng', subPath: '/lich-su-dung', subItem: [] },
+    ]
   },
   {
     id: 10,

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from 'react-query';
 import {
   useRecoilValue,
-  //  useRecoilState 
+  //  useRecoilState
 } from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
@@ -38,20 +38,21 @@ const BadCustomer = () => {
 
   const pageLimit = useRecoilValue(listRoomPageLimitState);
   const page = useRecoilValue(listRoomPageState);
+  console.log(filterParams);
 
   const getData = useCallback(async (page, pageLimit) => {
     const {
       strSearch,
       nameRoom, numberPeople, branchRoom, kindOfRoom
     } = filterParams;
-    return await getListCustomer().getList({
+    return await getListCustomer().getList1({
       page, pageLimit, strSearch, nameRoom, numberPeople, branchRoom, kindOfRoom
     });
-  }, [ pageLimit, filterParams, page.skip ]);
+  }, [ pageLimit, filterParams, page ]);
 
   const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY_ROOM', page.skip, JSON.stringify(filterParams) ],
-    () => getData(page.skip, pageLimit),
+    [ 'PRODUCT_LIST_KEY_ROOM', page, JSON.stringify(filterParams) ],
+    () => getData(page, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
@@ -72,7 +73,6 @@ const BadCustomer = () => {
         setOpenDialog={ setOpenDialog }
         pageState={ listRoomPageState }
         pageLimitState={ listRoomPageLimitState } />
-
       { openDialog.open &&
         <DialogDetail
           classes={ {

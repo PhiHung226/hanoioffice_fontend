@@ -8,7 +8,7 @@ import {
 } from 'recoil';
 
 import useOnClickOutSide from '../../../../../hooks/useOnClickOutSide';
-import { employeeFilterParamsState } from '../../../../../store/atoms/employee';
+import { listRoomFilterParamsState } from '../../../../../store/atoms/room/listRoom/listRoom';
 import BaseIconButton from '../../../../base/button/BaseIconButton';
 import BaseButton from '../../../../base/button/ButtonBase';
 import BaseInput from '../../../../base/input/BaseInput';
@@ -24,7 +24,7 @@ const SearchBar = ({ ...props }) => {
   const { strSearch, nameRoom, numberPeople } = search;
   const [ isOpen, setIsOpen ] = useState(false);
   const [ isFocusInput, setIsFocusInput ] = useState(false);
-  const filterParams = useSetRecoilState(employeeFilterParamsState);
+  const filterParams = useSetRecoilState(listRoomFilterParamsState);
 
   const ref = useRef(null);
   useOnClickOutSide(ref, () => {
@@ -38,9 +38,9 @@ const SearchBar = ({ ...props }) => {
     }
   };
   const searchStr = () => {
-    const str = document.getElementById('strSearch').value;
+    const str = document.getElementById('strSearch11').value;
     const name = document.getElementById('name').value;
-    const number = document.getElementById('number').value;
+    const number = document.getElementById('number111').value;
     setSearch({
       strSearch: str,
       nameRoom: name,
@@ -55,8 +55,7 @@ const SearchBar = ({ ...props }) => {
   const onFocusInput = ({ type }) => {
     setIsFocusInput(type === 'focus');
   };
-
-
+  
   useEffect(() => {
     filterParams(search => {
       return {
@@ -76,7 +75,7 @@ const SearchBar = ({ ...props }) => {
           <FontAwesomeIcon className="cursor-pointer ml-3" icon="search" color={ '#999' } />
           <input
             { ...props }
-            id='strSearch'
+            id='strSearch11'
             type="text"
             className="w-full focus:outline-none focus:shadow-2xl border-0 p-2"
             style={ { border: 'none !important' } }
@@ -90,7 +89,7 @@ const SearchBar = ({ ...props }) => {
             <div className="m-4">
               {/*<BaseInput id='codeSearch' placeholder="Theo mã phòng" onChange={ onChange } onKeyDown={ onEnter } />*/}
               <BaseInput id='name' placeholder="Theo tên phòng " onChange={ onChange } onKeyDown={ onEnter } />
-              <BaseInput id='number' placeholder="Theo số lượng người " onChange={ onChange } onKeyDown={ onEnter } />
+              <BaseInput id='number111' placeholder="Theo số lượng người " onChange={ onChange } onKeyDown={ onEnter } />
               <div className="flex justify-end" style={ { marginTop: 28 } }>
                 <BaseButton title="Tìm kiếm" onClick={ searchStr } className="bg-green-500 btn--green mb-3" />
               </div>

@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { getYearMonthDay } from '../../../../../helpers/helper';
+import {getListCustomer} from '../../../../../service/customer/customerList/listCustomer';
 import DialogAddInfo from '../Dialog/DetailInfo';
 const styles = (theme) => ({
   root: {
@@ -51,8 +52,8 @@ const DialogAdd = (props) => {
   };
 
   const [ values, setValues ] = React.useState({
+    code_type_room: '',
     code_utilities: '',
-    name_utilities: '',
     number_utilities: 0
   });
   const [ form, setForm ] = useState({
@@ -66,7 +67,19 @@ const DialogAdd = (props) => {
     // setOpenDialog(!openDialog);
     console.log(values);
     console.log(form);
-
+    const {
+      code_type_room, code_utilities, name_type_room,
+      name_utilities, note,  number_utilities
+    } = values;
+    const { date_created } = form;
+    const value = {
+      code_type_room, code_utilities, name_type_room,
+      name_utilities, note,  number_utilities, date_created
+    };
+    const getData = async () => {
+      return await getListCustomer().addRoom(value);
+    };
+    console.log(getData());
   };
 
   const methods = useForm({ defaultValues: values });

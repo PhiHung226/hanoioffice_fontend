@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 305,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),

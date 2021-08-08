@@ -49,18 +49,18 @@ const getStyles = (name, personName, theme) => {
         : theme.typography.fontWeightMedium,
   };
 };
-const MultipleSelect = ({
-  data = [ { id: 1, name: 'Đang tải...' } ],
+const MultipleSelect = ({ data = [ { id: 1, name: 'Đang tải...' } ],
   personName, setPersonName,
-  minWidth = '100%',
-  context, noCheckbox = false, oneChip = false
+  minWidth = '100%', context,
+  noCheckbox = false,
+  oneChip = false
 }) => {
   const classes = useStyles();
   const theme = useTheme();
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
-
+  
   const nameSelect = (value) => {
     for (let i = 0; i < data.length; i++) {
       if (data[ i ].id === value) {
@@ -68,26 +68,26 @@ const MultipleSelect = ({
       }
     }
   };
-
+  
   return (
     <>
       <div className="w-full">
         <FormControl className={ classes.formControl } style={ { minWidth: minWidth } }>
           <InputLabel id="demo-mutiple-chip-label">{ context }</InputLabel>
           <Select
-            className="py-2"
+            className="pt-2"
             labelId="demo-mutiple-chip-label"
             id="demo-mutiple-chip"
             multiple
             value={ personName }
             onChange={ handleChange }
-            input={ <Input id="select-multiple-chip" className="pt-2" /> }
+            input={ <Input id="select-multiple-chip" className="" /> }
             renderValue={ (selected) => (
               <div className={ classes.chips }>
                 { !oneChip &&
-                  selected.map((value, index) => (
-                    <Chip key={ index } label={ nameSelect(value) } className={ classes.chip } />
-                  ))
+                selected.map((value, index) => (
+                  <Chip key={ index } label={ nameSelect(value) } className={ classes.chip } />
+                ))
                 }
                 {
                   oneChip &&
