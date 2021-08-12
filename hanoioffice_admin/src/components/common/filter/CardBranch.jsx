@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 
 import PropTypes from 'prop-types';
-// import { useQueryClient } from 'react-query';
+import {useQuery} from 'react-query';
 import { useSetRecoilState } from 'recoil';
 
-// import { AUTH_USER_INFO_KEY } from '../../../constants/queryKey';
+import {getListBranchs} from '../../../service/branch/listBranch/branchList';
 import MultipleSelect from '../../base/input/MultipleSelect';
 
 const CardBranch = ({ filterParams }) => {
-  // const queryClient = useQueryClient();
-  // const { data } = queryClient.getQueryData(AUTH_USER_INFO_KEY);
   const [ branch, setBranch ] = useState([]);
   const branchSearch = useSetRecoilState(filterParams);
-  // console.log(data);
-
-  const data1 = [
-    { id: 1, name: 'Chi nhánh Thanh Xuân' },
-    { id: 2, name: 'Chi nhánh Thanh Hà' },
-    { id: 3, name: 'Chi nhánh Hà Đông' },
-    { id: 4, name: 'Chi nhanh Từ Liêm' }
-  ];
+  
+  const getData = async () => {
+    return await getListBranchs().getListArr();
+  };
+  const { data } = useQuery(
+    [ 'PRODUCT_LIST_KEY_BRANCH_1' ],
+    () => getData(),
+    {
+      keepPreviousData: true, staleTime: 5000,
+      placeholderData: []
+    }
+  );
   useEffect(() => {
     branchSearch(search => {
       return {
@@ -32,7 +34,7 @@ const CardBranch = ({ filterParams }) => {
     <>
       <div className="flex items-center w-full">
         <span className="w-1/5">Chi nhánh</span>
-        <MultipleSelect data={ data1 } personName={ branch } setPersonName={ setBranch } minWidth='90%' oneChip={ true } />
+        <MultipleSelect data={ data } personName={ branch } setPersonName={ setBranch } minWidth='90%' oneChip={ true } />
       </div>
     </>
   );

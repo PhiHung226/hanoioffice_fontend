@@ -8,7 +8,7 @@ import {
 } from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
-import { getListCustomer } from '../../../../service/customer/customerList/listCustomer';
+import { getListRoom } from '../../../../service/room/listRoom/listRoom';
 import {
   listRoomColumnTableState,
   listRoomFilterParamsState,
@@ -38,14 +38,13 @@ const BadCustomer = () => {
 
   const pageLimit = useRecoilValue(listRoomPageLimitState);
   const page = useRecoilValue(listRoomPageState);
-  console.log(filterParams);
 
   const getData = useCallback(async (page, pageLimit) => {
     const {
       strSearch,
       nameRoom, numberPeople, branchRoom, kindOfRoom
     } = filterParams;
-    return await getListCustomer().getList1({
+    return await getListRoom().getList1({
       page, pageLimit, strSearch, nameRoom, numberPeople, branchRoom, kindOfRoom
     });
   }, [ pageLimit, filterParams, page ]);
@@ -58,7 +57,6 @@ const BadCustomer = () => {
       placeholderData: LIST_ORDER_PLACEHOLDER_DATA
     }
   );
-  console.log(data);
   useEffect(() => {
     refetch();
   }, [ pageLimit, filterParams, page ]);
@@ -68,7 +66,7 @@ const BadCustomer = () => {
     <>
       <TableV7 columns={ columnTable } datas={ data }
         queryKey='queryKey' idDetai='detail'
-        keyId="id_employee" detailFunction={ getListCustomer().getDetail }
+        keyId="id_employee" detailFunction={ getListRoom().getDetail }
         openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
         pageState={ listRoomPageState }

@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { useQuery } from 'react-query';
+import {makeStyles} from '@material-ui/core/styles';
+import {useQuery} from 'react-query';
 import {
   useRecoilValue,
   //  useRecoilState 
 } from 'recoil';
 
-import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
-import { getListBranchs } from '../../../../service/branch/listBranch/branchList';
+import {LIST_ORDER_PLACEHOLDER_DATA} from '../../../../fixedData/dataEmployee';
+import {getListBranchs} from '../../../../service/branch/listBranch/branchList';
 import {
   listBranchColumnTableState,
   listBranchFilterParamsState,
@@ -35,7 +35,7 @@ const BranchList = () => {
   const classes = useStyles();
   const columnTable = useRecoilValue(listBranchColumnTableState);
   const filterParams = useRecoilValue(listBranchFilterParamsState);
-
+  
   const pageLimit = useRecoilValue(listBranchPageLimitState);
   const page = useRecoilValue(listBranchPageState);
   // console.log(columnTable);
@@ -46,10 +46,10 @@ const BranchList = () => {
     return await getListBranchs().getList({
       page, pageLimit, strSearch
     });
-  }, [ pageLimit, filterParams, page.skip ]);
-
-  const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY_BRANCH', page.skip, JSON.stringify(filterParams) ],
+  }, [pageLimit, filterParams, page.skip]);
+  
+  const {data, refetch} = useQuery(
+    ['PRODUCT_LIST_KEY_LIST_BRANCH', page.skip, JSON.stringify(filterParams)],
     () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
@@ -58,9 +58,9 @@ const BranchList = () => {
   );
   useEffect(() => {
     refetch();
-  }, [ pageLimit, filterParams, page ]);
-  const [ openDialog, setOpenDialog ] = useState({ open: false, id: null });
-
+  }, [pageLimit, filterParams, page]);
+  const [openDialog, setOpenDialog] = useState({open: false, id: null});
+  
   return (
     <>
       <TableV7 columns={ columnTable } datas={ data }
@@ -72,16 +72,16 @@ const BranchList = () => {
         pageLimitState={ listBranchPageLimitState }
         heightTable={ 690 }
       />
-
-      { openDialog.open &&
-        <DialogDetail
-          classes={ {
-            paper: classes.paper,
-          } }
-          id="ringtone-menu"
-          openDialog={ openDialog }
-          setOpenDialog={ setOpenDialog }
-          detail={ DetailInfo } />
+      
+      {openDialog.open &&
+      <DialogDetail
+        classes={ {
+          paper: classes.paper,
+        } }
+        id="ringtone-menu"
+        openDialog={ openDialog }
+        setOpenDialog={ setOpenDialog }
+        detail={ DetailInfo }/>
       }
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
@@ -7,13 +7,15 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import PropTypes from 'prop-types';
-// import { useSetRecoilState } from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
-const CheckboxGroup = ({ title, className, helperText, dataCheckbox,
-  // filterParams, name,
-  color }) => {
-  // const setParams = useSetRecoilState(filterParams);
-
+const CheckboxGroup = ({
+  title, className, helperText, dataCheckbox,
+  filterParams, name, lableAll = 'Tất cả',
+  color, dataAll = []
+}) => {
+  const setParams = useSetRecoilState(filterParams);
+  
   const [state, setState] = useState(dataCheckbox);
   const [stateAll, setStateAll] = useState(false);
   
@@ -43,33 +45,44 @@ const CheckboxGroup = ({ title, className, helperText, dataCheckbox,
       })
     );
   };
-  // useEffect(() => {
-  //   setParams(data => {
-  //     return {
-  //       ...data,
-  //       [name]: state
-  //     };
-  //   });
-  // }, [state]);
+  const [dataNew, setDataNew] = useState([]);
+  React.useEffect(() => {
+    const dataFilter = state.filter(i => i.checked);
+    setDataNew(
+      dataFilter.map(i => {
+        return i.id;
+      })
+    );
+  }, [state]);
+  
+  React.useEffect(() => {
+    setParams(data => {
+      return {
+        ...data,
+        [name]: dataAll.length > 0 && dataNew.length === dataCheckbox.length ? [dataAll[0].id] : dataNew
+      };
+    });
+  }, [dataNew]);
   return (
     <>
       <FormControl component="fieldset" className={ className }>
-        <FormLabel component="legend">{ title }</FormLabel>
+        <FormLabel component="legend">{title}</FormLabel>
         <FormGroup>
           <div className='grid grid-cols-4 gap-2 w-full'>{
             state.map((item, index) => {
               return (
                 <FormControlLabel key={ index }
-                  control={ <Checkbox checked={ item.checked } color={ color } onChange={ e => handleChange(e) } id={ item.id.toString() } /> }
+                  control={ <Checkbox checked={ item.checked } color={ color }
+                    onChange={ e => handleChange(e) } id={ item.id.toString() }/> }
                   label={ item.value }
                 />
               );
             })
           }
-          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } /> } label="Tất cả"/>
+          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll }/> } label={ lableAll }/>
           </div>
         </FormGroup>
-        <FormHelperText>{ helperText }</FormHelperText>
+        <FormHelperText>{helperText}</FormHelperText>
       </FormControl>
     </>
   );
@@ -82,6 +95,8 @@ CheckboxGroup.propTypes = {
   helperText: PropTypes.string,
   filterParams: PropTypes.object,
   color: PropTypes.string,
-  // name: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  dataAll: PropTypes.array,
+  lableAll: PropTypes.string
 };
 export default CheckboxGroup;

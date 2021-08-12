@@ -49,6 +49,10 @@ const IntermittentUse = () => {
     setListDate([...listDate]);
   };
   
+  const listService = () => {
+  
+  };
+  
   const onChange = (numbers, e) => {
     setListDate(
       listDate.map((item,index)=> {
@@ -77,7 +81,10 @@ const IntermittentUse = () => {
                   <div className='w-1/2'>
                     <DateFromTo title={ `Ngày (${index + 1})` } keySearch={ 'oneDate' } value={ item.dates } onChange={ (e) => onChange(index, e) } classNameTitle='w-64'/>
                   </div>
-                  <Button variant="outlined" color="primary" className={ classes.button1 } size="small" onClick={ () => onDelete(index) }>Xóa</Button>
+                  <div>
+                    <Button variant="outlined" color="primary" className={ classes.button1 } size="small" onClick={ () => listService(index) }>Dịch vụ</Button>
+                    <Button variant="outlined" color="primary" className={ classes.button1 } size="small" onClick={ () => onDelete(index) }>Xóa</Button>
+                  </div>
                 </div>
                 <div className='pl-16 pt-1'>
                   <CheckboxGroupTime dataCheckbox={ item.times } listDate={ listDate } setListDate={ setListDate } indexs={ index } className='w-full'/>
@@ -87,7 +94,7 @@ const IntermittentUse = () => {
           );
         })
       }
-      <div className='flex justify-end'>
+      <div className='flex justify-end mb-5'>
         <Button variant="outlined" color="primary" className={ classes.button } startIcon={ <AddIcon /> } onClick={ onClickAdd } >
           Thêm ngày
         </Button>

@@ -1,20 +1,28 @@
 import React from 'react';
 
-import { orderBookFilterParamsState } from '../../../../store/actom/orderBook/orderBook';
+import {useQuery} from 'react-query';
+
+import {getListBook} from '../../../../service/bookAnOffices/bookAnOffices';
+import {orderBookFilterParams} from '../../../../store/actom/orderBook/orderBook';
 import CheckboxGroup from '../../../base/checkbox/CheckboxGroup';
 
-const dataService = [
-  { id: 200, value: 'Máy chiếu', checked: false },
-  { id: 201, value: 'Máy in', checked: false },
-  { id: 202, value: 'Máy fax', checked: false },
-  { id: 203, value: 'Bảo vệ', checked: false },
-  { id: 1, value: 'Người số 1', checked: false },
-];
+// const dataService = [
+//   {id: 200, value: 'Máy chiếu', checked: false}
+// ];
 
 const ServiceBook = () => {
+  const {data} = useQuery(
+    ['LIST_SERVICE'],
+    () => getListBook().getListService(),
+    {
+      keepPreviousData: true, staleTime: 5000,
+    }
+  );
+  
   return (
     <>
-      <CheckboxGroup dataCheckbox={ dataService } title={ 'Dịch vụ đi kèm' } filterParams={ orderBookFilterParamsState } className='w-full'/>
+      <CheckboxGroup dataCheckbox={ data } title={ 'Dịch vụ đi kèm' } filterParams={ orderBookFilterParams }
+        name={ 'listService' } className='w-full' dataAll={ [] }/>
     </>
   );
 };

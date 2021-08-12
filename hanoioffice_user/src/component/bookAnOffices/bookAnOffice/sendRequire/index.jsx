@@ -6,7 +6,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 
 import Filter from '../filter';
-import ServiceBook from '../serviceBook';
+// import ServiceBook from '../serviceBook';
 import ContinuousUse from './continuousUse';
 import IntermittentUse from './intermittentUse';
 
@@ -29,9 +29,6 @@ const SendRequire = () => {
       </FormControl>
       { value === 'lien_tuc' && <ContinuousUse /> }
       { value === 'ngat_quang' && <IntermittentUse />}
-      <div>
-        <ServiceBook />
-      </div>
     </>
   );
 };

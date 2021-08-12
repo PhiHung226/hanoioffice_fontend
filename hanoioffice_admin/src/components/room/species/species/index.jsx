@@ -8,7 +8,7 @@ import {
 } from 'recoil';
 
 import { LIST_ORDER_PLACEHOLDER_DATA } from '../../../../fixedData/dataEmployee';
-import { getListCustomer } from '../../../../service/customer/customerList/listCustomer';
+import { getListTypeRoom } from '../../../../service/room/typeRoom/listTypeRoom';
 import {
   typeRoomColumnTableState,
   typeRoomFilterParamsState,
@@ -43,13 +43,13 @@ const BadCustomer = () => {
     const {
       strSearch
     } = filterParams;
-    return await getListCustomer().getList({
+    return await getListTypeRoom().getList({
       page, pageLimit, strSearch
     });
   }, [ pageLimit, filterParams, page.skip ]);
 
   const { data, refetch } = useQuery(
-    [ 'PRODUCT_LIST_KEY_ROOM_SPECIES_1', page.skip, JSON.stringify(filterParams) ],
+    [ 'PRODUCT_LIST_KEY_TYPE_ROOM_SPECIES_1', page.skip, JSON.stringify(filterParams) ],
     () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
@@ -65,7 +65,7 @@ const BadCustomer = () => {
     <>
       <TableV7 columns={ columnTable } datas={ data }
         queryKey='queryKey' idDetai='detail'
-        keyId="id_employee" detailFunction={ getListCustomer().getDetail }
+        keyId="id_employee" detailFunction={ getListTypeRoom().getDetail }
         openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
         pageState={ typeRoomPageState }

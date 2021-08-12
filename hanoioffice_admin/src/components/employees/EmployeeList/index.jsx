@@ -36,7 +36,7 @@ const EmployeeList = () => {
               aria-label="scrollable auto tabs example"
             >
               <Tab label="Danh sách nhân viên" { ...a11yProps(0) } />
-              <Tab label="Nhân viên đã nghỉ" { ...a11yProps(1) } />
+              {/*<Tab label="Nhân viên đã nghỉ" { ...a11yProps(1) } />*/}
             </Tabs>
           </AppBar>
           <TabPanel value={ value } index={ 0 } dir={ theme.direction } className="customs-tabPanel" nav={ Filter }>

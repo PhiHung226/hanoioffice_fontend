@@ -1,39 +1,46 @@
-// import React, { useEffect, useState } from 'react';
-//
-// import PropTypes from 'prop-types';
-// // import { useQueryClient } from 'react-query';
-// import { useSetRecoilState } from 'recoil';
-//
-// // import { AUTH_USER_INFO_KEY } from '../../../constants/queryKey';
-// import MultipleSelect from '../../../base/input/MultipleSelect';
-//
-// const CardType = ({ filterParams, dataArr, title }) => {
-//   // const queryClient = useQueryClient();
-//   // const { data } = queryClient.getQueryData(AUTH_USER_INFO_KEY);
-//   const [ branch, setBranch ] = useState([]);
-//   const branchSearch = useSetRecoilState(filterParams);
-//   // console.log(data);
-//
-//   useEffect(() => {
-//     branchSearch(search => {
-//       return {
-//         ...search,
-//         kindOfRoom: branch
-//       };
-//     });
-//   }, [ branch ]);
-//   return (
-//     <>
-//       <div className="flex w-full">
-//         <span className="w-2/5 pt-8">{ title }</span>
-//         <MultipleSelect data={ dataArr } personName={ branch } setPersonName={ setBranch } minWidth='90%' oneChip={ true } />
-//       </div>
-//     </>
-//   );
-// };
-// CardType.propTypes = {
-//   filterParams: PropTypes.object,
-//   dataArr: PropTypes.array,
-//   title: PropTypes.string
-// };
-// export default CardType;
+import React, {useEffect, useState} from 'react';
+
+import PropTypes from 'prop-types';
+import {useQuery} from 'react-query';
+import {useRecoilState} from 'recoil';
+
+import {getListBook} from '../../../../service/bookAnOffices/bookAnOffices';
+import {orderBookFilterParamsState} from '../../../../store/actom/orderBook/orderBook';
+import SelectInput from '../../../base/input/SelectInput';
+
+const CardTypeRoom = () => {
+  // const [ branch, setBranch ] = useState([]);
+  // const branchSearch = useSetRecoilState(filterParams);
+  // console.log(branchSearch);
+  const [filterState, setFilterState] = useRecoilState(orderBookFilterParamsState);
+  const {data} = useQuery(
+    ['TYPE_ROOM_LIST'],
+    () => getListBook().getListTypeRoom(),
+    {
+      keepPreviousData: true, staleTime: 5000,
+    }
+  );
+  const [valueTypeRoom, setValueTyeRoom] = useState(data[0].id);
+  const onChageBranch = (e) => {
+    setValueTyeRoom(e.target.value);
+  };
+  useEffect(() => {
+    setFilterState({
+      ...filterState,
+      typeRoom: valueTypeRoom
+    }
+    );
+  }, [valueTypeRoom]);
+  return (
+    <>
+      <SelectInput title='Loại phòng' dataArr={ data } className='w-full' value={ valueTypeRoom }
+        onChange={ e => onChageBranch(e) }/>
+    </>
+  );
+};
+CardTypeRoom.propTypes = {
+  filterParams: PropTypes.object,
+  value: PropTypes.object,
+  onChange: PropTypes.func
+};
+export default CardTypeRoom;

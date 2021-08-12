@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
-// import { useQueryClient } from 'react-query';
+import {useQuery} from 'react-query';
 import { useSetRecoilState } from 'recoil';
 
-// import { AUTH_USER_INFO_KEY } from '../../../constants/queryKey';
+import {getListTypeRoom} from '../../../../../service/room/typeRoom/listTypeRoom';
 import MultipleSelect from '../../../../base/input/MultipleSelect';
 
-const CardBranch = ({ filterParams, dataArr, title }) => {
-  // const queryClient = useQueryClient();
-  // const { data } = queryClient.getQueryData(AUTH_USER_INFO_KEY);
+const CardBranch = ({ filterParams, title }) => {
   const [ branch, setBranch ] = useState([]);
   const branchSearch = useSetRecoilState(filterParams);
-  // console.log(data);
-
+  
+  const getData = async () => {
+    return await getListTypeRoom().getListArr();
+  };
+  const { data } = useQuery(
+    [ 'PRODUCT_LIST_KEY_TYPE_ROOM_1' ],
+    () => getData(),
+    {
+      keepPreviousData: true, staleTime: 5000,
+      placeholderData: []
+    }
+  );
   useEffect(() => {
     branchSearch(search => {
       return {
@@ -26,14 +34,14 @@ const CardBranch = ({ filterParams, dataArr, title }) => {
     <>
       <div className="flex items-center w-full">
         <span className="w-1/5">{ title }</span>
-        <MultipleSelect data={ dataArr } personName={ branch } setPersonName={ setBranch } minWidth='90%' oneChip={ true } />
+        <MultipleSelect data={ data } personName={ branch } setPersonName={ setBranch } minWidth='90%' oneChip={ true } />
       </div>
     </>
   );
 };
 CardBranch.propTypes = {
   filterParams: PropTypes.object,
-  dataArr: PropTypes.array,
+  // dataArr: PropTypes.array,
   title: PropTypes.string
 };
 export default CardBranch;

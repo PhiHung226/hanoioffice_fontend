@@ -41,7 +41,7 @@ const DialogTitle = withStyles(styles)((props) => {
 });
 
 const DialogDetail = (props) => {
-  const { setOpenDialog, openDialog, data, ...other } = props;
+  const { setOpenDialog, openDialog,  ...other } = props;
   const ref = useRef(null);
 
   const handleEntering = () => {
@@ -49,7 +49,7 @@ const DialogDetail = (props) => {
       ref.current.focus();
     }
   };
-  const {} = data; // lấy dữ liệu detail
+  // const {} = data; // lấy dữ liệu detail
   const [ values, setValues ] = React.useState({
     //hiển thị dữ liệu detail
   });

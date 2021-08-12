@@ -1,17 +1,22 @@
-import { atom } from 'recoil';
+import {atom} from 'recoil';
 
-const today = new Date();
+// const today = new Date();
 export const orderBookFilterParamsState = atom({
   key: 'orderBookFilterParamsState',
   default: {
-    strSearch: '',
-    codeSearch: '',
-    debitSearch: 99,
-    from_date: today,
-    to_date: today,
+    branch: 0,
+    typeRoom: 0,
   }
 });
-
+export const orderBookFilterParams = atom({
+  key: 'orderBookFilterParams',
+  default: {
+    listTime: [],
+    listService: [],
+    idRoom: '',
+    idCustomer: ''
+  }
+});
 export const orderBookPageLimitState = atom({
   key: 'orderBookPageLimitState',
   default: 15

@@ -1,4 +1,4 @@
-import { atom } from 'recoil';
+import {atom} from 'recoil';
 
 const today = new Date();
 export const listBranchFilterParamsState = atom({
@@ -36,14 +36,46 @@ export const listBranchPageState = atom({
 export const listBranchColumnTableState = atom({
   key: 'listBranchColumnTableState',
   default: [
-    { field: 'detail', headerName: 'Chi tiết', width: 80, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
-    { field: 'id_branch', headerName: 'Mã chi nhánh', width: 150, sortable: false, description: 'Mã chi nhánh' },
-    { field: 'name_branch', headerName: 'Tên chi nhánh', width: 220, sortable: false, description: 'Tên chi nhánh' },
-    { field: 'address_branch', headerName: 'Địa chỉ', width: 350, sortable: false, description: 'Địa chỉ' },
-    { field: 'type_room', headerName: 'Loại phòng', width: 350, sortable: false, description: 'Các loại phòng có trong chi nhánh' },
-    { field: 'service_component', headerName: 'Số lượng dịch vụ', width: 200, sortable: false, description: 'Số lượng dịch vụ chi nhánh' },
-    { field: 'number_employees', headerName: 'Số lượng nhân viên', width: 170, sortable: false, description: 'Số lượng nhân viên của chi nhánh' },
-    { field: 'date_start', headerName: 'Ngày tạo', width: 170, sortable: false, description: 'Ngày tạo chi nhánh' },
-    { field: 'note', headerName: 'Ghi chú', width: 290, sortable: false, description: 'Ghi chú' },
+    {
+      field: 'detail',
+      headerName: 'Chi tiết',
+      width: 80,
+      sortable: false,
+      description: 'Chi tiết',
+      cellClassName: 'cursor-pointer'
+    },
+    {field: 'codeBranch', headerName: 'Mã chi nhánh', width: 150, sortable: false, description: 'Mã chi nhánh'},
+    {field: 'name', headerName: 'Tên chi nhánh', width: 200, sortable: false, description: 'Tên chi nhánh'},
+    {field: 'address', headerName: 'Địa chỉ', width: 300, sortable: false, description: 'Địa chỉ'},
+    {
+      field: 'phoneNumber',
+      headerName: 'SĐT chi nhánh',
+      width: 150,
+      sortable: false,
+      description: 'Số điện thoại chi nhánh'
+    },
+    {
+      field: 'branchManager',
+      headerName: 'Tên quản lý',
+      width: 150,
+      sortable: false,
+      description: 'Quản lý của chi nhánh'
+    },
+    {
+      field: 'phoneNumberManager',
+      headerName: 'SĐT của quản lý',
+      width: 150,
+      sortable: false,
+      description: 'Số điện thoại của quản lý'
+    },
+    {field: 'createDate', headerName: 'Ngày tạo', width: 170, sortable: false, description: 'Ngày tạo chi nhánh'},
+    {
+      field: 'status',
+      headerName: 'Trạng thái',
+      width: 170,
+      sortable: false,
+      description: 'Trạng thái hoạt động của chi nhánh'
+    },
+    {field: 'description', headerName: 'Ghi chú', width: 290, sortable: false, description: 'Ghi chú'},
   ]
 });
