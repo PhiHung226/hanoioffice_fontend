@@ -22,7 +22,7 @@ const ServiceBook = () => {
   return (
     <>
       <CheckboxGroup dataCheckbox={ data } title={ 'Dịch vụ đi kèm' } filterParams={ orderBookFilterParams }
-        name={ 'listService' } className='w-full' dataAll={ [] }/>
+        name={ 'listService' } className='w-full text-xs' dataAll={ [] } column={ '3' }/>
     </>
   );
 };

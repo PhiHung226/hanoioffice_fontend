@@ -11,8 +11,8 @@ import {useSetRecoilState} from 'recoil';
 
 const CheckboxGroup = ({
   title, className, helperText, dataCheckbox,
-  filterParams, name, lableAll = 'Tất cả',
-  color, dataAll = []
+  filterParams, name, lableAll = 'Tất cả', column = '4',
+  color
 }) => {
   const setParams = useSetRecoilState(filterParams);
   
@@ -50,7 +50,7 @@ const CheckboxGroup = ({
     const dataFilter = state.filter(i => i.checked);
     setDataNew(
       dataFilter.map(i => {
-        return i.id;
+        return {...i};
       })
     );
   }, [state]);
@@ -59,7 +59,7 @@ const CheckboxGroup = ({
     setParams(data => {
       return {
         ...data,
-        [name]: dataAll.length > 0 && dataNew.length === dataCheckbox.length ? [dataAll[0].id] : dataNew
+        [name]: dataNew
       };
     });
   }, [dataNew]);
@@ -68,7 +68,7 @@ const CheckboxGroup = ({
       <FormControl component="fieldset" className={ className }>
         <FormLabel component="legend">{title}</FormLabel>
         <FormGroup>
-          <div className='grid grid-cols-4 gap-2 w-full'>{
+          <div className={ `grid grid-cols-${column} gap-2 w-full` }>{
             state.map((item, index) => {
               return (
                 <FormControlLabel key={ index }
@@ -85,7 +85,8 @@ const CheckboxGroup = ({
         <FormHelperText>{helperText}</FormHelperText>
       </FormControl>
     </>
-  );
+  )
+  ;
 };
 CheckboxGroup.propTypes = {
   title: PropTypes.string,
@@ -97,6 +98,7 @@ CheckboxGroup.propTypes = {
   color: PropTypes.string,
   name: PropTypes.string,
   dataAll: PropTypes.array,
-  lableAll: PropTypes.string
+  lableAll: PropTypes.string,
+  column: PropTypes.string
 };
 export default CheckboxGroup;

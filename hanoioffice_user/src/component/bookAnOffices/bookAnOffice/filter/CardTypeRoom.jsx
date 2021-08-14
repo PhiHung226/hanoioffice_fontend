@@ -5,7 +5,11 @@ import {useQuery} from 'react-query';
 import {useRecoilState} from 'recoil';
 
 import {getListBook} from '../../../../service/bookAnOffices/bookAnOffices';
-import {orderBookFilterParamsState} from '../../../../store/actom/orderBook/orderBook';
+import {
+  orderBookFilterParams,
+  orderBookFilterParamsContinuous,
+  orderBookFilterParamsState
+} from '../../../../store/actom/orderBook/orderBook';
 import SelectInput from '../../../base/input/SelectInput';
 
 const CardTypeRoom = () => {
@@ -13,6 +17,8 @@ const CardTypeRoom = () => {
   // const branchSearch = useSetRecoilState(filterParams);
   // console.log(branchSearch);
   const [filterState, setFilterState] = useRecoilState(orderBookFilterParamsState);
+  const [filter, setFilter] = useRecoilState(orderBookFilterParamsContinuous);
+  const [filterOder, setFilterOder] = useRecoilState(orderBookFilterParams);
   const {data} = useQuery(
     ['TYPE_ROOM_LIST'],
     () => getListBook().getListTypeRoom(),
@@ -30,6 +36,14 @@ const CardTypeRoom = () => {
       typeRoom: valueTypeRoom
     }
     );
+    setFilter({
+      ...filter,
+      valueType: data.filter(i => i.id === valueTypeRoom)
+    });
+    setFilterOder({
+      ...filterOder,
+      valueType: data.filter(i => i.id === valueTypeRoom)
+    });
   }, [valueTypeRoom]);
   return (
     <>

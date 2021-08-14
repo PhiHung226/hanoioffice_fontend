@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import Menu from '@material-ui/core/Menu';
 import DateRange from '@material-ui/icons/DateRange';
@@ -31,15 +31,7 @@ const WEEKDAYS_LONG = [
 ];
 const WEEKDAYS_SHORT = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 
-const DateSingle = ({
-  title,
-  classNameTitle,
-  disabledDays = new Date(),
-  selectedDay = [],
-  setListDate,
-  index, valueItem,
-  listDate, newDate
-}) => {
+const DateSingle = ({title, classNameTitle, value, onChange, disabledDays = new Date()}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -59,49 +51,7 @@ const DateSingle = ({
   //     [ keySearch ]: getYearMonthDay(fromDay, 'yyyy-MM-dd')
   //   });
   // }, [ fromDay ]);
-  // console.log(selectedDay);
-  // const maxDate = (day) => {
-  //   console.log(day);
-  //   if (day.length <= 0) {
-  //     return new Date();
-  //   }
-  //   // day.sort((a, b) => {
-  //   //   return b - a;
-  //   // });
-  //   // const newDate = selectedDay[0].setDate(selectedDay[0].getDate() + 1);
-  //   // return newDate;
-  //   let maxDay = new Date();
-  //   for (let i in day) {
-  //     if (i - maxDay > 0) {
-  //       maxDay = i;
-  //     }
-  //   }
-  //   maxDay.setDate(maxDay.getDate() + 1);
-  //   return maxDay;
-  // };
-  const [value, setValue] = useState(newDate);
-  // useEffect(() => {
-  //   setValue(valueItem);
-  // }, [valueItem]);
-  const onChange = (day, modifiers = {}) => {
-    if (modifiers.disabled) {
-      return;
-    }
-    setValue(
-      modifiers.disabled ? undefined : day
-    );
-  };
   
-  useEffect(() => {
-    setListDate(
-      listDate.map((item, ind) => {
-        return {
-          ...item,
-          startDate: index === ind ? value : item.startDate
-        };
-      })
-    );
-  }, [value]);
   return (
     <>
       <div className="w-full">
@@ -109,7 +59,7 @@ const DateSingle = ({
           <span className={ `font-medium ${classNameTitle}` }>{title}</span>
           <div className="flex mr-3 w-full" aria-controls="simple-menu" aria-haspopup="true" onClick={ handleClick }>
             <p className='border-b-1 px-10 border-gray-500 cursor-pointer w-full'>
-              {valueItem ? valueItem.toLocaleDateString() : null}
+              {value ? value.toLocaleDateString() : null}
             </p>
             <DateRange className="cursor-pointer"/>
           </div>
@@ -125,11 +75,11 @@ const DateSingle = ({
             <div className="">
               <div className="flex items-start">
                 <DayPicker
+                  selectedDays={ value }
                   disabledDays={ [
-                    ...selectedDay,
+                    // ...selectedDay,
                     {before: disabledDays},
                   ] }
-                  // selectedDays={ [...selectedDay] }
                   onDayClick={ onChange }
                   todayButton="Tháng này"
                   locale={ 'vi' }
@@ -150,12 +100,9 @@ const DateSingle = ({
 DateSingle.propTypes = {
   title: PropTypes.string,
   classNameTitle: PropTypes.string,
+  value: PropTypes.object,
+  onChange: PropTypes.func,
+  // keySearch: PropTypes.string,
   disabledDays: PropTypes.object,
-  selectedDay: PropTypes.array,
-  setListDate: PropTypes.func,
-  index: PropTypes.number,
-  listDate: PropTypes.array,
-  newDate: PropTypes.object,
-  valueItem: PropTypes.object
 };
 export default DateSingle;

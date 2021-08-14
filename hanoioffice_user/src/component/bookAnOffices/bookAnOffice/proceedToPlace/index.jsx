@@ -1,13 +1,3 @@
-// import React from 'react';
-
-// const ProceedToPlace = () => {
-//   return (
-//     <>
-
-//     </>
-//   );
-// };
-// export default ProceedToPlace;
 import React from 'react';
 
 import Button from '@material-ui/core/Button';
@@ -16,10 +6,8 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Stepper from '@material-ui/core/Stepper';
 import {
-  makeStyles,
-  //  withStyles 
+  makeStyles
 } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
 import Check from '@material-ui/icons/Check';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -30,28 +18,6 @@ import PropTypes from 'prop-types';
 import CustomerInfo from './CustomerInfo';
 import RoomInfo from './RoomInfo';
 import Rules from './Rules';
-// const QontoConnector = withStyles({
-//   alternativeLabel: {
-//     top: 10,
-//     left: 'calc(-50% + 16px)',
-//     right: 'calc(50% + 16px)',
-//   },
-//   active: {
-//     '& $line': {
-//       borderColor: '#784af4',
-//     },
-//   },
-//   completed: {
-//     '& $line': {
-//       borderColor: '#784af4',
-//     },
-//   },
-//   line: {
-//     borderColor: '#eaeaf0',
-//     borderTopWidth: 3,
-//     borderRadius: 1,
-//   },
-// })(StepConnector);
 
 const useQontoStepIconStyles = makeStyles({
   root: {
@@ -78,15 +44,15 @@ const useQontoStepIconStyles = makeStyles({
 
 const QontoStepIcon = (props) => {
   const classes = useQontoStepIconStyles();
-  const { active, completed } = props;
-
+  const {active, completed} = props;
+  
   return (
     <div
       className={ clsx(classes.root, {
-        [ classes.active ]: active,
+        [classes.active]: active,
       }) }
     >
-      { completed ? <Check className={ classes.completed } /> : <div className={ classes.circle } /> }
+      {completed ? <Check className={ classes.completed }/> : <div className={ classes.circle }/>}
     </div>
   );
 };
@@ -101,30 +67,6 @@ QontoStepIcon.propTypes = {
    */
   completed: PropTypes.bool,
 };
-
-// const ColorlibConnector = withStyles({
-//   alternativeLabel: {
-//     top: 22,
-//   },
-//   active: {
-//     '& $line': {
-//       backgroundImage:
-//         'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-//     },
-//   },
-//   completed: {
-//     '& $line': {
-//       backgroundImage:
-//         'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-//     },
-//   },
-//   line: {
-//     height: 3,
-//     border: 0,
-//     backgroundColor: '#eaeaf0',
-//     borderRadius: 1,
-//   },
-// })(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -151,23 +93,23 @@ const useColorlibStepIconStyles = makeStyles({
 
 const ColorlibStepIcon = (props) => {
   const classes = useColorlibStepIconStyles();
-  const { active, completed, handleNext } = props;
-
+  const {active, completed, handleNext} = props;
+  
   const icons = {
-    1: <SettingsIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
+    1: <SettingsIcon/>,
+    2: <GroupAddIcon/>,
+    3: <VideoLabelIcon/>,
   };
-
+  
   return (
     <div
       className={ clsx(classes.root, {
-        [ classes.active ]: active,
-        [ classes.completed ]: completed,
+        [classes.active]: active,
+        [classes.completed]: completed,
       }) }
       onClick={ handleNext }
     >
-      { icons[ String(props.icon) ] }
+      {icons[String(props.icon)]}
     </div>
   );
 };
@@ -185,7 +127,7 @@ ColorlibStepIcon.propTypes = {
    * The label displayed in the step icon.
    */
   icon: PropTypes.node,
-
+  
   handleNext: PropTypes.func
 };
 
@@ -205,73 +147,59 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getSteps = () => {
-  return [ 'Thông tin phòng chi tiết', 'Cập nhật thông tin cá nhân', 'Chấp nhận yêu cầu và chính sách' ];
+  return ['Thông tin phòng chi tiết', 'Cập nhật thông tin cá nhân', 'Chấp nhận yêu cầu và chính sách'];
 };
 
-const CustomizedSteppers = ({ setState }) => {
-
+const CustomizedSteppers = ({setState}) => {
+  
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return (<RoomInfo />);
+        return (<RoomInfo/>);
       case 1:
-        return (<CustomerInfo />);
+        return (<CustomerInfo/>);
       case 2:
-        return (<Rules />);
+        return (<Rules/>);
       default:
         return 'Unknown step';
     }
   };
   const classes = useStyles();
-  const [ activeStep, setActiveStep ] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-
+  
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
+  
   const handleClick = (index) => {
     setActiveStep(index);
   };
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
+  
   const handleReset = () => {
     setActiveStep(0);
   };
-
+  
   return (
     <>
       <div className='mt-4 pl-24 cursor-pointer hover:text-blue-800 text-blue-500' onClick={ () => setState('detail') }>
-        <p>{ '<< Quay lại tìm kiếm' }</p>
+        <p>{'<< Quay lại tìm kiếm'}</p>
       </div>
       <div className={ classes.root }>
         <div className="flex justify-center">
           <Stepper alternativeLabel activeStep={ activeStep }>
-            { steps.map((label, index) => (
+            {steps.map((label, index) => (
               <Step key={ index }>
-                <StepLabel onClick={ () => handleClick(index) } className='cursor-pointer'>{ label }</StepLabel>
+                <StepLabel onClick={ () => handleClick(index) } className='cursor-pointer'>{label}</StepLabel>
               </Step>
-            )) }
+            ))}
           </Stepper>
         </div>
-        {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <QontoConnector /> }>
-        { steps.map((label) => (
-          <Step key={ label }>
-            <StepLabel StepIconComponent={ QontoStepIcon } onClick={ handleNext }>{ label }</StepLabel>
-          </Step>
-        )) }
-      </Stepper> */}
-        {/* <Stepper alternativeLabel activeStep={ activeStep } connector={ <ColorlibConnector /> }>
-        { steps.map((label) => (
-          <Step key={ label }>
-            <StepLabel StepIconComponent={ ColorlibStepIcon } onClick={ handleNext } className="cursor-pointer">{ label }</StepLabel>
-          </Step>
-        )) }
-      </Stepper> */}
         <div>
-          { activeStep === steps.length ?
+          {activeStep === steps.length ?
             (<div>
               <div>
                 {
@@ -279,12 +207,12 @@ const CustomizedSteppers = ({ setState }) => {
                 }
               </div>
               <Button onClick={ handleReset } className={ classes.button }>
-                Đặt lại
+                  Đặt lại
               </Button>
             </div>
-            ) : (<div >
+            ) : (<div>
               <div>
-                { getStepContent(activeStep) }
+                {getStepContent(activeStep)}
                 <div className="flex justify-end">
                   <Button disabled={ activeStep === 0 } onClick={ handleBack } className={ classes.button }>
                     Back
@@ -295,11 +223,11 @@ const CustomizedSteppers = ({ setState }) => {
                     onClick={ handleNext }
                     className={ classes.button }
                   >
-                    { activeStep === steps.length - 1 ? 'Tiến hành đặt' : 'Tiếp' }
+                    {activeStep === steps.length - 1 ? 'Tiến hành đặt' : 'Tiếp'}
                   </Button>
                 </div>
               </div>
-            </div>) }
+            </div>)}
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@ const Home = () => {
       <div className="grid grid-cols-2 gap-2 py-3">
         <div className="py-36">
           <h1 className="text-blue-800 font-bold text-center text-xl">HANOI OFFICE – COWORKING SPACE: GIẢI
-                        PHÁP CHO THUÊ VĂN PHÒNG THÔNG MINH</h1>
+            PHÁP CHO THUÊ VĂN PHÒNG THÔNG MINH</h1>
           <h1 className="text-blue-800 font-bold text-center text-xl">MINH</h1>
           <span className="pl-16 font-bold text-center">Kiến tạo </span>
           <span className="text-center pr-10">không gian Văn Phòng Cho Thuê – Coworking Space hiện đại và chuyên nghiệp,xây dựng cộng đồng doanh</span>
@@ -67,16 +67,16 @@ const Home = () => {
           <h1>Slide Ảnh</h1>
         </div>
       </div>
-      <div className="bg-blue-500 py-6">
+      <div className="bg-blue-800 py-6">
         <div className="grid grid-cols-2 gap-2">
           <div className="pl-20 mr-36">
             <p className="font-bold text-white">Bạn đang tìm thuê văn phòng và chưa tìm được giải pháp phù
-                            hợp và tối ưu?</p>
+              hợp và tối ưu?</p>
             <p className="font-bold text-white">Hãy để Hanoi Office – Coworking Space giúp bạn!</p>
           </div>
           <div>
-            <button className="border border-white bg-gray-200 px-4 py-3 ml-96 hover:bg-blue-500">GỌI CHO
-                            HANOI OFFICE NGAY!
+            <button className="border border-white bg-gray-200 px-4 py-3 ml-96 hover:bg-blue-500">
+              ĐĂT LỊCH NGAY!
             </button>
           </div>
         </div>
@@ -94,7 +94,7 @@ const Home = () => {
             <p className="font-bold text-center">VĂN PHÒNG ẢO</p>
           </a>
           <p>Bạn sẽ được sử dụng văn phòng ảo ở Hà Nội để: làm văn phòng đại diện, địa chỉ giao dịch, tiếp đối
-                        tác – khách hàng, địa chỉ nhận bưu thư…</p>
+            tác – khách hàng, địa chỉ nhận bưu thư…</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
           <a href="">
@@ -104,19 +104,19 @@ const Home = () => {
             <p className="font-bold text-center">VĂN PHÒNG TRỌN GÓI</p>
           </a>
           <p>Bạn sẽ sở hữu: 1 phòng làm việc riêng, phòng họp – phòng khách sang trọng, thiết bị văn phòng
-                        hiện đại,… Và không lo đóng phí điện – nước, internet.</p>
+            hiện đại,… Và không lo đóng phí điện – nước, internet.</p>
         </div>
         <div className="mr-56 col-span-4 pt-36">
           <h1 className="font-bold text-xl">KHÔNG GIAN VĂN PHÒNG CHO THUÊ SANG TRỌNG & LỊCH LÃM</h1>
           <p className="text-center">Hanoi Office đem đến giải pháp không gian văn phòng làm việc sang trọng
-                        và lịch</p>
+            và lịch</p>
           <p className="text-center">thiệp, giải pháp của Hanoi Office sẽ giúp bạn có những ngày làm việc hiệu
-                        quả</p>
+            quả</p>
           <p className="text-center">trong không gian văn phòng làm việc riêng mà không bị làm phiền.</p>
           <div className="text-center pt-3">
             <button
               className="border-2 border-blue-400 bg-blue-500 text-white font-bold px-12 py-3 hover:bg-white hover:text-black">THUÊ
-                            VĂN PHÒNG
+              VĂN PHÒNG
             </button>
           </div>
         </div>
@@ -125,18 +125,18 @@ const Home = () => {
         <div className="grid grid-cols-9 pt-16">
           <div className="ml-56 pt-36 col-span-5">
             <h1 className="font-bold text-xl text-center">CHỖ NGỒI LÀM VIỆC CHUYÊN NGHIỆP PHÙ HỢP VỚI MỌI
-                            NHU CẦU</h1>
+              NHU CẦU</h1>
             <h1 className="font-bold text-xl text-center">CỦA BẠN</h1>
             <p className="text-center">Chỗ ngồi làm việc trong một không gian chung mở nhưng vẫn đảm bảo
-                            tính riêng</p>
+              tính riêng</p>
             <p className="text-center">tư (vách ngăn – bàn làm việc riêng) và bảo mật (tủ tài liệu riêng).
-                            Chi phí phù hợp</p>
+              Chi phí phù hợp</p>
             <p className="text-center">mà bạn vẫn được sử dụng đầy đủ tất cả các tiện ích từ Hanoi
-                            Office.</p>
+              Office.</p>
             <div className="text-center pt-3">
               <button
                 className="border-2 border-blue-400 bg-blue-500 text-white font-bold px-12 py-3 hover:bg-white hover:text-black">THUÊ
-                                CHỖ NGỒI
+                CHỖ NGỒI
               </button>
             </div>
           </div>
@@ -149,7 +149,7 @@ const Home = () => {
             </a>
             <div>
               <p className="pr-16">Bạn có thể sử dụng không gian văn phòng trên toàn bộ hệ thống Hanoi
-                                Office. Phù hợp với nhu cầu liên tục di chuyển tại trung tâm Hà Nội.</p>
+                Office. Phù hợp với nhu cầu liên tục di chuyển tại trung tâm Hà Nội.</p>
             </div>
           </div>
           <div className="col-span-2">
@@ -160,9 +160,9 @@ const Home = () => {
               <p className="font-bold text-center pr-32">CHỖ NGỒI LÀM VIỆC</p>
             </a>
             <p className="pr-28">Bạn chỉ phải trả tiền cho một chỗ ngồi làm việc nhưng lại được sử dụng đầy
-                            đủ tiện ích văn phòng, thiết bị hiện đại trong một không gian yên tĩnh.</p>
+              đủ tiện ích văn phòng, thiết bị hiện đại trong một không gian yên tĩnh.</p>
           </div>
-
+        
         </div>
       </div>
       <div className="grid grid-cols-9 pt-16">
@@ -173,7 +173,7 @@ const Home = () => {
             <p className="font-bold text-center">PHÒNG HỌP CHO THUÊ</p>
           </a>
           <p>Phòng họp có sức chứa từ 10-30 người sẽ phù hợp với các nhu cầu khác nhau của bạn. Được trang bị
-                        đầy đủ thiết bị hiện đại trong không gian sang trọng.</p>
+            đầy đủ thiết bị hiện đại trong không gian sang trọng.</p>
         </div>
         <div className="col-span-2 mr-24 ml-12 ">
           <a href="">
@@ -182,20 +182,20 @@ const Home = () => {
             <p className="font-bold text-center">PHÒNG HỌP TRỰC TUYẾN</p>
           </a>
           <p>Cho thuê phòng họp giá rẻ – hội nghị trực tuyến tại Hà Nội với công nghệ âm thanh, video call
-                        hiện đại, sắc nét với chi phí chỉ từ 400.000đ/giờ.</p>
+            hiện đại, sắc nét với chi phí chỉ từ 400.000đ/giờ.</p>
         </div>
         <div className="mr-48 col-span-4 pt-36">
           <h1 className="font-bold text-xl">2 GIẢI PHÁP PHÒNG HỌP CHO THUÊ HIỆN ĐẠI PHÙ HỢP MỌI MỤC</h1>
           <h1 className="font-bold text-xl text-center">ĐÍCH</h1>
           <p className="text-center">Hanoi Office trang bị những thiết bị tối tân và hiện đại nhất cho không
-                        gian phòng</p>
+            gian phòng</p>
           <p className="text-center">họp, ngoài ra Hanoi Office còn có thể setup phòng họp trực tuyến tại
-                        chính cơ sở</p>
+            chính cơ sở</p>
           <p className="text-center">của bạn đem đến tính chủ động và linh hoạt.</p>
           <div className="text-center pt-3">
             <button
               className="border-2 border-blue-400 bg-blue-500 text-white font-bold px-12 py-3 hover:bg-white hover:text-black">THUÊ
-                            PHÒNG HỌP
+              PHÒNG HỌP
             </button>
           </div>
         </div>
@@ -334,7 +334,7 @@ const Home = () => {
             <span>đem đến các giải pháp dịch vụ cho thuê văn phòng như: </span>
             <span className="font-bold">Văn phòng</span>
             <p className="font-bold">ảo – Văn phòng trọn gói – Văn phòng chia sẻ – Chỗ ngồi làm việc – Phòng
-                            họp</p>
+              họp</p>
             <span className="font-bold">Coworking Space </span>
             <span>giúp bạn tối ưu 80% chi phí nhưng vẫn có được một không gian</span>
             <p>và môi trường làm việc văn phòng chuyên nghiệp.</p>
@@ -361,12 +361,12 @@ const Home = () => {
       <div className="grid grid-cols-12 text-center pt-8">
         <div className="ml-80 pl-12 col-span-6 text-center pt-48">
           <h1 className="font-bold text-center text-lg">ĐĂNG KÝ TƯ VẤN GIẢI PHÁP KHÔNG GIAN VĂN PHÒNG CHO
-                        THUÊ</h1>
+            THUÊ</h1>
           <div className="pt-4">
             <p className="text-center">Hãy điền thông tin và yêu cầu của bạn, các chuyên viên Hanoi Office
-                            sẽ liên hệ và</p>
+              sẽ liên hệ và</p>
             <p className="text-center">tư vấn chi tiết cho bạn về giải pháp không gian văn phòng thuê
-                            Coworking Space</p>
+              Coworking Space</p>
             <p className="text-center">Hà Nội</p>
           </div>
         </div>
@@ -411,7 +411,7 @@ const Home = () => {
             <div className="pt-2">
               <button
                 className="border border-blue-500 bg-blue-500 px-16 py-2 text-white hover:bg-white hover:text-black">GỬI
-                                YÊU CẦU
+                YÊU CẦU
               </button>
             </div>
           </div>
@@ -463,12 +463,12 @@ const Home = () => {
         <div className="grid grid-cols-3 gap-2">
           <div className="pl-20 mr-24 pl-24 col-span-2">
             <p className="font-bold text-white">Bạn chưa tìm được văn phòng cho thuê tại Hà Nội phù hợp? Hãy
-                            để Hanoi Office – Coworking</p>
+              để Hanoi Office – Coworking</p>
             <p className="font-bold text-white">Space giúp bạn!</p>
           </div>
           <div className="col-span-1">
             <button className="border border-white bg-gray-200 ml-48 px-4 py-3 ml-96 hover:bg-blue-500">NHẬN
-                            TƯ VẤN
+              TƯ VẤN
             </button>
           </div>
         </div>
@@ -479,15 +479,16 @@ const Home = () => {
       </div>
       <div className="pt-4">
         <p className="text-center text-gray-500">Văn phòng cho thuê Hanoi Office Coworking Space được đặt tại
-                    các vị trí giao thông đi lại thuận tiện, ở những địa chỉ tập trung nhiều công ty lớn và các ngân
-                    hàng. Chúng</p>
+          các vị trí giao thông đi lại thuận tiện, ở những địa chỉ tập trung nhiều công ty lớn và các ngân
+          hàng. Chúng</p>
         <p className="text-center text-gray-500">tôi sẽ giúp bạn tận dụng được tối đa các cơ hội kinh doanh của
-                    mình.</p>
+          mình.</p>
       </div>
       <div className="pt-16 grid grid-cols-6 text-center px-6 mx-80">
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ba-dinh.jpg"/>
           </a>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Ba Đình</p>
@@ -495,7 +496,8 @@ const Home = () => {
         </div>
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-cau-giay.jpg"/>
           </a>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Cầu Giấy</p>
@@ -503,7 +505,8 @@ const Home = () => {
         </div>
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-ha-dong.jpg"/>
           </a>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hà Đông</p>
@@ -511,7 +514,8 @@ const Home = () => {
         </div>
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/12/quan-hoang-mai.jpg"/>
           </a>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Hoàng Mai</p>
@@ -519,7 +523,8 @@ const Home = () => {
         </div>
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-nam-tu-liem.jpg"/>
           </a>
           <p className="font-bold text-xl">1 Cơ sở</p>
           <p className="font-bold text-xl">Quận Nam Từ Liêm</p>
@@ -527,7 +532,8 @@ const Home = () => {
         </div>
         <div className="">
           <a href="">
-            <img className="w-40 h-52 mx-auto" src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg" />
+            <img className="w-40 h-52 mx-auto"
+              src="https://hanoioffice.vn/wp-content/uploads/2020/06/quan-thanh-xuan.jpg"/>
           </a>
           <p className="font-bold text-xl">2 Cơ sở</p>
           <p className="font-bold text-xl">Quận Thanh Xuân</p>
@@ -535,14 +541,16 @@ const Home = () => {
         </div>
       </div>
       <div className="pt-3">
-        <img className="mx-auto" src="https://static.vncommerce.com/maps/600x250/T%E1%BA%A7ng+6,T%C3%B2a+Nh%C3%A0+Vi%E1%BB%87t+%C3%81,9+Ph%E1%BB%91+Duy+T%C3%A2n,Qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,H%C3%A0+N%E1%BB%99i,Vi%E1%BB%87t+Nam.png"  />
+        <img className="mx-auto"
+          src="https://static.vncommerce.com/maps/600x250/T%E1%BA%A7ng+6,T%C3%B2a+Nh%C3%A0+Vi%E1%BB%87t+%C3%81,9+Ph%E1%BB%91+Duy+T%C3%A2n,Qu%E1%BA%ADn+C%E1%BA%A7u+Gi%E1%BA%A5y,H%C3%A0+N%E1%BB%99i,Vi%E1%BB%87t+Nam.png"/>
       </div>
       <div className="text-center pt-16">
         <h1 className="inline-block pr-1.5 text-2xl">GIỚI THIỆU VỀ</h1>
         <h1 className="font-bold inline-block text-2xl">HANOI OFFICE</h1>
       </div>
       <div className="pt-3">
-        <p className="text-center text-xl">Dịch vụ cho thuê Văn Phòng Ảo - Phòng Làm Việc Riêng - Chỗ Ngồi Làm Việc - Phòng Họp - Coworking Space tại Hà Nội</p>
+        <p className="text-center text-xl">Dịch vụ cho thuê Văn Phòng Ảo - Phòng Làm Việc Riêng - Chỗ Ngồi Làm Việc -
+          Phòng Họp - Coworking Space tại Hà Nội</p>
       </div>
       <div className="pt-10 text-center">
         <span className="font-bold italic">Hanoi Office – Mô hình Coworking Space </span>
@@ -563,15 +571,21 @@ const Home = () => {
         <span className="font-bold italic">Hãy đến Hanoi Office – Coworking Space và trải nghiệm ngay!</span>
       </div>
       <div className="pt-10 text-center pb-16">
-        <button className="border border-blue-500 bg-blue-500 text-white px-16 py-2 hover:bg-white hover:text-black">THUÊ VĂN PHÒNG</button>
+        <button
+          className="border border-blue-500 bg-blue-500 text-white px-16 py-2 hover:bg-white hover:text-black">THUÊ VĂN
+          PHÒNG
+        </button>
       </div>
       <div className="grid grid-cols-2 bg-blue-500 py-3">
         <div className="ml-52">
-          <p className="font-bold">Bạn đang tìm thuê văn phòng thông minh – Coworking Space tại Hà Nội? Hãy để Hanoi Office</p>
+          <p className="font-bold">Bạn đang tìm thuê văn phòng thông minh – Coworking Space tại Hà Nội? Hãy để Hanoi
+            Office</p>
           <p className="font-bold">– Coworking Space giúp bạn!</p>
         </div>
         <div className="ml-48">
-          <button className="ml-24 text-white border border-black hover:bg-white hover:text-black py-2 px-16">GỢI Ý ĐỊA ĐIỂM</button>
+          <button className="ml-24 text-white border border-black hover:bg-white hover:text-black py-2 px-16">GỢI Ý ĐỊA
+            ĐIỂM
+          </button>
         </div>
       </div>
       <div className="pt-4">
@@ -581,22 +595,26 @@ const Home = () => {
         <div className="grid grid-cols-4 gap-2 mx-96">
           <div>
             <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/van-phong-cho-thue-quan-ha-dong-day-du-tien-ich-chi-tu-650000-VND-thang-2.jpg" />
+              <img className="w-72 h-48"
+                src="https://hanoioffice.vn/wp-content/uploads/2021/06/van-phong-cho-thue-quan-ha-dong-day-du-tien-ich-chi-tu-650000-VND-thang-2.jpg"/>
             </a>
           </div>
           <div>
             <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/kham-pha-tien-ich-uu-viet-tai-van-phong-cho-thue-hanoi-office-co-so-khuat-duy-tien-thanh-xuan-2.jpg" />
+              <img className="w-72 h-48"
+                src="https://hanoioffice.vn/wp-content/uploads/2021/06/kham-pha-tien-ich-uu-viet-tai-van-phong-cho-thue-hanoi-office-co-so-khuat-duy-tien-thanh-xuan-2.jpg"/>
             </a>
           </div>
           <div>
             <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/06/nam-giu-bi-quyet-dieu-hanh-doanh-nghiep-lam-viec-tu-xa-hieu-qua.jpg" />
+              <img className="w-72 h-48"
+                src="https://hanoioffice.vn/wp-content/uploads/2021/06/nam-giu-bi-quyet-dieu-hanh-doanh-nghiep-lam-viec-tu-xa-hieu-qua.jpg"/>
             </a>
           </div>
           <div>
             <a href="" title="Tin Tức">
-              <img className="w-72 h-48" src="https://hanoioffice.vn/wp-content/uploads/2021/05/5-loi-ich-uu-viet-tu-mo-hinh-van-phong-chia-se-da-nang-2-1.jpg" />
+              <img className="w-72 h-48"
+                src="https://hanoioffice.vn/wp-content/uploads/2021/05/5-loi-ich-uu-viet-tu-mo-hinh-van-phong-chia-se-da-nang-2-1.jpg"/>
             </a>
           </div>
         </div>

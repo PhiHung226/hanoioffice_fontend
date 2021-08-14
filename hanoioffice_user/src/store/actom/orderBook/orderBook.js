@@ -14,7 +14,16 @@ export const orderBookFilterParams = atom({
     listTime: [],
     listService: [],
     idRoom: '',
-    idCustomer: ''
+    idCustomer: '',
+    valueType: []
+  }
+});
+export const orderBookFilterParamsContinuous = atom({
+  key: 'orderBookFilterParamsContinuous',
+  default: {
+    idRoom: '',
+    idCustomer: '',
+    schdules: []
   }
 });
 export const orderBookPageLimitState = atom({
@@ -25,4 +34,11 @@ export const orderBookPageLimitState = atom({
 export const orderBookPageState = atom({
   key: 'orderBookPageState',
   default: 1
+});
+
+export const totalPayment = atom({
+  key: 'totalPayment',
+  default: {
+    total: '0 VND'
+  }
 });

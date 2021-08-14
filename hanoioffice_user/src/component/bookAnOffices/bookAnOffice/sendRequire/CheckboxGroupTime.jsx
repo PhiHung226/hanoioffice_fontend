@@ -7,52 +7,68 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import PropTypes from 'prop-types';
+// import {useQuery} from 'react-query';
+//
+// import {getListBook} from '../../../../service/bookAnOffices/bookAnOffices';
 // import { useSetRecoilState } from 'recoil';
 
-const CheckboxGroup = ({ title, className, helperText, listDate, indexs, setListDate, dataCheckbox,
-  // filterParams, name,
-  color }) => {
-  // const setParams = useSetRecoilState(filterParams);
-  const [data, setData] = useState(listDate);
-  useEffect(()=> {
-    setData(listDate);
-  },[listDate]);
+const CheckboxGroup = ({
+  title,
+  className,
+  helperText,
+  listDate,
+  setListDate,
+  color,
+  data,
+  timeSelect,
+  // timeSelectAll,
+  indexs, dataItem
+}) => {
+  
+  const [dataNew, setDataNew] = useState(timeSelect);
+  useEffect(() => {
+    if (dataItem.length > 0) {
+      setDataNew(dataItem);
+    } else {
+      setDataNew(timeSelect);
+    }
+    
+  }, [data, dataItem]);
   
   const [stateAll, setStateAll] = useState(false);
-  
   const handleChange = (e) => {
-    setListDate(
-      data.map((item,index)=> {
+    setDataNew(
+      dataNew.map((item) => {
         return {
           ...item,
-          times: index !== indexs ? item.times : item.times.map((it) => {
-            console.log(it);
-            return {
-              ...it,
-              checked: it.id.toString() === e.target.id ? e.target.checked : it.checked
-            };
-          })
+          checked: item.id.toString() === e.target.id ? e.target.checked : item.checked
         };
       })
     );
   };
-  React.useEffect(() => {
+  useEffect(() => {
+    setListDate(listDate.map((item, index) => {
+      return {
+        ...item,
+        // listShift: index === indexs ? (dataNew.filter(item => item.checked).length === timeSelect.length ?
+        //   [timeSelectAll[0].id.toString()] : dataNew.filter(i => i.checked).map(j => j.id.toString())) : item.listShift
+        listShift: index === indexs ? dataNew : item.listShift
+      };
+    }));
+  }, [dataNew]);
+  
+  useEffect(() => {
     setStateAll(
-      dataCheckbox.filter(item => item.checked).length === dataCheckbox.length
+      dataNew.filter(item => item.checked).length === timeSelect.length
     );
-  }, [dataCheckbox]);
+  }, [dataNew]);
   const handleChangeAll = () => {
     setStateAll(!stateAll);
-    setListDate(
-      data.map((item,index)=> {
+    setDataNew(
+      dataNew.map((item) => {
         return {
           ...item,
-          times: index !== indexs  ? item.times : item.times.map(i => {
-            return {
-              ...i,
-              checked: !stateAll
-            };
-          })
+          checked: !stateAll
         };
       })
     );
@@ -60,23 +76,24 @@ const CheckboxGroup = ({ title, className, helperText, listDate, indexs, setList
   return (
     <>
       <FormControl component="fieldset" className={ className }>
-        <FormLabel component="legend">{ title }</FormLabel>
+        <FormLabel component="legend">{title}</FormLabel>
         <FormGroup>
           <div className='grid grid-cols-4 gap-2 w-full'>{
-            dataCheckbox.map((item, index) => {
+            dataNew.map((item, index) => {
               // console.log(item);
               return (
                 <FormControlLabel key={ index }
-                  control={ <Checkbox checked={ item.checked } color={ color } onChange={ e => handleChange(e) } id={ item.id.toString() } /> }
+                  control={ <Checkbox checked={ item.checked } color={ color }
+                    onChange={ e => handleChange(e) } id={ item.id.toString() }/> }
                   label={ item.value }
                 />
               );
             })
           }
-          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } /> } label="Tất cả"/>
+          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll }/> } label="Cả ngày"/>
           </div>
         </FormGroup>
-        <FormHelperText>{ helperText }</FormHelperText>
+        <FormHelperText>{helperText}</FormHelperText>
       </FormControl>
     </>
   );
@@ -85,12 +102,15 @@ CheckboxGroup.propTypes = {
   title: PropTypes.string,
   key: PropTypes.string,
   className: PropTypes.string,
-  dataCheckbox: PropTypes.array.isRequired,
   helperText: PropTypes.string,
   filterParams: PropTypes.object,
   color: PropTypes.string,
   listDate: PropTypes.array,
   indexs: PropTypes.number,
-  setListDate: PropTypes.func
+  setListDate: PropTypes.func,
+  data: PropTypes.array,
+  timeSelect: PropTypes.array,
+  timeSelectAll: PropTypes.array,
+  dataItem: PropTypes.array
 };
 export default CheckboxGroup;
