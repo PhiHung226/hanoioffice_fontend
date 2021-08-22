@@ -1,10 +1,6 @@
 import React, {useState} from 'react';
 
-import {
-  DataGrid,
-  GridToolbarContainer,
-  GridToolbarColumnsButton
-} from '@material-ui/data-grid';
+import {DataGrid, GridToolbarColumnsButton, GridToolbarContainer} from '@material-ui/data-grid';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import PropTypes from 'prop-types';
@@ -27,10 +23,10 @@ const CustomToolbar = () => {
 };
 const DataGridDemo = ({
   columns, datas, queryKey,
-  keyId, detailFunction, openDialog,
-  setOpenDialog, idDetai, pageState, pageLimitState,
+  keyId, detailFunction, setId,
+  setOpenDialog, idDetail, pageState, pageLimitState,
   heightTable = 690
-  //  page, setPage, pageLimit, setPageLimit 
+  //  page, setPage, pageLimit, setPageLimit
 }) => {
   // console.log(pageState);
   
@@ -96,21 +92,17 @@ const DataGridDemo = ({
   };
   
   const getDemo = async (event) => {
-    if (event.field === idDetai) {
+    if (event.field === idDetail) {
       // let is_expanded = dataTable.findIndex(item => item[ keyId ] === event.id);
       await queryClient.prefetchQuery(
         [queryKey, event.id],
         () => detailFunction(event.id),
         {staleTime: 5000}
       );
-      setOpenDialog({
-        open: !openDialog.open,
-        id: event.id
-      });
+      setId(event.id);
+      setOpenDialog(true);
     }
   };
-  console.log(dataTable);
-  
   return (
     <div style={ {height: heightTable, width: '100%'} }>
       <DataGrid
@@ -137,11 +129,12 @@ DataGridDemo.propTypes = {
   queryKey: PropTypes.string,// key nạp trước dữ liệu
   keyId: PropTypes.string, // key lọc
   detailFunction: PropTypes.func,//hàm nạp trước dữ liệu
-  openDialog: PropTypes.object,
+  openDialog: PropTypes.bool,
   setOpenDialog: PropTypes.func,
-  idDetai: PropTypes.string,// khóa được chọn khi click vào bảng
+  idDetail: PropTypes.string,// khóa được chọn khi click vào bảng
   pageState: PropTypes.object,
   pageLimitState: PropTypes.object,
-  heightTable: PropTypes.number
+  heightTable: PropTypes.number,
+  setId: PropTypes.func
 };
 export default DataGridDemo;

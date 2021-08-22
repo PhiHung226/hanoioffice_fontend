@@ -15,10 +15,10 @@ const CheckboxGroup = ({
   color = 'primary'
 }) => {
   const setParams = useSetRecoilState(filterParams);
-  
+
   const [state, setState] = useState(dataCheckbox);
   const [stateAll, setStateAll] = useState(false);
-  
+
   const handleChange = (event) => {
     setState(
       state.map((i) => {
@@ -54,7 +54,7 @@ const CheckboxGroup = ({
       })
     );
   }, [state]);
-  
+
   React.useEffect(() => {
     setParams(data => {
       return {
@@ -68,18 +68,21 @@ const CheckboxGroup = ({
       <FormControl component="fieldset" className={ className }>
         <FormLabel component="legend">{title}</FormLabel>
         <FormGroup>
-          <div className={ `grid grid-cols-${column} gap-2 w-full` }>{
+          <div className={ `grid grid-cols-${column} text-xs gap-2 w-full` }>{
             state.map((item, index) => {
               return (
                 <FormControlLabel key={ index }
                   control={ <Checkbox checked={ item.checked } color={ color }
-                    onChange={ e => handleChange(e) } id={ item.id.toString() }/> }
+                    onChange={ e => handleChange(e) } size="small"
+                    id={ item.id.toString() }/> }
                   label={ item.value }
                 />
               );
             })
           }
-          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } color={ color }/> }
+          <FormControlLabel
+            control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } color={ color }
+              size="small"/> }
             label={ lableAll }/>
           </div>
         </FormGroup>

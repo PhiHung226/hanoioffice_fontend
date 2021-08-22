@@ -1,71 +1,92 @@
 /*Custom Tooltip*/
 .customeTheme {
-  color: #111 !important;
-  background-color: #fff !important;
-  font-size: 12px !important;
-  font-weight: 400 !important;
-  opacity: 1 !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
-  pointer-events: auto !important;
-  padding: 10px !important;
-  max-width: 220px;
+	color: #111 !important;
+	background-color: #fff !important;
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	opacity: 1 !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+	pointer-events: auto !important;
+	padding: 10px !important;
+	max-width: 220px;
 }
+
 .customeTheme.place-top:after {
-  border-top-color: #4bac4d !important;
-  border-top-style: solid !important;
-  border-top-width: 6px !important;
+	border-top-color: #4bac4d !important;
+	border-top-style: solid !important;
+	border-top-width: 6px !important;
 }
+
 .customeTheme:hover {
-  visibility: visible !important;
-  opacity: 1 !important;
+	visibility: visible !important;
+	opacity: 1 !important;
 }
 
 .w-main-left {
-  width: 234px;
+	width: 234px;
 }
+
 .w-main-right {
-  background-color: #fff;
-  height: 53rem;
+	background-color: #fff;
+	height: 53rem;
 }
+
 .responsive-menu {
-  display: none;
+	display: none;
 }
+
 .table-selectInput-MuiInput-formControl .MuiInput-formControl {
-  margin-top: 0;
+	margin-top: 0;
 }
+
 .customs-tabPanel div {
-  padding: 0;
+	padding: 0;
 }
+
 .max-w-searchBar {
-  max-width: 30rem;
+	max-width: 30rem;
 }
+
 .responsive-searchBar {
-  width: 100%;
+	width: 100%;
 }
+
 .h-640 {
-  height: 640px;
+	height: 640px;
 }
+
 .h-560 {
-  height: 560px;
+	height: 560px;
 }
+
 .h-230 {
-  height: 230px;
+	height: 230px;
 }
+
 .h-484 {
-  height: 484px;
+	height: 484px;
 }
+
 .h-275 {
-  height: 275px;
+	height: 275px;
 }
+
 .h-237 {
-  height: 237px;
+	height: 237px;
 }
+
 .h-190 {
-  height: 190px;
+	height: 190px;
 }
+
 .border-b-1 {
-  border-bottom: 1px solid gray;
+	border-bottom: 1px solid gray;
 }
+
 .border-dashed {
-  border: 2px dashed gray;
+	border: 2px dashed gray;
+}
+
+.border-br-1 {
+	border-right: 2px solid gray;
 }

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -11,11 +11,10 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import {FormProvider, useForm} from 'react-hook-form';
-import {useMutation, useQueryClient} from 'react-query';
+import {useMutation, useQuery, useQueryClient} from 'react-query';
 
-import {getYearMonthDay} from '../../../../../helpers/helper';
 import {getListTypeRoom} from '../../../../../service/room/typeRoom/listTypeRoom';
-import DialogAddInfo from '../Dialog/DetailInfo';
+import DialogInfo from './DialogInfo';
 
 const styles = (theme) => ({
   root: {
@@ -43,47 +42,35 @@ const DialogTitle = withStyles(styles)((props) => {
   );
 });
 
-const DialogAdd = (props) => {
-  const queryClient = useQueryClient();
-  const {setOpenDialog, openDialog, ...other} = props;
+const DialogDetail = ({openDialog, setOpenDialog, queryKey, id, detailFunction, ...other}) => {
   const ref = useRef(null);
-  
+
+  const queryClient = useQueryClient();
   const handleEntering = () => {
     if (ref.current != null) {
       ref.current.focus();
     }
   };
-  
+  const {data} = useQuery(
+    [queryKey, id],
+    () => detailFunction(id),
+  );
+  console.log(data);
   const [values, setValues] = React.useState({
-    codeTypeRoom: '',
-    priceTypeRoom: 0,
-    name: '',
-    description: ''
+    codeTypeRoom: data.codeTypeRoom,
+    priceTypeRoom: data.priceTypeRoom,
+    name: data.name,
+    description: data.description
   });
-  const [form, setForm] = useState({
-    date_created: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
-    date_end: getYearMonthDay(new Date(), 'yyyy-MM-dd')
-  });
+
+  // const [form, setForm] = useState({
+  //   date_created: getYearMonthDay(new Date(), 'yyyy-MM-dd'),
+  //   date_end: getYearMonthDay(new Date(), 'yyyy-MM-dd')
+  // });
+  // Xóa loại phòng
+  const deleteMutation = useMutation(id => getListTypeRoom().updateTypeRoom(id));
   const handleCancel = () => {
-    setOpenDialog(!openDialog);
-  };
-  const createMutation = useMutation(value => getListTypeRoom().addRoom(value));
-  const onSubmitForm = (values) => {
-    // setOpenDialog(!openDialog);
-    // console.log(values);
-    const {
-      codeTypeRoom, name,
-      description, priceTypeRoom
-    } = values;
-    const value = {
-      codeTypeRoom, name,
-      description, priceTypeRoom
-    };
-    // const getData = async () => {
-    //   return await getListCustomer().addRoom(value);
-    // };
-    // console.log(getData());
-    createMutation.mutate(value, {
+    deleteMutation.mutate(id, {
       onSuccess: async () => {
         await queryClient.refetchQueries('PRODUCT_LIST_KEY_TYPE_ROOM_SPECIES_1', {active: true});
         handleCancel();
@@ -91,15 +78,30 @@ const DialogAdd = (props) => {
       onError: () => {
       }
     });
+    setOpenDialog(false);
   };
-  
+    // Cập nhật loại phòng
+  const updateMutation = useMutation(param => getListTypeRoom().updateTypeRoom(param));
+  const onSubmitForm = (values) => {
+    const param = {id, values};
+    updateMutation.mutate(param, {
+      onSuccess: async () => {
+        await queryClient.refetchQueries('PRODUCT_LIST_KEY_TYPE_ROOM_SPECIES_1', {active: true});
+        handleCancel();
+      },
+      onError: () => {
+      }
+    });
+    setOpenDialog(!openDialog);
+  };
   const methods = useForm({defaultValues: values});
+
   return (
     <Dialog
       disableBackdropClick
       disableEscapeKeyDown
       fullWidth={ true }
-      maxWidth={ 'sm' }
+      maxWidth={ '1200px' }
       onEntering={ handleEntering }
       aria-labelledby="confirmation-dialog-title"
       open={ openDialog }
@@ -107,16 +109,19 @@ const DialogAdd = (props) => {
       height={ '180px' }
     >
       <FormProvider { ...methods } setValues={ setValues }>
-        <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Thêm mới loại phòng</DialogTitle>
+        <DialogTitle id="confirmation-dialog-title" onClose={ handleCancel }>Chi tiết lịch đặt</DialogTitle>
         <DialogContent dividers>
-          <DialogAddInfo form={ form } setForm={ setForm }/>
+          <DialogInfo data={ data }/>
         </DialogContent>
         <DialogActions>
           <Button color="primary" variant="contained" onClick={ () => methods.handleSubmit(onSubmitForm)() }>
-            Thêm
+                        Cập nhật
+          </Button>
+          <Button color="secondary" variant="contained" onClick={ handleCancel }>
+                        Xóa
           </Button>
           <Button onClick={ handleCancel } color="secondary" variant="contained">
-            Bỏ qua
+                        Bỏ qua
           </Button>
         </DialogActions>
       </FormProvider>
@@ -124,8 +129,12 @@ const DialogAdd = (props) => {
   );
 };
 
-DialogAdd.propTypes = {
+DialogDetail.propTypes = {
   setOpenDialog: PropTypes.func,
-  openDialog: PropTypes.bool
+  openDialog: PropTypes.bool,
+  queryKey: PropTypes.string,
+  id: PropTypes.number,
+  detailFunction: PropTypes.func
+
 };
-export default DialogAdd;
+export default DialogDetail;

@@ -2,18 +2,18 @@ import React, {useCallback, useEffect, useState} from 'react';
 
 import {makeStyles} from '@material-ui/core/styles';
 import {useQuery} from 'react-query';
-import {useRecoilValue,} from 'recoil';
+import {useRecoilValue} from 'recoil';
 
 import {LIST_ORDER_PLACEHOLDER_DATA} from '../../../../fixedData/dataEmployee';
-import {getListTypeRoom} from '../../../../service/room/typeRoom/listTypeRoom';
+import {getListAppointment} from '../../../../service/book/listBook/appointment';
 import {
-  typeRoomColumnTableState,
-  typeRoomFilterParamsState,
-  typeRoomPageLimitState,
-  typeRoomPageState
-} from '../../../../store/atoms/room/typeRoom/typeRoom';
+  listBookColumnTableState,
+  listBookFilterParamsState,
+  listBookPageLimitState,
+  listBookPageState
+} from '../../../../store/atoms/book/appointment';
 import TableV7 from '../../../common/table/TableV7';
-import DialogDetail from '../species/Dialog/DialogDetail';
+import DialogDetail from './Dialog/DialogDetail';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,25 +27,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BadCustomer = () => {
+const ListBook = () => {
   const classes = useStyles();
-  const columnTable = useRecoilValue(typeRoomColumnTableState);
-  const filterParams = useRecoilValue(typeRoomFilterParamsState);
+  const columnTable = useRecoilValue(listBookColumnTableState);
+  const filterParams = useRecoilValue(listBookFilterParamsState);
   
-  const pageLimit = useRecoilValue(typeRoomPageLimitState);
-  const page = useRecoilValue(typeRoomPageState);
-  
+  const pageLimit = useRecoilValue(listBookPageLimitState);
+  const page = useRecoilValue(listBookPageState);
   const getData = useCallback(async (page, pageLimit) => {
     const {
       strSearch
     } = filterParams;
-    return await getListTypeRoom().getList({
+    return await getListAppointment().getList({
       page, pageLimit, strSearch
     });
   }, [pageLimit, filterParams, page.skip]);
   
   const {data, refetch} = useQuery(
-    ['PRODUCT_LIST_KEY_TYPE_ROOM_SPECIES_1', page.skip, JSON.stringify(filterParams)],
+    ['PRODUCT_LIST_KEY_LIST_BOOK', page.skip, JSON.stringify(filterParams)],
     () => getData(page.skip, pageLimit),
     {
       keepPreviousData: true, staleTime: 5000,
@@ -57,17 +56,17 @@ const BadCustomer = () => {
   }, [pageLimit, filterParams, page]);
   const [openDialog, setOpenDialog] = useState(false);
   const [id, setId] = useState(0);
-  
+  console.log(data);
   return (
     <>
       <TableV7 columns={ columnTable } datas={ data }
-        queryKey='PRODUCT_DETAIL_KEY_TYPE_ROOM_SPECIES' idDetail='detail'
-        keyId="id" detailFunction={ getListTypeRoom().getDetail }
+        queryKey='PRODUCT_LIST_KEY_LIST_BOOK_DETAIL' idDetail='detail'
+        keyId="id" detailFunction={ getListAppointment().getDetail }
         // openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
-        pageState={ typeRoomPageState }
+        pageState={ listBookPageState }
         setId={ setId }
-        pageLimitState={ typeRoomPageLimitState }/>
+        pageLimitState={ listBookPageLimitState }/>
       {openDialog &&
       <DialogDetail
         classes={ {
@@ -76,11 +75,11 @@ const BadCustomer = () => {
         id={ id }
         openDialog={ openDialog }
         setOpenDialog={ setOpenDialog }
-        queryKey='PRODUCT_DETAIL_KEY_TYPE_ROOM_SPECIES'
-        detailFunction={ getListTypeRoom().getDetail }
+        queryKey='PRODUCT_LIST_KEY_LIST_BOOK_DETAIL'
+        detailFunction={ getListAppointment().getDetail }
       />
       }
     </>
   );
 };
-export default BadCustomer;
+export default ListBook;

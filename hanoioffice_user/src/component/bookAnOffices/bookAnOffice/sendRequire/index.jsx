@@ -29,8 +29,8 @@ const SendRequire = ({value, onChange}) => {
       </div>
       <FormControl component="fieldset">
         <RadioGroup aria-label="gender" name="gender1" value={ value } onChange={ onChange }>
-          <FormControlLabel value={ 'lien_tuc' } control={ <Radio/> } label="Sử dụng liên tục"/>
-          <FormControlLabel value={ 'ngat_quang' } control={ <Radio/> } label="Sử dụng theo số buổi"/>
+          <FormControlLabel value={ 'lien_tuc' } control={ <Radio color={ 'primary' }/> } label="Sử dụng liên tục"/>
+          <FormControlLabel value={ 'ngat_quang' } control={ <Radio color={ 'primary' }/> } label="Sử dụng theo số buổi"/>
         </RadioGroup>
       </FormControl>
       {value === 'lien_tuc' && <ContinuousUse data={ data }/>}

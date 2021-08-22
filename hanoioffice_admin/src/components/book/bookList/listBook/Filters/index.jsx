@@ -8,7 +8,7 @@ const Filters = () => {
   return (
     <>
       <div className="flex justify-end ">
-        <ButtonBase title={ 'Thêm loại phòng' } color={ 'primary' } className='m-3' onClick={ () => setOpenAdd(!openAdd) }/>
+        <ButtonBase title={ 'Thêm lịch' } color={ 'primary' } className='m-3' onClick={ () => setOpenAdd(!openAdd) }/>
         {
           <DialogAdd setOpenDialog={ setOpenAdd } openDialog={ openAdd }/>
         }

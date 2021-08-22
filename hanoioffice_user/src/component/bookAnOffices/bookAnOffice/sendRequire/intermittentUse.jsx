@@ -36,11 +36,11 @@ const IntermittentUse = ({data}) => {
   const [newDate, setNewDate] = useState(new Date());
   const addDate = {startDate: newDate, listShift: [], listService: []};
   const [listDate, setListDate] = useState([addDate]);
-    
+
   const onClickAdd = () => {
     setListDate([...listDate, addDate]);
   };
-    
+
   const onDelete = (index, listDate) => {
     listDate.length > 1 ? listDate.splice(index, 1) : listDate.splice(index, 0);
     setListDate([...listDate]);
@@ -52,7 +52,7 @@ const IntermittentUse = ({data}) => {
     setIndexNumber(index);
   };
   const [selectedDay, setSelectedDay] = useState([]);
-    
+
   useEffect(() => {
     setSelectedDay(
       listDate.map(i => {
@@ -63,10 +63,11 @@ const IntermittentUse = ({data}) => {
       return new Date(i.startDate);
     })));
   }, [listDate]);
-    
+
   useEffect(() => {
     setFilterState({
       ...filterState,
+      idAll: timeSelectAll[0].id.toString(),
       schdules: listDate.map(item => {
         return {
           ...item,
@@ -101,14 +102,18 @@ const IntermittentUse = ({data}) => {
               <div>
                 <div className='flex justify-between items-start'>
                   <div className='w-1/2'>
-                    <DateFromTo title={ `Ngày (${index + 1})` } keySearch={ 'oneDate' } valueItem={ item.startDate }
+                    <DateFromTo title={ `Ngày (${index + 1})` } keySearch={ 'oneDate' }
+                      valueItem={ item.startDate }
                       classNameTitle='w-64' selectedDay={ selectedDay }
-                      setListDate={ setListDate } index={ index } listDate={ listDate } newDate={ newDate }/>
+                      setListDate={ setListDate } index={ index } listDate={ listDate }
+                      newDate={ newDate }/>
                   </div>
                   <div>
-                    <Button variant="outlined" color="primary" className={ classes.button1 } size="small"
+                    <Button variant="outlined" color="primary" className={ classes.button1 }
+                      size="small"
                       onClick={ () => listService(index) }>Dịch vụ</Button>
-                    <Button variant="outlined" color="primary" className={ classes.button1 } size="small"
+                    <Button variant="outlined" color="primary" className={ classes.button1 }
+                      size="small"
                       onClick={ () => onDelete(index, listDate) }>Xóa</Button>
                   </div>
                 </div>
@@ -125,13 +130,14 @@ const IntermittentUse = ({data}) => {
       }
       {
         openDialog &&
-          <DialogService openDialog={ openDialog } setOpenDialog={ setOpenDialog } indexs={ indexNumber } listDate={ listDate }
-            setListDate={ setListDate } dataItem={ listDate[indexNumber].listService }/>
+                    <DialogService openDialog={ openDialog } setOpenDialog={ setOpenDialog } indexs={ indexNumber }
+                      listDate={ listDate }
+                      setListDate={ setListDate } dataItem={ listDate[indexNumber].listService }/>
       }
       <div className='flex justify-center mb-5'>
         <Button variant="outlined" color="primary" className={ classes.button } startIcon={ <AddIcon/> }
           onClick={ onClickAdd }>
-            Thêm ngày
+                        Thêm ngày
         </Button>
       </div>
     </>

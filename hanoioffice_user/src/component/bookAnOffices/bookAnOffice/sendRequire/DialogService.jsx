@@ -45,7 +45,16 @@ const DialogTitle = withStyles(styles)((props) => {
   );
 });
 
-const DialogService = ({setOpenDialog, openDialog, setListDate, listDate, dataItem, indexs, ...other}) => {
+const DialogService = ({
+  setOpenDialog,
+  openDialog,
+  setListDate,
+  listDate,
+  dataItem,
+  indexs,
+  color = 'primary',
+  ...other
+}) => {
   const ref = useRef(null);
   
   const handleEntering = () => {
@@ -134,13 +143,15 @@ const DialogService = ({setOpenDialog, openDialog, setListDate, listDate, dataIt
                   return (
                     <FormControlLabel key={ index }
                       control={ <Checkbox checked={ item.checked }
-                        onChange={ e => handleChange(e) } id={ item.id.toString() }/> }
+                        onChange={ e => handleChange(e) } id={ item.id.toString() }
+                        color={ color }/> }
                       label={ item.value }
                     />
                   );
                 })
               }
-              <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll }/> } label={ 'Tất cả' }/>
+              <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } color={ color }/> }
+                label={ 'Tất cả' }/>
               </div>
             </FormGroup>
           </FormControl>
@@ -161,6 +172,7 @@ DialogService.propTypes = {
   setListDate: PropTypes.func,
   listDate: PropTypes.array,
   indexs: PropTypes.number,
-  dataItem: PropTypes.array
+  dataItem: PropTypes.array,
+  color: PropTypes.string
 };
 export default DialogService;

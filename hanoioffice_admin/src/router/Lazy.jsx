@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import {lazy} from 'react';
 
 export const Error404 = lazy(() => import('../pages/error/error404'));
 export const Login = lazy(() => import('../pages/auth/login'));
@@ -38,3 +38,5 @@ export const ReportRevenue = lazy(() => import('../pages/report/revenue'));
 export const ReportRevenuadebt = lazy(() => import('../pages/report/revenuadebt'));
 export const ReportContract = lazy(() => import('../pages/report/contract'));
 export const ReportSpecies = lazy(() => import('../pages/report/species'));
+//book
+export const SaleBookAppp = lazy(() => import('../pages/book/appointment'));

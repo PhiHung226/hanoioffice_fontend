@@ -3,9 +3,9 @@ import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
-import { router } from '../../router';
+import {router, router2, router3, router4} from '../../router';
 import MenuBarItem from './MenuBarItem';
 // import Demo from './demo1';
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MenuBar = () => {
   const classes = useStyles();
-
+  const role = 2;
   return (
     <List
       component="nav"
@@ -31,11 +31,26 @@ const MenuBar = () => {
       </ListSubheader> }
       className={ classes.root }
     >
-      <Divider />
-      {
-        router.map((item, index) => (
-          <MenuBarItem item={ item } key={ index } />
-        ))
+      <Divider/>
+      {role === 1 &&
+      router.map((item, index) => (
+        <MenuBarItem item={ item } key={ index }/>
+      ))
+      }
+      {role === 2 &&
+      router2.map((item, index) => (
+        <MenuBarItem item={ item } key={ index }/>
+      ))
+      }
+      {role === 3 &&
+      router3.map((item, index) => (
+        <MenuBarItem item={ item } key={ index }/>
+      ))
+      }
+      {role === null &&
+      router4.map((item, index) => (
+        <MenuBarItem item={ item } key={ index }/>
+      ))
       }
     </List>
   );

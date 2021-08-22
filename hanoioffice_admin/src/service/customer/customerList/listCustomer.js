@@ -1,4 +1,4 @@
-import { axiosInstance } from '../../../config/axios';
+import {axiosInstance} from '../../../config/axios';
 import {getYearMonthDay} from '../../../helpers/helper';
 
 export const getListCustomer = () => {
@@ -16,38 +16,41 @@ export const getListCustomer = () => {
   //   return data;
   // };
   const getList = async (value) => {
-    const {page = '1', pageLimit = '15', strSearch ='', nameRoom='',
-      numberPeople='', branchRoom=[], kindOfRoom=[]}= value;
-    const { data } = await axiosInstance.get('/customer/find_all');
-    return dataProcesing(setDataNew(data), page, pageLimit, [strSearch, nameRoom, numberPeople],kindOfRoom, branchRoom);
+    const {
+      page = '1', pageLimit = '15', strSearch = '', nameRoom = '',
+      numberPeople = '', branchRoom = [], kindOfRoom = []
+    } = value;
+    const {data} = await axiosInstance.get('/customer/find_all');
+    return dataProcesing(setDataNew(data), page, pageLimit, [strSearch, nameRoom, numberPeople], kindOfRoom, branchRoom);
   };
   
-  const addRoom = async (param) => {
-    const { data } = await axiosInstance.get('/customers-customers-customers?param=' + param);
+  const addRoom = async (value) => {
+    console.log(value);
+    const {data} = await axiosInstance.get('/typeroom/insert', {...value});
     return data;
   };
   const updateRoom = async (id) => {
-    const { data } = await axiosInstance.put('/customers-customers-customers?param=' + id);
+    const {data} = await axiosInstance.put('/customers-customers-customers?param=' + id);
     return data;
   };
   const deleteRoom = async (id) => {
-    const { data } = await axiosInstance.delete('/customers-customers-customers?param=' + id);
+    const {data} = await axiosInstance.delete('/customers-customers-customers?param=' + id);
     return data;
   };
-  return { addRoom, updateRoom, deleteRoom, getList };
+  return {addRoom, updateRoom, deleteRoom, getList};
 };
 
 const dataProcesing = (data, page, limit, filter, kindOfRoom, branchRoom) => {
-  if(data.length > 0) {
+  if (data.length > 0) {
     const dataId = data.filter(i => (filter[0] !== '' ? i.codeRoom === filter[0] : true)
       && (filter[1] !== '' ? i.name === filter[1] : true)
       && (filter[2] !== '' ? i.soChoNgoi.toString() === filter[2] : true)
       && (branchRoom.length > 0 ? branchRoom.includes(i.idBranch) : true)
       && (kindOfRoom.length > 0 ? kindOfRoom.includes(i.typeRoom) : true));
     
-    const startLimit = (page - 1)*limit;
-    const endLimit = page*limit > data.length ? data.length : page*limit;
-    const dataNew =  dataId.slice(startLimit, endLimit);
+    const startLimit = (page - 1) * limit;
+    const endLimit = page * limit > data.length ? data.length : page * limit;
+    const dataNew = dataId.slice(startLimit, endLimit);
     return {
       data: dataNew,
       meta: {

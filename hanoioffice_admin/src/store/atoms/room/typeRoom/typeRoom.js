@@ -1,4 +1,4 @@
-import { atom } from 'recoil';
+import {atom} from 'recoil';
 
 const today = new Date();
 export const typeRoomFilterParamsState = atom({
@@ -25,12 +25,38 @@ export const typeRoomPageState = atom({
 export const typeRoomColumnTableState = atom({
   key: 'typeRoomColumnTableState',
   default: [
-    { field: 'detail', headerName: 'Chi tiết', width: 80, sortable: false, description: 'Chi tiết', cellClassName: 'cursor-pointer' },
-    { field: 'codeTypeRoom', headerName: 'Mã loại phòng', width: 200, sortable: false, description: 'Mã loại phòng' },
-    { field: 'name', headerName: 'Tên loại phòng', width: 350, sortable: false, description: 'Tên loại phòng' },
-    { field: 'createDate', headerName: 'Ngày tạo', width: 250, sortable: false, description: 'Thời gian bắt đầu sử dụng loại phòng' },
+    {
+      field: 'detail',
+      headerName: 'Chi tiết',
+      width: 80,
+      sortable: false,
+      description: 'Chi tiết',
+      cellClassName: 'cursor-pointer'
+    },
+    {
+      field: 'codeTypeRoom',
+      headerName: 'Mã loại phòng',
+      width: 200,
+      sortable: false,
+      description: 'Mã loại phòng'
+    },
+    {field: 'name', headerName: 'Tên loại phòng', width: 300, sortable: false, description: 'Tên loại phòng'},
+    {
+      field: 'priceTypeRoom',
+      headerName: 'Giá loại phòng',
+      width: 150,
+      sortable: false,
+      description: 'Giá loại phòng'
+    },
+    {
+      field: 'createDate',
+      headerName: 'Ngày tạo',
+      width: 250,
+      sortable: false,
+      description: 'Thời gian bắt đầu sử dụng loại phòng'
+    },
     // { field: 'date_stop', headerName: 'Thời gian ngừng sử dụng', width: 200, sortable: false, description: 'Thời gian ngừng sử dụng loại phòng' },
-    { field: 'status', headerName: 'Đang sử dụng', width: 200, sortable: false, description: 'Đang sử dụng' },
-    { field: 'description', headerName: 'Ghi chú', width: 400, sortable: false, description: 'Ghi chú' },
+    {field: 'status', headerName: 'Đang sử dụng', width: 200, sortable: false, description: 'Đang sử dụng'},
+    {field: 'description', headerName: 'Ghi chú', width: 400, sortable: false, description: 'Ghi chú'},
   ]
 });

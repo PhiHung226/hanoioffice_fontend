@@ -26,7 +26,24 @@ export const getListBook = () => {
     const {data} = await axiosInstance.get('/employees-employees-employees');
     return data;
   };
-  return {getListBranch, getDetail, getListTypeRoom, getListNumberPeoPle, getListTime, getListService};
+  const orderBookLT = async (value) => {
+    const {data} = await axiosInstance.post('/book/bookroomlt', {...value});
+    return data;
+  };
+  const orderBookKLT = async (value) => {
+    const {data} = await axiosInstance.post('/book/bookroomklt', {...value});
+    return data;
+  };
+  return {
+    getListBranch,
+    getDetail,
+    getListTypeRoom,
+    getListNumberPeoPle,
+    getListTime,
+    getListService,
+    orderBookLT,
+    orderBookKLT
+  };
 };
 
 const dataProcesing = (data, branch, typeRoom) => {

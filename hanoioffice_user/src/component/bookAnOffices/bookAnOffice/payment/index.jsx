@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
@@ -6,6 +6,7 @@ import {useRecoilValue} from 'recoil';
 
 import {formatCurrency, totalNumberDate} from '../../../../helpers/helper';
 import {orderBookFilterParams, orderBookFilterParamsContinuous} from '../../../../store/actom/orderBook/orderBook';
+import BookOrder from '../bookOrder';
 import PaymentContinuous from './paymentContinuous';
 import PaymentIntermittent from './paymentIntermittent';
 
@@ -38,6 +39,9 @@ const Payment = ({value}) => {
     }
     return 0;
   };
+  
+  const [openDialog, setOpentDialog] = useState(false);
+  
   return (
     <>
       <h2 className='text-center font-bold my-2'>ĐƠN GIÁ</h2>
@@ -46,9 +50,12 @@ const Payment = ({value}) => {
         <p className='text-xl'>{value === 'ngat_quang' ? formatCurrency(totalAll()) : formatCurrency(total())}</p>
       </div>
       <div className='flex justify-center mt-5 mx-6 border-b-1 pb-5'>
-        <Button color="primary" variant="contained">
+        <Button color="primary" variant="contained" onClick={ () => setOpentDialog(!openDialog) }>
           Tiến hành đặt lịch
         </Button>
+        {
+          openDialog && <BookOrder openDialog={ openDialog } setOpenDialog={ setOpentDialog } value={ value }/>
+        }
       </div>
       {value === 'lien_tuc' && <PaymentContinuous/>}
       {value === 'ngat_quang' && <PaymentIntermittent/>}

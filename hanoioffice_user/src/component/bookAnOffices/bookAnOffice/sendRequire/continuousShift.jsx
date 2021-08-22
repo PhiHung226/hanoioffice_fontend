@@ -16,7 +16,7 @@ const ContinuousShift = ({data}) => {
   return (
     <>
       <CheckboxGroup dataCheckbox={ timeSelect } title={ '' } filterParams={ orderBookFilterParams } name={ 'listTime' }
-        dataAll={ timeSelectAll } className='w-full' lableAll={ 'Cả ngày' }/>
+        dataAll={ timeSelectAll } className='w-full' lableAll={ 'Cả ngày' } color={ 'primary' }/>
     </>
   );
 };

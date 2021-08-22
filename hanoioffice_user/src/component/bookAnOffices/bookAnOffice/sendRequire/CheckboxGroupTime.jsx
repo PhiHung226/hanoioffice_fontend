@@ -7,10 +7,6 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import PropTypes from 'prop-types';
-// import {useQuery} from 'react-query';
-//
-// import {getListBook} from '../../../../service/bookAnOffices/bookAnOffices';
-// import { useSetRecoilState } from 'recoil';
 
 const CheckboxGroup = ({
   title,
@@ -18,10 +14,9 @@ const CheckboxGroup = ({
   helperText,
   listDate,
   setListDate,
-  color,
+  color = 'primary',
   data,
   timeSelect,
-  // timeSelectAll,
   indexs, dataItem
 }) => {
   
@@ -90,7 +85,8 @@ const CheckboxGroup = ({
               );
             })
           }
-          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll }/> } label="Cả ngày"/>
+          <FormControlLabel control={ <Checkbox checked={ stateAll } onChange={ handleChangeAll } color={ 'primary' }/> }
+            label="Cả ngày"/>
           </div>
         </FormGroup>
         <FormHelperText>{helperText}</FormHelperText>
