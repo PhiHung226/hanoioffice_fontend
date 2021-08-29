@@ -18,7 +18,11 @@ export const getListAppointment = () => {
     const {data} = await axiosInstance.get('/shift/find_all');
     return setDataTime(data);
   };
-  return {getList, getDetail, getListTime};
+  const getListService = async () => {
+    const {data} = await axiosInstance.get('/service/find_all');
+    return setServiceList(data);
+  };
+  return {getList, getDetail, getListTime, getListService};
 };
 const dataProcesing = (data, page, limit) => {
   if (data.length > 0) {
@@ -84,5 +88,12 @@ const setDataTime = (data) => {
     ...i,
     checked: false,
     value: i.startTime + '-' + i.endTime
+  }));
+};
+const setServiceList = (data) => {
+  return data.map(i => ({
+    ...i,
+    checked: false,
+    value: i.name,
   }));
 };

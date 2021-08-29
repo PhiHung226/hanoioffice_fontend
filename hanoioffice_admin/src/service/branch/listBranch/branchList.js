@@ -6,18 +6,23 @@ export const getListBranchs = () => {
     const {data} = await axiosInstance.get('/branch/find_all');
     return data;
   };
-  
+
   const getList = async (value) => {
     const {page = '1', pageLimit = '15'} = value;
     const {data} = await axiosInstance.get('/branch/find_all');
     return dataProcesing(setDataNew(data), page, pageLimit);
   };
-  
+
+  const getListArray = async () => {
+    const {data} = await axiosInstance.get('/branch/find_all');
+    return data;
+  };
+
   const getDetail = async () => {
     const {data} = await axiosInstance.get('/branchs-branchs-branchs');
     return data;
   };
-  return {getListArr, getList, getDetail};
+  return {getListArr, getList, getDetail, getListArray};
 };
 const dataProcesing = (data, page, limit) => {
   if (data.length > 0) {

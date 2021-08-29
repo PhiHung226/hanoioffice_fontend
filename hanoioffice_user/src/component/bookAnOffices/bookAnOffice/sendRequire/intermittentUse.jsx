@@ -32,7 +32,6 @@ const IntermittentUse = ({data}) => {
   const timeSelect = data.filter(i => i.startTime.indexOf('C') === -1);
   const timeSelectAll = data.filter(i => i.startTime.indexOf('C') !== -1);
   const [filterState, setFilterState] = useRecoilState(orderBookFilterParamsContinuous);
-  console.log(filterState);
   const [newDate, setNewDate] = useState(new Date());
   const addDate = {startDate: newDate, listShift: [], listService: []};
   const [listDate, setListDate] = useState([addDate]);

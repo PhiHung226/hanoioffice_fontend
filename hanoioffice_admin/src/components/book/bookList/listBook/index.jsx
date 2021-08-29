@@ -31,7 +31,7 @@ const ListBook = () => {
   const classes = useStyles();
   const columnTable = useRecoilValue(listBookColumnTableState);
   const filterParams = useRecoilValue(listBookFilterParamsState);
-  
+
   const pageLimit = useRecoilValue(listBookPageLimitState);
   const page = useRecoilValue(listBookPageState);
   const getData = useCallback(async (page, pageLimit) => {
@@ -42,7 +42,7 @@ const ListBook = () => {
       page, pageLimit, strSearch
     });
   }, [pageLimit, filterParams, page.skip]);
-  
+
   const {data, refetch} = useQuery(
     ['PRODUCT_LIST_KEY_LIST_BOOK', page.skip, JSON.stringify(filterParams)],
     () => getData(page.skip, pageLimit),
@@ -56,7 +56,6 @@ const ListBook = () => {
   }, [pageLimit, filterParams, page]);
   const [openDialog, setOpenDialog] = useState(false);
   const [id, setId] = useState(0);
-  console.log(data);
   return (
     <>
       <TableV7 columns={ columnTable } datas={ data }
@@ -68,16 +67,16 @@ const ListBook = () => {
         setId={ setId }
         pageLimitState={ listBookPageLimitState }/>
       {openDialog &&
-      <DialogDetail
-        classes={ {
-          paper: classes.paper,
-        } }
-        id={ id }
-        openDialog={ openDialog }
-        setOpenDialog={ setOpenDialog }
-        queryKey='PRODUCT_LIST_KEY_LIST_BOOK_DETAIL'
-        detailFunction={ getListAppointment().getDetail }
-      />
+            <DialogDetail
+              classes={ {
+                paper: classes.paper,
+              } }
+              id={ id }
+              openDialog={ openDialog }
+              setOpenDialog={ setOpenDialog }
+              queryKey='PRODUCT_LIST_KEY_LIST_BOOK_DETAIL'
+              detailFunction={ getListAppointment().getDetail }
+            />
       }
     </>
   );

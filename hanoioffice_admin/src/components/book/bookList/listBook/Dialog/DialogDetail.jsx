@@ -55,7 +55,6 @@ const DialogDetail = ({openDialog, setOpenDialog, queryKey, id, detailFunction, 
     [queryKey, id],
     () => detailFunction(id),
   );
-  console.log(data);
   const [values, setValues] = React.useState({
     codeTypeRoom: data.codeTypeRoom,
     priceTypeRoom: data.priceTypeRoom,
@@ -101,7 +100,7 @@ const DialogDetail = ({openDialog, setOpenDialog, queryKey, id, detailFunction, 
       disableBackdropClick
       disableEscapeKeyDown
       fullWidth={ true }
-      maxWidth={ '1200px' }
+      maxWidth={ 'xl' }
       onEntering={ handleEntering }
       aria-labelledby="confirmation-dialog-title"
       open={ openDialog }

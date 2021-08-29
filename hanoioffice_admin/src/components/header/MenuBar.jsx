@@ -21,36 +21,36 @@ const useStyles = makeStyles((theme) => ({
 
 const MenuBar = () => {
   const classes = useStyles();
-  const role = 2;
+  const role = 1;
   return (
     <List
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={ <ListSubheader component="div" id="nested-list-subheader">
-        Phong cách làm việc mới!
+                Phong cách làm việc mới!
       </ListSubheader> }
       className={ classes.root }
     >
       <Divider/>
       {role === 1 &&
-      router.map((item, index) => (
-        <MenuBarItem item={ item } key={ index }/>
-      ))
+            router.map((item, index) => (
+              <MenuBarItem item={ item } key={ index }/>
+            ))
       }
       {role === 2 &&
-      router2.map((item, index) => (
-        <MenuBarItem item={ item } key={ index }/>
-      ))
+            router2.map((item, index) => (
+              <MenuBarItem item={ item } key={ index }/>
+            ))
       }
       {role === 3 &&
-      router3.map((item, index) => (
-        <MenuBarItem item={ item } key={ index }/>
-      ))
+            router3.map((item, index) => (
+              <MenuBarItem item={ item } key={ index }/>
+            ))
       }
       {role === null &&
-      router4.map((item, index) => (
-        <MenuBarItem item={ item } key={ index }/>
-      ))
+            router4.map((item, index) => (
+              <MenuBarItem item={ item } key={ index }/>
+            ))
       }
     </List>
   );
